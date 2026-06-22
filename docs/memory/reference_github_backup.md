@@ -14,7 +14,9 @@ Workspace is backed up to GitHub at `https://github.com/dawnsolomon482-cyber/daw
 **Excluded from this repo** (see workspace `.gitignore`):
 - `.env` / `.env.*` files (real secrets found in `ghl-reactivation/`, `interactive-design-studio/`, `manopress/`)
 - `node_modules/`
-- `lord-law-website/` and `manopress/` — these have their own nested `.git` repos, skipped entirely to avoid broken submodule links. They are NOT in this backup at all; only on this PC.
+- `lord-law-website/`, `manopress/`, `interactive-design-studio/` — these have their own nested `.git` repos, skipped entirely to avoid broken submodule links. They are NOT in this backup at all; only on this PC.
 - `memory.db`, logs, `reference/` (pre-existing excludes)
+
+**Memory sync**: `docs/memory/` inside the workspace holds a snapshot copy of all files from `~/.claude/projects/.../memory/` (including this one and `MEMORY.md`), so Claude's memory travels with the GitHub repo to other devices. See [[github-sync-routine]] for keeping it current.
 
 **How to apply**: If asked to push updates, sync, or check this backup again, use this remote — don't recreate it. If a `git push` fails with a 403/permission error, check `cmdkey /list` for a stale stored credential under a different GitHub account (this happened once with a leftover `techvablueprint` credential) and remove it via `cmdkey /delete:LegacyGeneric:target=git:https://github.com` before retrying.

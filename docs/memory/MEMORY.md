@@ -38,7 +38,8 @@ Custom memory system modeled after openclaw's architecture:
 - [Auto-open browser for previews](feedback_browser_auto_open.md) — Always open Chrome automatically after starting any local server
 
 ## Backup & Sync
-- [GitHub backup repo](reference_github_backup.md) — dawn-workspace-backup (private), excludes .env/node_modules/lord-law-website/manopress; watch for stale credential errors
+- [GitHub backup repo](reference_github_backup.md) — dawn-workspace-backup (private), excludes .env/node_modules/lord-law-website/manopress/interactive-design-studio; watch for stale credential errors
+- [GitHub sync routine](feedback_github_sync_routine.md) — after meaningful work, re-copy memory to docs/memory/ and push to GitHub without asking each time
 
 ## Cross-Tool Continuity
 - [Codex work history](reference_codex_history.md) — check `~/.codex/session_index.jsonl` + `sessions/` for prior context before re-asking user about a project
