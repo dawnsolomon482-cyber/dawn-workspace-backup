@@ -1,0 +1,192 @@
+{
+  "name": "AU YellowPages Lead Scraper",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "node-001-manual",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const cities = [\n  { name: 'Sydney', state: 'NSW' },\n  { name: 'Melbourne', state: 'VIC' },\n  { name: 'Brisbane', state: 'QLD' },\n  { name: 'Perth', state: 'WA' },\n  { name: 'Adelaide', state: 'SA' }\n];\nconst categories = [\n  { label: 'HVAC', search: 'air+conditioning' },\n  { label: 'Roofing', search: 'roofing' },\n  { label: 'Fencing', search: 'fencing' }\n];\nconst quoteKeywords = [\n  'get a quote', 'free quote', 'free estimate', 'instant quote',\n  'request a quote', 'calculate', 'estimator', 'online quote',\n  'quote calculator', 'get estimate', 'price calculator'\n];\nconst queries = [];\nfor (const city of cities) {\n  for (const cat of categories) {\n    for (let page = 1; page <= 3; page++) {\n      queries.push({\n        url: `https://www.yellowpages.com.au/search/listings?clue=${cat.search}&locationClue=${city.name}+${city.state}&pageNumber=${page}`,\n        city: city.name,\n        category: cat.label,\n        keywords: quoteKeywords\n      });\n    }\n  }\n}\nreturn queries.map(q => ({ json: q }));"
+      },
+      "id": "node-002-config",
+      "name": "Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000,
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "node-003-scrape-yp",
+      "name": "Scrape YellowPages",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [640, 300],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const items = [];\nconst seen = new Set();\n\nfor (const item of $input.all()) {\n  const html = item.json.data || '';\n  const city = item.json.city || '';\n  const category = item.json.category || '';\n  const keywords = item.json.keywords || [];\n\n  if (!html || html.length < 100) continue;\n\n  // Extract business names\n  const namePattern = /class=\"[^\"]*(?:listing-name|business-name)[^\"]*\"[^>]*>\\s*(?:<[^>]+>)?([^<]{2,80})/g;\n  const phonePattern = /href=\"tel:([^\"]{7,15})\"/g;\n  const websitePattern = /href=\"(https?:\\/\\/(?!(?:www\\.)?yellowpages\\.com\\.au)[^\"]{5,200})\"[^>]*>(?:[^<]*Visit|[^<]*Website)/gi;\n  const addressPattern = /class=\"[^\"]*(?:address|locality)[^\"]*\"[^>]*>([^<]{5,100})</g;\n\n  const names = [];\n  const phones = [];\n  const websites = [];\n  const addresses = [];\n\n  let m;\n  while ((m = namePattern.exec(html)) !== null) {\n    const val = m[1].trim().replace(/&amp;/g, '&').replace(/&#39;/g, \"'\");\n    if (val && val.length > 1) names.push(val);\n  }\n  while ((m = phonePattern.exec(html)) !== null) {\n    phones.push(m[1].trim());\n  }\n  while ((m = websitePattern.exec(html)) !== null) {\n    websites.push(m[1].trim());\n  }\n  while ((m = addressPattern.exec(html)) !== null) {\n    const val = m[1].trim();\n    if (val) addresses.push(val);\n  }\n\n  const count = Math.max(names.length, websites.length);\n  for (let i = 0; i < count; i++) {\n    if (!names[i] && !websites[i]) continue;\n    const website = websites[i] || '';\n    const dedupKey = website ? website.toLowerCase().replace(/\\/+$/, '') : names[i];\n    if (seen.has(dedupKey)) continue;\n    seen.add(dedupKey);\n    items.push({\n      json: {\n        name: names[i] || '',\n        category,\n        city,\n        website,\n        phone: phones[i] || '',\n        address: addresses[i] || '',\n        keywords\n      }\n    });\n  }\n}\n\nif (items.length === 0) {\n  return [{ json: { _no_results: true, name: 'NO RESULTS - Check regex or Yellow Pages structure changed', category: '', city: '', website: '', phone: '', address: '', keywords: [] } }];\n}\n\nreturn items;"
+      },
+      "id": "node-004-parse",
+      "name": "Parse Listings",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "filter-has-website",
+              "leftValue": "={{ $json.website }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "node-005-filter",
+      "name": "Has Website",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.website }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 8000,
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "node-006-scrape-biz",
+      "name": "Scrape Business Site",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 300],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const items = [];\n\nfor (const item of $input.all()) {\n  const html = item.json.data || '';\n  const htmlLower = html.toLowerCase();\n  const keywords = item.json.keywords || [];\n\n  // Detect quote keywords\n  const foundKeywords = keywords.filter(kw => htmlLower.includes(kw.toLowerCase()));\n  const hasQuoteTool = foundKeywords.length > 0 ? 'YES' : 'NO';\n\n  // Extract email from original HTML (case-preserved)\n  const emailRegex = /[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}/g;\n  const allEmails = html.match(emailRegex) || [];\n  const skipDomains = ['sentry', 'example', 'schema', 'w3.org', 'wix.com', 'wordpress', 'jquery', 'png', 'jpg', 'gif', 'svg'];\n  const validEmails = allEmails.filter(e => {\n    const lower = e.toLowerCase();\n    return !skipDomains.some(d => lower.includes(d));\n  });\n  const email = validEmails[0] || '';\n\n  items.push({\n    json: {\n      'Business Name': item.json.name || '',\n      'Category': item.json.category || '',\n      'City': item.json.city || '',\n      'Website': item.json.website || '',\n      'Email': email,\n      'Phone': item.json.phone || '',\n      'Address': item.json.address || '',\n      'Has Quote Estimator': hasQuoteTool,\n      'Keywords Found': foundKeywords.join(', ')\n    }\n  });\n}\n\nreturn items;"
+      },
+      "id": "node-007-detect",
+      "name": "Detect Quote Tool",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1520, 300]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "xlsx",
+        "options": {
+          "fileName": "=AU_Leads_{{ $now.format('YYYY-MM-DD') }}.xlsx"
+        }
+      },
+      "id": "node-008-excel",
+      "name": "Save to Excel",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 2,
+      "position": [1740, 300]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [{ "node": "Config", "type": "main", "index": 0 }]
+      ]
+    },
+    "Config": {
+      "main": [
+        [{ "node": "Scrape YellowPages", "type": "main", "index": 0 }]
+      ]
+    },
+    "Scrape YellowPages": {
+      "main": [
+        [{ "node": "Parse Listings", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse Listings": {
+      "main": [
+        [{ "node": "Has Website", "type": "main", "index": 0 }]
+      ]
+    },
+    "Has Website": {
+      "main": [
+        [{ "node": "Scrape Business Site", "type": "main", "index": 0 }]
+      ]
+    },
+    "Scrape Business Site": {
+      "main": [
+        [{ "node": "Detect Quote Tool", "type": "main", "index": 0 }]
+      ]
+    },
+    "Detect Quote Tool": {
+      "main": [
+        [{ "node": "Save to Excel", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

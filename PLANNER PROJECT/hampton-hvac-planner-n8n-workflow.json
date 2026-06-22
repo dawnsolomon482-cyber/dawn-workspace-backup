@@ -1,0 +1,384 @@
+{
+  "name": "Hampton HVAC Planner — Lead Workflow",
+  "nodes": [
+    {
+      "id": "b0000001-0000-0000-0000-000000000001",
+      "name": "Receive Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 400],
+      "webhookId": "hampton-hvac-planner-001",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hvac-planner",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "b0000002-0000-0000-0000-000000000002",
+      "name": "Prepare Lead Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 400],
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body ?? $input.first().json;\n\nconst firstName          = String(body.firstName          ?? '').trim();\nconst lastName           = String(body.lastName           ?? '').trim();\nconst email              = String(body.email              ?? '').trim().toLowerCase();\nconst phone              = String(body.phone              ?? '').trim();\nconst address            = String(body.address            ?? '').trim();\nconst propertyType       = String(body.propertyType       ?? 'Residential');\nconst squareFootage      = body.squareFootage != null ? Number(body.squareFootage) : 0;\nconst stories            = String(body.stories            ?? '');\nconst hasExistingSystem  = String(body.hasExistingSystem  ?? 'No');\nconst existingSystemAge  = String(body.existingSystemAge  ?? 'N/A');\nconst serviceType        = String(body.serviceType        ?? '');\nconst systemType         = String(body.systemType         ?? '');\nconst urgency            = String(body.urgency            ?? '');\nconst additionalFeatures = String(body.additionalFeatures ?? '');\nconst notes              = String(body.notes              ?? '');\nconst estimate           = body.estimate != null ? Number(body.estimate) : 0;\n\nreturn [{\n  json: {\n    firstName,\n    lastName,\n    fullName: `${firstName} ${lastName}`.trim(),\n    email,\n    phone,\n    address,\n    propertyType,\n    squareFootage,\n    stories,\n    hasExistingSystem,\n    existingSystemAge,\n    serviceType,\n    systemType,\n    urgency,\n    additionalFeatures,\n    notes,\n    estimate,\n    source:      'Hampton HVAC Planner',\n    submittedAt: new Date().toISOString()\n  }\n}];"
+      }
+    },
+    {
+      "id": "b0000003-0000-0000-0000-000000000003",
+      "name": "Search GHL Contact",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 400],
+      "parameters": {
+        "method": "GET",
+        "url": "https://services.leadconnectorhq.com/contacts/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{GHL_TOKEN}}" },
+            { "name": "Version",       "value": "2021-07-28" }
+          ]
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "locationId", "value": "{{LOCATION_ID}}" },
+            { "name": "email",      "value": "={{ $('Prepare Lead Data').first().json.email }}" }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": { "neverError": true }
+          }
+        }
+      }
+    },
+    {
+      "id": "b0000004-0000-0000-0000-000000000004",
+      "name": "Contact Exists?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [880, 400],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "hvac-cond-check",
+              "leftValue": "={{ Array.isArray($json.contacts) && $json.contacts.length > 0 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "b0000005-0000-0000-0000-000000000005",
+      "name": "Set Existing Contact Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1100, 240],
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            { "id": "hv-ex-01", "name": "contactId",          "value": "={{ $json.contacts[0].id }}",                                           "type": "string" },
+            { "id": "hv-ex-02", "name": "firstName",          "value": "={{ $('Prepare Lead Data').first().json.firstName }}",                   "type": "string" },
+            { "id": "hv-ex-03", "name": "lastName",           "value": "={{ $('Prepare Lead Data').first().json.lastName }}",                    "type": "string" },
+            { "id": "hv-ex-04", "name": "fullName",           "value": "={{ $('Prepare Lead Data').first().json.fullName }}",                    "type": "string" },
+            { "id": "hv-ex-05", "name": "email",              "value": "={{ $('Prepare Lead Data').first().json.email }}",                       "type": "string" },
+            { "id": "hv-ex-06", "name": "phone",              "value": "={{ $('Prepare Lead Data').first().json.phone }}",                       "type": "string" },
+            { "id": "hv-ex-07", "name": "address",            "value": "={{ $('Prepare Lead Data').first().json.address }}",                     "type": "string" },
+            { "id": "hv-ex-08", "name": "propertyType",       "value": "={{ $('Prepare Lead Data').first().json.propertyType }}",                "type": "string" },
+            { "id": "hv-ex-09", "name": "squareFootage",      "value": "={{ $('Prepare Lead Data').first().json.squareFootage }}",               "type": "number" },
+            { "id": "hv-ex-10", "name": "stories",            "value": "={{ $('Prepare Lead Data').first().json.stories }}",                     "type": "string" },
+            { "id": "hv-ex-11", "name": "hasExistingSystem",  "value": "={{ $('Prepare Lead Data').first().json.hasExistingSystem }}",           "type": "string" },
+            { "id": "hv-ex-12", "name": "existingSystemAge",  "value": "={{ $('Prepare Lead Data').first().json.existingSystemAge }}",           "type": "string" },
+            { "id": "hv-ex-13", "name": "serviceType",        "value": "={{ $('Prepare Lead Data').first().json.serviceType }}",                 "type": "string" },
+            { "id": "hv-ex-14", "name": "systemType",         "value": "={{ $('Prepare Lead Data').first().json.systemType }}",                  "type": "string" },
+            { "id": "hv-ex-15", "name": "urgency",            "value": "={{ $('Prepare Lead Data').first().json.urgency }}",                     "type": "string" },
+            { "id": "hv-ex-16", "name": "additionalFeatures", "value": "={{ $('Prepare Lead Data').first().json.additionalFeatures }}",          "type": "string" },
+            { "id": "hv-ex-17", "name": "notes",              "value": "={{ $('Prepare Lead Data').first().json.notes }}",                       "type": "string" },
+            { "id": "hv-ex-18", "name": "estimate",           "value": "={{ $('Prepare Lead Data').first().json.estimate }}",                    "type": "number" },
+            { "id": "hv-ex-19", "name": "source",             "value": "Hampton HVAC Planner",                                                   "type": "string" },
+            { "id": "hv-ex-20", "name": "submittedAt",        "value": "={{ $('Prepare Lead Data').first().json.submittedAt }}",                 "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b0000006-0000-0000-0000-000000000006",
+      "name": "Create GHL Contact",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 560],
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/contacts/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{GHL_TOKEN}}" },
+            { "name": "Version",       "value": "2021-07-28" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ firstName: $('Prepare Lead Data').first().json.firstName, lastName: $('Prepare Lead Data').first().json.lastName, email: $('Prepare Lead Data').first().json.email, phone: $('Prepare Lead Data').first().json.phone, locationId: '{{LOCATION_ID}}' }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "b0000007-0000-0000-0000-000000000007",
+      "name": "Set New Contact Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1320, 560],
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            { "id": "hv-nw-01", "name": "contactId",          "value": "={{ $json.contact?.id ?? $json.id }}",                                   "type": "string" },
+            { "id": "hv-nw-02", "name": "firstName",          "value": "={{ $('Prepare Lead Data').first().json.firstName }}",                   "type": "string" },
+            { "id": "hv-nw-03", "name": "lastName",           "value": "={{ $('Prepare Lead Data').first().json.lastName }}",                    "type": "string" },
+            { "id": "hv-nw-04", "name": "fullName",           "value": "={{ $('Prepare Lead Data').first().json.fullName }}",                    "type": "string" },
+            { "id": "hv-nw-05", "name": "email",              "value": "={{ $('Prepare Lead Data').first().json.email }}",                       "type": "string" },
+            { "id": "hv-nw-06", "name": "phone",              "value": "={{ $('Prepare Lead Data').first().json.phone }}",                       "type": "string" },
+            { "id": "hv-nw-07", "name": "address",            "value": "={{ $('Prepare Lead Data').first().json.address }}",                     "type": "string" },
+            { "id": "hv-nw-08", "name": "propertyType",       "value": "={{ $('Prepare Lead Data').first().json.propertyType }}",                "type": "string" },
+            { "id": "hv-nw-09", "name": "squareFootage",      "value": "={{ $('Prepare Lead Data').first().json.squareFootage }}",               "type": "number" },
+            { "id": "hv-nw-10", "name": "stories",            "value": "={{ $('Prepare Lead Data').first().json.stories }}",                     "type": "string" },
+            { "id": "hv-nw-11", "name": "hasExistingSystem",  "value": "={{ $('Prepare Lead Data').first().json.hasExistingSystem }}",           "type": "string" },
+            { "id": "hv-nw-12", "name": "existingSystemAge",  "value": "={{ $('Prepare Lead Data').first().json.existingSystemAge }}",           "type": "string" },
+            { "id": "hv-nw-13", "name": "serviceType",        "value": "={{ $('Prepare Lead Data').first().json.serviceType }}",                 "type": "string" },
+            { "id": "hv-nw-14", "name": "systemType",         "value": "={{ $('Prepare Lead Data').first().json.systemType }}",                  "type": "string" },
+            { "id": "hv-nw-15", "name": "urgency",            "value": "={{ $('Prepare Lead Data').first().json.urgency }}",                     "type": "string" },
+            { "id": "hv-nw-16", "name": "additionalFeatures", "value": "={{ $('Prepare Lead Data').first().json.additionalFeatures }}",          "type": "string" },
+            { "id": "hv-nw-17", "name": "notes",              "value": "={{ $('Prepare Lead Data').first().json.notes }}",                       "type": "string" },
+            { "id": "hv-nw-18", "name": "estimate",           "value": "={{ $('Prepare Lead Data').first().json.estimate }}",                    "type": "number" },
+            { "id": "hv-nw-19", "name": "source",             "value": "Hampton HVAC Planner",                                                   "type": "string" },
+            { "id": "hv-nw-20", "name": "submittedAt",        "value": "={{ $('Prepare Lead Data').first().json.submittedAt }}",                 "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b0000008-0000-0000-0000-000000000008",
+      "name": "Create GHL Opportunity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 400],
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/opportunities/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{GHL_TOKEN}}" },
+            { "name": "Version",       "value": "2021-07-28" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ locationId: '{{LOCATION_ID}}', pipelineId: '{{HVAC_PIPELINE_ID}}', pipelineStageId: '{{HVAC_PIPELINE_STAGE_ID}}', contactId: $json.contactId, name: `New HVAC Quote - ${$json.fullName} - ${$json.serviceType}`, status: 'open', monetaryValue: Number($json.estimate) }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "b0000009-0000-0000-0000-000000000009",
+      "name": "Build Final Record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 400],
+      "parameters": {
+        "jsCode": "const oppResponse = $input.first().json;\nconst lead = $('Prepare Lead Data').first().json;\n\nconst opportunity   = oppResponse.opportunity ?? oppResponse;\nconst opportunityId = opportunity.id ?? opportunity.opportunityId ?? '';\nconst contactId     = opportunity.contactId ?? '';\n\nreturn [{\n  json: {\n    ...lead,\n    contactId,\n    opportunityId,\n    status: 'new'\n  }\n}];"
+      }
+    },
+    {
+      "id": "b0000010-0000-0000-0000-000000000010",
+      "name": "Slack Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1980, 400],
+      "parameters": {
+        "method": "POST",
+        "url": "{{SLACK_WEBHOOK_URL}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: `*New HVAC Quote Received* :snowflake:\\n\\n*Name:* ${$json.fullName}\\n*Email:* ${$json.email}\\n*Phone:* ${$json.phone}\\n*Address:* ${$json.address || 'Not provided'}\\n\\n*Property Type:* ${$json.propertyType}\\n*Square Footage:* ${$json.squareFootage.toLocaleString()} sq ft\\n*Stories:* ${$json.stories}\\n\\n*Service Needed:* ${$json.serviceType}\\n*System Type:* ${$json.systemType}\\n*Has Existing System:* ${$json.hasExistingSystem} ${$json.existingSystemAge !== 'N/A' ? '(' + $json.existingSystemAge + ')' : ''}\\n*Urgency:* ${$json.urgency}\\n*Add-ons:* ${$json.additionalFeatures || 'None'}\\n\\n*Estimate:* $${$json.estimate.toLocaleString()}\\n*Notes:* ${$json.notes || 'None'}\\n\\n*GHL Contact ID:* ${$json.contactId}\\n*GHL Opportunity ID:* ${$json.opportunityId}\\n*Source:* ${$json.source}\\n*Submitted At:* ${$json.submittedAt}` }) }}",
+        "options": {
+          "response": {
+            "response": { "neverError": true }
+          }
+        }
+      }
+    },
+    {
+      "id": "b0000011-0000-0000-0000-000000000011",
+      "name": "Google Sheets Backup",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [2200, 400],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_GOOGLE_CREDS_ID",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "{{HVAC_GOOGLE_SHEET_ID}}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "submittedAt":        "={{ $json.submittedAt }}",
+            "firstName":          "={{ $json.firstName }}",
+            "lastName":           "={{ $json.lastName }}",
+            "fullName":           "={{ $json.fullName }}",
+            "email":              "={{ $json.email }}",
+            "phone":              "={{ $json.phone }}",
+            "address":            "={{ $json.address }}",
+            "propertyType":       "={{ $json.propertyType }}",
+            "squareFootage":      "={{ $json.squareFootage }}",
+            "stories":            "={{ $json.stories }}",
+            "hasExistingSystem":  "={{ $json.hasExistingSystem }}",
+            "existingSystemAge":  "={{ $json.existingSystemAge }}",
+            "serviceType":        "={{ $json.serviceType }}",
+            "systemType":         "={{ $json.systemType }}",
+            "urgency":            "={{ $json.urgency }}",
+            "additionalFeatures": "={{ $json.additionalFeatures }}",
+            "notes":              "={{ $json.notes }}",
+            "estimate":           "={{ $json.estimate }}",
+            "source":             "={{ $json.source }}",
+            "ghlContactId":       "={{ $json.contactId }}",
+            "ghlOpportunityId":   "={{ $json.opportunityId }}",
+            "status":             "={{ $json.status }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      }
+    },
+    {
+      "id": "b0000012-0000-0000-0000-000000000012",
+      "name": "Respond to Website",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2420, 400],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'HVAC quote request received successfully' }) }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type",                "value": "application/json" },
+              { "name": "Access-Control-Allow-Origin", "value": "*" }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Lead": {
+      "main": [
+        [{ "node": "Prepare Lead Data", "type": "main", "index": 0 }]
+      ]
+    },
+    "Prepare Lead Data": {
+      "main": [
+        [{ "node": "Search GHL Contact", "type": "main", "index": 0 }]
+      ]
+    },
+    "Search GHL Contact": {
+      "main": [
+        [{ "node": "Contact Exists?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Contact Exists?": {
+      "main": [
+        [{ "node": "Set Existing Contact Data", "type": "main", "index": 0 }],
+        [{ "node": "Create GHL Contact",        "type": "main", "index": 0 }]
+      ]
+    },
+    "Set Existing Contact Data": {
+      "main": [
+        [{ "node": "Create GHL Opportunity", "type": "main", "index": 0 }]
+      ]
+    },
+    "Create GHL Contact": {
+      "main": [
+        [{ "node": "Set New Contact Data", "type": "main", "index": 0 }]
+      ]
+    },
+    "Set New Contact Data": {
+      "main": [
+        [{ "node": "Create GHL Opportunity", "type": "main", "index": 0 }]
+      ]
+    },
+    "Create GHL Opportunity": {
+      "main": [
+        [{ "node": "Build Final Record", "type": "main", "index": 0 }]
+      ]
+    },
+    "Build Final Record": {
+      "main": [
+        [{ "node": "Slack Notification", "type": "main", "index": 0 }]
+      ]
+    },
+    "Slack Notification": {
+      "main": [
+        [{ "node": "Google Sheets Backup", "type": "main", "index": 0 }]
+      ]
+    },
+    "Google Sheets Backup": {
+      "main": [
+        [{ "node": "Respond to Website", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  }
+}

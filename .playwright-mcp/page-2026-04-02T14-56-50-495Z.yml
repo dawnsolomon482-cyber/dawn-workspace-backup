@@ -1,0 +1,216 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Scalgent" [level=1] [ref=e4]
+      - heading "HVAC Revenue Operating System™ — Email Campaign Scope" [level=2] [ref=e5]
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - strong [ref=e8]: "Date:"
+        - text: April 2, 2026
+      - generic [ref=e9]:
+        - strong [ref=e10]: "Platform:"
+        - text: GoHighLevel (GHL)
+      - generic [ref=e11]:
+        - strong [ref=e12]: "Website:"
+        - text: scalgent.com
+      - generic [ref=e13]:
+        - strong [ref=e14]: "Version:"
+        - text: "1.0"
+  - generic [ref=e15]: "15-Touch Email Outreach Campaign | Targeting HVAC Business Owners | Goal: Book a Sales Call"
+  - heading "Project Overview" [level=3] [ref=e16]
+  - paragraph [ref=e18]:
+    - text: Build a
+    - strong [ref=e19]: 15-touch automated email outreach campaign
+    - text: in GoHighLevel for Scalgent. The campaign targets HVAC business owners and is designed to educate them on the HVAC Revenue Operating System™, address their pain points, and convert them into booked sales calls over a 30-day period.
+  - paragraph [ref=e20]:
+    - strong [ref=e21]: "Core Message:"
+    - text: "\"We install complete revenue and operations systems for HVAC companies — increasing booked jobs while automating follow-ups, project tracking, payments, and repetitive admin work.\""
+  - heading "What We're Building" [level=3] [ref=e22]
+  - table [ref=e23]:
+    - rowgroup [ref=e24]:
+      - row "Item Detail" [ref=e25]:
+        - columnheader "Item" [ref=e26]
+        - columnheader "Detail" [ref=e27]
+    - rowgroup [ref=e28]:
+      - row "Campaign Type Outbound email outreach (B2B)" [ref=e29]:
+        - cell "Campaign Type" [ref=e30]:
+          - strong [ref=e31]: Campaign Type
+        - cell "Outbound email outreach (B2B)" [ref=e32]
+      - row "Audience HVAC business owners" [ref=e33]:
+        - cell "Audience" [ref=e34]:
+          - strong [ref=e35]: Audience
+        - cell "HVAC business owners" [ref=e36]
+      - row "Sender Scalgent (scalgent1@gmail.com)" [ref=e37]:
+        - cell "Sender" [ref=e38]:
+          - strong [ref=e39]: Sender
+        - cell "Scalgent (scalgent1@gmail.com)" [ref=e40]
+      - row "Total Touches 15 emails over 30 days" [ref=e41]:
+        - cell "Total Touches" [ref=e42]:
+          - strong [ref=e43]: Total Touches
+        - cell "15 emails over 30 days" [ref=e44]
+      - row "Goal Book a sales call / demo for the HVAC Revenue Operating System™" [ref=e45]:
+        - cell "Goal" [ref=e46]:
+          - strong [ref=e47]: Goal
+        - cell "Book a sales call / demo for the HVAC Revenue Operating System™" [ref=e48]
+      - row "Platform GoHighLevel — 1 workflow, 15 email templates" [ref=e49]:
+        - cell "Platform" [ref=e50]:
+          - strong [ref=e51]: Platform
+        - cell "GoHighLevel — 1 workflow, 15 email templates" [ref=e52]
+  - heading "15-Touch Email Sequence (Day 0–30)" [level=3] [ref=e53]
+  - paragraph [ref=e54]: High frequency in Week 1 (fresh leads), tapering off through Week 4. All emails stop automatically once the contact books a call.
+  - table [ref=e55]:
+    - rowgroup [ref=e56]:
+      - row "# Day Email Angle Type" [ref=e57]:
+        - columnheader "#" [ref=e58]
+        - columnheader "Day" [ref=e59]
+        - columnheader "Email Angle" [ref=e60]
+        - columnheader "Type" [ref=e61]
+    - rowgroup [ref=e62]:
+      - row "WEEK 1 — Hook & Pain Points" [ref=e63]:
+        - cell "WEEK 1 — Hook & Pain Points" [ref=e64]
+      - row "1 Day 0 \"You're probably losing 5+ jobs a week without knowing it\" Pain point" [ref=e65]:
+        - cell "1" [ref=e66]
+        - cell "Day 0" [ref=e67]
+        - cell "\"You're probably losing 5+ jobs a week without knowing it\"" [ref=e68]
+        - cell "Pain point" [ref=e69]
+      - 'row "2 Day 1 The #1 reason HVAC companies miss revenue Education" [ref=e70]':
+        - cell "2" [ref=e71]
+        - cell "Day 1" [ref=e72]
+        - 'cell "The #1 reason HVAC companies miss revenue" [ref=e73]'
+        - cell "Education" [ref=e74]
+      - row "3 Day 2 What happens when a lead doesn't hear back in 5 minutes Education" [ref=e75]:
+        - cell "3" [ref=e76]
+        - cell "Day 2" [ref=e77]
+        - cell "What happens when a lead doesn't hear back in 5 minutes" [ref=e78]
+        - cell "Education" [ref=e79]
+      - row "4 Day 3 \"How many calls went unanswered this week?\" Pain point" [ref=e80]:
+        - cell "4" [ref=e81]
+        - cell "Day 3" [ref=e82]
+        - cell "\"How many calls went unanswered this week?\"" [ref=e83]
+        - cell "Pain point" [ref=e84]
+      - row "5 Day 5 Social proof — HVAC owner results Trust" [ref=e85]:
+        - cell "5" [ref=e86]
+        - cell "Day 5" [ref=e87]
+        - cell "Social proof — HVAC owner results" [ref=e88]
+        - cell "Trust" [ref=e89]
+      - row "WEEK 2 — Educate & Build Interest" [ref=e90]:
+        - cell "WEEK 2 — Educate & Build Interest" [ref=e91]
+      - row "6 Day 7 Missed calls = missed money (calculate their loss) Value framing" [ref=e92]:
+        - cell "6" [ref=e93]
+        - cell "Day 7" [ref=e94]
+        - cell "Missed calls = missed money (calculate their loss)" [ref=e95]
+        - cell "Value framing" [ref=e96]
+      - row "7 Day 9 \"Your team isn't the problem — the system is\" Reframe" [ref=e97]:
+        - cell "7" [ref=e98]
+        - cell "Day 9" [ref=e99]
+        - cell "\"Your team isn't the problem — the system is\"" [ref=e100]
+        - cell "Reframe" [ref=e101]
+      - row "8 Day 11 What the HVAC Revenue Operating System does Product intro" [ref=e102]:
+        - cell "8" [ref=e103]
+        - cell "Day 11" [ref=e104]
+        - cell "What the HVAC Revenue Operating System does" [ref=e105]
+        - cell "Product intro" [ref=e106]
+      - row "9 Day 14 Review automation — how it works Feature spotlight" [ref=e107]:
+        - cell "9" [ref=e108]
+        - cell "Day 14" [ref=e109]
+        - cell "Review automation — how it works" [ref=e110]
+        - cell "Feature spotlight" [ref=e111]
+      - row "WEEK 3 — Value & Offer" [ref=e112]:
+        - cell "WEEK 3 — Value & Offer" [ref=e113]
+      - row "10 Day 16 WhatsApp AI agent — what it means for their business Feature spotlight" [ref=e114]:
+        - cell "10" [ref=e115]
+        - cell "Day 16" [ref=e116]
+        - cell "WhatsApp AI agent — what it means for their business" [ref=e117]
+        - cell "Feature spotlight" [ref=e118]
+      - row "11 Day 18 \"Would 10 extra booked jobs a month justify the investment?\" Value close" [ref=e119]:
+        - cell "11" [ref=e120]
+        - cell "Day 18" [ref=e121]
+        - cell "\"Would 10 extra booked jobs a month justify the investment?\"" [ref=e122]
+        - cell "Value close" [ref=e123]
+      - row "12 Day 21 What's included — full breakdown Offer reveal" [ref=e124]:
+        - cell "12" [ref=e125]
+        - cell "Day 21" [ref=e126]
+        - cell "What's included — full breakdown" [ref=e127]
+        - cell "Offer reveal" [ref=e128]
+      - row "WEEK 4 — Urgency & Close" [ref=e129]:
+        - cell "WEEK 4 — Urgency & Close" [ref=e130]
+      - row "13 Day 24 Objection handler — \"I already have software\" Objection" [ref=e131]:
+        - cell "13" [ref=e132]
+        - cell "Day 24" [ref=e133]
+        - cell "Objection handler — \"I already have software\"" [ref=e134]
+        - cell "Objection" [ref=e135]
+      - row "14 Day 27 Scarcity — limited slots per city/area Urgency" [ref=e136]:
+        - cell "14" [ref=e137]
+        - cell "Day 27" [ref=e138]
+        - cell "Scarcity — limited slots per city/area" [ref=e139]
+        - cell "Urgency" [ref=e140]
+      - row "15 Day 30 \"Should we close your file?\" Last touch" [ref=e141]:
+        - cell "15" [ref=e142]
+        - cell "Day 30" [ref=e143]
+        - cell "\"Should we close your file?\"" [ref=e144]
+        - cell "Last touch" [ref=e145]
+  - generic [ref=e146]: All emails stop automatically once a contact books a sales call (GHL goal condition).
+  - heading "Scope" [level=3] [ref=e147]
+  - generic [ref=e148]:
+    - generic [ref=e149]:
+      - heading "Included" [level=4] [ref=e150]
+      - list [ref=e151]:
+        - listitem [ref=e152]: ✓ 15 email templates (written + formatted)
+        - listitem [ref=e153]: ✓ 1 GHL workflow (built, tested, published)
+        - listitem [ref=e154]: ✓ Contact tagging for tracking
+        - listitem [ref=e155]: ✓ Smart stop on call booked
+        - listitem [ref=e156]: ✓ QA testing before go-live
+    - generic [ref=e157]:
+      - heading "Not Included" [level=4] [ref=e158]
+      - list [ref=e159]:
+        - listitem [ref=e160]: ✗ SMS/WhatsApp sequences (Phase 2)
+        - listitem [ref=e161]: ✗ Branded HTML email design
+        - listitem [ref=e162]: ✗ Lead list / contact sourcing
+        - listitem [ref=e163]: ✗ Ad campaigns
+        - listitem [ref=e164]: ✗ Pipeline / post-call automations
+  - heading "Technical Delivery" [level=3] [ref=e165]
+  - table [ref=e166]:
+    - rowgroup [ref=e167]:
+      - row "Item Detail" [ref=e168]:
+        - columnheader "Item" [ref=e169]
+        - columnheader "Detail" [ref=e170]
+    - rowgroup [ref=e171]:
+      - row "Workflow Name Scalgent — HVAC Outreach 15-Touch" [ref=e172]:
+        - cell "Workflow Name" [ref=e173]:
+          - strong [ref=e174]: Workflow Name
+        - cell "Scalgent — HVAC Outreach 15-Touch" [ref=e175]
+      - row "Trigger Contact added to campaign / tag assigned" [ref=e176]:
+        - cell "Trigger" [ref=e177]:
+          - strong [ref=e178]: Trigger
+        - cell "Contact added to campaign / tag assigned" [ref=e179]
+      - row "Structure Single linear workflow, 15 email steps" [ref=e180]:
+        - cell "Structure" [ref=e181]:
+          - strong [ref=e182]: Structure
+        - cell "Single linear workflow, 15 email steps" [ref=e183]
+      - row "Stop Condition Contact books a call → workflow ends" [ref=e184]:
+        - cell "Stop Condition" [ref=e185]:
+          - strong [ref=e186]: Stop Condition
+        - cell "Contact books a call → workflow ends" [ref=e187]
+      - row "Location Scalgent GHL Account (scalgent.com)" [ref=e188]:
+        - cell "Location" [ref=e189]:
+          - strong [ref=e190]: Location
+        - cell "Scalgent GHL Account (scalgent.com)" [ref=e191]
+  - heading "Success Metrics" [level=3] [ref=e192]
+  - generic [ref=e193]:
+    - generic [ref=e194]:
+      - generic [ref=e195]: Target Open Rate
+      - generic [ref=e196]: 35%+
+    - generic [ref=e197]:
+      - generic [ref=e198]: Target Reply Rate
+      - generic [ref=e199]: 5–10%
+    - generic [ref=e200]:
+      - generic [ref=e201]: Target Call Booking Rate
+      - generic [ref=e202]: 3–5% of sequence
+    - generic [ref=e203]:
+      - generic [ref=e204]: Sequence Duration
+      - generic [ref=e205]: 30 days per contact
+  - generic [ref=e206]:
+    - generic [ref=e207]:
+      - strong [ref=e208]: Scalgent
+      - text: — HVAC Revenue Operating System™ Email Campaign Scope v1.0
+    - generic [ref=e209]: April 2, 2026 | scalgent.com

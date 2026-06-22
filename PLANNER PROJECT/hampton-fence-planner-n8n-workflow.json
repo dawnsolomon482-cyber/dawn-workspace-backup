@@ -1,0 +1,370 @@
+{
+  "name": "Hampton Fence Planner — Lead Workflow",
+  "nodes": [
+    {
+      "id": "a0000001-0000-0000-0000-000000000001",
+      "name": "Receive Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 400],
+      "webhookId": "hampton-fence-planner-001",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "fence-planner",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "a0000002-0000-0000-0000-000000000002",
+      "name": "Prepare Lead Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 400],
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body ?? $input.first().json;\n\nconst firstName = String(body.firstName ?? '').trim();\nconst lastName  = String(body.lastName  ?? '').trim();\nconst email     = String(body.email     ?? '').trim().toLowerCase();\nconst phone     = String(body.phone     ?? '').trim();\nconst fenceType = String(body.fenceType ?? '');\nconst height    = String(body.height    ?? '');\nconst length    = String(body.length    ?? '');\nconst gateCount = body.gateCount != null ? Number(body.gateCount) : 0;\nconst estimate  = body.estimate  != null ? Number(body.estimate)  : 0;\nconst notes     = String(body.notes     ?? '');\n\nreturn [{\n  json: {\n    firstName,\n    lastName,\n    fullName: `${firstName} ${lastName}`.trim(),\n    email,\n    phone,\n    fenceType,\n    height,\n    length,\n    gateCount,\n    estimate,\n    notes,\n    source:      'Hampton Fence Planner',\n    submittedAt: new Date().toISOString()\n  }\n}];"
+      }
+    },
+    {
+      "id": "a0000003-0000-0000-0000-000000000003",
+      "name": "Search GHL Contact",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 400],
+      "parameters": {
+        "method": "GET",
+        "url": "https://services.leadconnectorhq.com/contacts/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{GHL_TOKEN}}" },
+            { "name": "Version",       "value": "2021-07-28" }
+          ]
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "locationId", "value": "{{LOCATION_ID}}" },
+            { "name": "email",      "value": "={{ $('Prepare Lead Data').first().json.email }}" }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "a0000004-0000-0000-0000-000000000004",
+      "name": "Contact Exists?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [880, 400],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-check-contacts",
+              "leftValue": "={{ Array.isArray($json.contacts) && $json.contacts.length > 0 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "a0000005-0000-0000-0000-000000000005",
+      "name": "Set Existing Contact Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1100, 240],
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            { "id": "ex-01", "name": "contactId",   "value": "={{ $json.contacts[0].id }}",                                         "type": "string" },
+            { "id": "ex-02", "name": "firstName",   "value": "={{ $('Prepare Lead Data').first().json.firstName }}",                 "type": "string" },
+            { "id": "ex-03", "name": "lastName",    "value": "={{ $('Prepare Lead Data').first().json.lastName }}",                  "type": "string" },
+            { "id": "ex-04", "name": "fullName",    "value": "={{ $('Prepare Lead Data').first().json.fullName }}",                  "type": "string" },
+            { "id": "ex-05", "name": "email",       "value": "={{ $('Prepare Lead Data').first().json.email }}",                     "type": "string" },
+            { "id": "ex-06", "name": "phone",       "value": "={{ $('Prepare Lead Data').first().json.phone }}",                     "type": "string" },
+            { "id": "ex-07", "name": "fenceType",   "value": "={{ $('Prepare Lead Data').first().json.fenceType }}",                 "type": "string" },
+            { "id": "ex-08", "name": "height",      "value": "={{ $('Prepare Lead Data').first().json.height }}",                    "type": "string" },
+            { "id": "ex-09", "name": "length",      "value": "={{ $('Prepare Lead Data').first().json.length }}",                    "type": "string" },
+            { "id": "ex-10", "name": "gateCount",   "value": "={{ $('Prepare Lead Data').first().json.gateCount }}",                 "type": "number" },
+            { "id": "ex-11", "name": "estimate",    "value": "={{ $('Prepare Lead Data').first().json.estimate }}",                  "type": "number" },
+            { "id": "ex-12", "name": "notes",       "value": "={{ $('Prepare Lead Data').first().json.notes }}",                     "type": "string" },
+            { "id": "ex-13", "name": "source",      "value": "Hampton Fence Planner",                                                "type": "string" },
+            { "id": "ex-14", "name": "submittedAt", "value": "={{ $('Prepare Lead Data').first().json.submittedAt }}",               "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a0000006-0000-0000-0000-000000000006",
+      "name": "Create GHL Contact",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 560],
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/contacts/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization",  "value": "Bearer {{GHL_TOKEN}}" },
+            { "name": "Version",        "value": "2021-07-28" },
+            { "name": "Content-Type",   "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ firstName: $('Prepare Lead Data').first().json.firstName, lastName: $('Prepare Lead Data').first().json.lastName, email: $('Prepare Lead Data').first().json.email, phone: $('Prepare Lead Data').first().json.phone, locationId: '{{LOCATION_ID}}' }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "a0000007-0000-0000-0000-000000000007",
+      "name": "Set New Contact Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1320, 560],
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            { "id": "nw-01", "name": "contactId",   "value": "={{ $json.contact?.id ?? $json.id }}",                                 "type": "string" },
+            { "id": "nw-02", "name": "firstName",   "value": "={{ $('Prepare Lead Data').first().json.firstName }}",                 "type": "string" },
+            { "id": "nw-03", "name": "lastName",    "value": "={{ $('Prepare Lead Data').first().json.lastName }}",                  "type": "string" },
+            { "id": "nw-04", "name": "fullName",    "value": "={{ $('Prepare Lead Data').first().json.fullName }}",                  "type": "string" },
+            { "id": "nw-05", "name": "email",       "value": "={{ $('Prepare Lead Data').first().json.email }}",                     "type": "string" },
+            { "id": "nw-06", "name": "phone",       "value": "={{ $('Prepare Lead Data').first().json.phone }}",                     "type": "string" },
+            { "id": "nw-07", "name": "fenceType",   "value": "={{ $('Prepare Lead Data').first().json.fenceType }}",                 "type": "string" },
+            { "id": "nw-08", "name": "height",      "value": "={{ $('Prepare Lead Data').first().json.height }}",                    "type": "string" },
+            { "id": "nw-09", "name": "length",      "value": "={{ $('Prepare Lead Data').first().json.length }}",                    "type": "string" },
+            { "id": "nw-10", "name": "gateCount",   "value": "={{ $('Prepare Lead Data').first().json.gateCount }}",                 "type": "number" },
+            { "id": "nw-11", "name": "estimate",    "value": "={{ $('Prepare Lead Data').first().json.estimate }}",                  "type": "number" },
+            { "id": "nw-12", "name": "notes",       "value": "={{ $('Prepare Lead Data').first().json.notes }}",                     "type": "string" },
+            { "id": "nw-13", "name": "source",      "value": "Hampton Fence Planner",                                                "type": "string" },
+            { "id": "nw-14", "name": "submittedAt", "value": "={{ $('Prepare Lead Data').first().json.submittedAt }}",               "type": "string" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a0000008-0000-0000-0000-000000000008",
+      "name": "Create GHL Opportunity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 400],
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/opportunities/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization",  "value": "Bearer {{GHL_TOKEN}}" },
+            { "name": "Version",        "value": "2021-07-28" },
+            { "name": "Content-Type",   "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ locationId: '{{LOCATION_ID}}', pipelineId: '{{PIPELINE_ID}}', pipelineStageId: '{{PIPELINE_STAGE_ID}}', contactId: $json.contactId, name: `New Fence Quote - ${$json.fullName} - ${$json.fenceType}`, status: 'open', monetaryValue: Number($json.estimate) }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "a0000009-0000-0000-0000-000000000009",
+      "name": "Build Final Record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 400],
+      "parameters": {
+        "jsCode": "const oppResponse = $input.first().json;\nconst lead = $('Prepare Lead Data').first().json;\n\nconst opportunity   = oppResponse.opportunity ?? oppResponse;\nconst opportunityId = opportunity.id ?? opportunity.opportunityId ?? '';\nconst contactId     = opportunity.contactId ?? '';\n\nreturn [{\n  json: {\n    ...lead,\n    contactId,\n    opportunityId,\n    status: 'new'\n  }\n}];"
+      }
+    },
+    {
+      "id": "a0000010-0000-0000-0000-000000000010",
+      "name": "Slack Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1980, 400],
+      "parameters": {
+        "method": "POST",
+        "url": "{{SLACK_WEBHOOK_URL}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: `*New Fence Quote Received*\\n\\n*Name:* ${$json.fullName}\\n*Email:* ${$json.email}\\n*Phone:* ${$json.phone}\\n*Fence Type:* ${$json.fenceType}\\n*Height:* ${$json.height}\\n*Length:* ${$json.length} ft\\n*Gate Count:* ${$json.gateCount}\\n*Estimate:* $${$json.estimate}\\n*Notes:* ${$json.notes || 'None'}\\n\\n*GHL Contact ID:* ${$json.contactId}\\n*GHL Opportunity ID:* ${$json.opportunityId}\\n*Source:* ${$json.source}\\n*Submitted At:* ${$json.submittedAt}` }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "a0000011-0000-0000-0000-000000000011",
+      "name": "Google Sheets Backup",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [2200, 400],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_GOOGLE_CREDS_ID",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "{{GOOGLE_SHEET_ID}}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "submittedAt":      "={{ $json.submittedAt }}",
+            "firstName":        "={{ $json.firstName }}",
+            "lastName":         "={{ $json.lastName }}",
+            "fullName":         "={{ $json.fullName }}",
+            "email":            "={{ $json.email }}",
+            "phone":            "={{ $json.phone }}",
+            "fenceType":        "={{ $json.fenceType }}",
+            "height":           "={{ $json.height }}",
+            "length":           "={{ $json.length }}",
+            "gateCount":        "={{ $json.gateCount }}",
+            "estimate":         "={{ $json.estimate }}",
+            "notes":            "={{ $json.notes }}",
+            "source":           "={{ $json.source }}",
+            "ghlContactId":     "={{ $json.contactId }}",
+            "ghlOpportunityId": "={{ $json.opportunityId }}",
+            "status":           "={{ $json.status }}"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      }
+    },
+    {
+      "id": "a0000012-0000-0000-0000-000000000012",
+      "name": "Respond to Website",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2420, 400],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'Quote request received successfully', redirectUrl: 'https://YOURDOMAIN.com/thank-you' }) }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type",                "value": "application/json" },
+              { "name": "Access-Control-Allow-Origin", "value": "*" }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Receive Lead": {
+      "main": [
+        [{ "node": "Prepare Lead Data", "type": "main", "index": 0 }]
+      ]
+    },
+    "Prepare Lead Data": {
+      "main": [
+        [{ "node": "Search GHL Contact", "type": "main", "index": 0 }]
+      ]
+    },
+    "Search GHL Contact": {
+      "main": [
+        [{ "node": "Contact Exists?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Contact Exists?": {
+      "main": [
+        [{ "node": "Set Existing Contact Data", "type": "main", "index": 0 }],
+        [{ "node": "Create GHL Contact",        "type": "main", "index": 0 }]
+      ]
+    },
+    "Set Existing Contact Data": {
+      "main": [
+        [{ "node": "Create GHL Opportunity", "type": "main", "index": 0 }]
+      ]
+    },
+    "Create GHL Contact": {
+      "main": [
+        [{ "node": "Set New Contact Data", "type": "main", "index": 0 }]
+      ]
+    },
+    "Set New Contact Data": {
+      "main": [
+        [{ "node": "Create GHL Opportunity", "type": "main", "index": 0 }]
+      ]
+    },
+    "Create GHL Opportunity": {
+      "main": [
+        [{ "node": "Build Final Record", "type": "main", "index": 0 }]
+      ]
+    },
+    "Build Final Record": {
+      "main": [
+        [{ "node": "Slack Notification", "type": "main", "index": 0 }]
+      ]
+    },
+    "Slack Notification": {
+      "main": [
+        [{ "node": "Google Sheets Backup", "type": "main", "index": 0 }]
+      ]
+    },
+    "Google Sheets Backup": {
+      "main": [
+        [{ "node": "Respond to Website", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  }
+}

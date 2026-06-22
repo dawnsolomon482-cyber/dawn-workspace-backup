@@ -1,0 +1,145 @@
+{
+  "name": "Zillow Rental Scraper v2 – Fort Lauderdale",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "node-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://serpapi.com/search.json",
+        "authentication": "none",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "engine", "value": "zillow" },
+            { "name": "search_type", "value": "rent" },
+            { "name": "location", "value": "Fort Lauderdale, FL 33301" },
+            { "name": "beds_min", "value": "4" },
+            { "name": "price_max", "value": "20000" },
+            { "name": "api_key", "value": "059fb1f02005d999daa65d57a614b3521b5cb3617e1b8a5018db00981d5553d7" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-http",
+      "name": "Search Zillow via SerpAPI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst results = data.properties || data.rental_properties || data.local_results || [];\n\nif (results.length === 0) {\n  return [{ json: { error: 'No properties found', raw: JSON.stringify(data).substring(0, 500) } }];\n}\n\nreturn results.map(item => ({\n  json: {\n    property_url: item.url ? 'https://www.zillow.com' + item.url : (item.detail_url || item.link || 'N/A'),\n    monthly_rent: item.price || item.rent || 'N/A',\n    bedrooms: item.beds || item.bedrooms || 0,\n    bathrooms: item.baths || item.bathrooms || 0,\n    address: item.address || item.location || 'N/A',\n    sqft: item.area || item.living_area || 'N/A'\n  }\n}));"
+      },
+      "id": "node-extract",
+      "name": "Extract Property Fields",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "cond-1",
+              "leftValue": "={{ $json.bedrooms }}",
+              "rightValue": 4,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-filter",
+      "name": "Filter 4+ Beds",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "fieldsToCompare": {
+          "fields": [
+            { "fieldName": "property_url" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-dedup",
+      "name": "Remove Duplicates",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "mode": "id",
+          "value": "1J712zkK-iK11bLPpvOlGxHu9p1XAjiyRwq4LzTfFUjI"
+        },
+        "sheetName": {
+          "mode": "name",
+          "value": "Rental Properties"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "property_url": "={{ $json.property_url }}",
+            "monthly_rent": "={{ $json.monthly_rent }}",
+            "bedrooms": "={{ $json.bedrooms }}",
+            "bathrooms": "={{ $json.bathrooms }}",
+            "address": "={{ $json.address }}",
+            "sqft": "={{ $json.sqft }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "node-sheets",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1320, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [[{ "node": "Search Zillow via SerpAPI", "type": "main", "index": 0 }]]
+    },
+    "Search Zillow via SerpAPI": {
+      "main": [[{ "node": "Extract Property Fields", "type": "main", "index": 0 }]]
+    },
+    "Extract Property Fields": {
+      "main": [[{ "node": "Filter 4+ Beds", "type": "main", "index": 0 }]]
+    },
+    "Filter 4+ Beds": {
+      "main": [[{ "node": "Remove Duplicates", "type": "main", "index": 0 }]]
+    },
+    "Remove Duplicates": {
+      "main": [[{ "node": "Save to Google Sheets", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

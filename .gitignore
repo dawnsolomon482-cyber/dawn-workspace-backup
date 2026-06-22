@@ -1,0 +1,31 @@
+# Sensitive / local only
+.env
+.env.*
+*.ps1
+*.bat
+memory.db
+bot.log
+*.log
+
+# Dependencies (regenerable)
+node_modules/
+
+# Daily session logs (personal chat history)
+memory/2025-*.md
+memory/2026-*.md
+memory/2027-*.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
+
+# Reference repos
+reference/
+
+# Nested repos (have their own .git, skipped to avoid broken submodule links)
+/lord-law-website/
+/manopress/

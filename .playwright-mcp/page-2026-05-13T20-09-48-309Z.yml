@@ -1,0 +1,569 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e6]:
+        - link "Dawn Solomon" [ref=e7] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e9]: Dawn Solomon
+        - generic [ref=e10]:
+          - link "Home" [ref=e11] [cursor=pointer]:
+            - /url: "#home"
+          - link "About" [ref=e12] [cursor=pointer]:
+            - /url: "#about"
+          - link "Projects" [ref=e13] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Book a Call" [ref=e14] [cursor=pointer]:
+            - /url: "#booking"
+          - link "Contact" [ref=e15] [cursor=pointer]:
+            - /url: "#contact"
+        - link "Book a Call" [ref=e17] [cursor=pointer]:
+          - /url: "#booking"
+    - main [ref=e18]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - generic [ref=e29]: Open for Freelance Projects
+            - heading "Automation That Saves Time, Money, and Focus." [level=1] [ref=e30]:
+              - text: Automation That Saves Time, Money,
+              - text: and Focus.
+            - paragraph [ref=e31]: Your Partner in AI & Business Automation.
+            - generic [ref=e32]:
+              - link "Book a Call" [ref=e33] [cursor=pointer]:
+                - /url: "#booking"
+                - generic [ref=e34]: Book a Call
+              - link "View My Work" [ref=e35] [cursor=pointer]:
+                - /url: "#projects"
+                - generic [ref=e36]: View My Work
+                - img
+            - generic [ref=e37]:
+              - img [ref=e38]
+              - generic [ref=e41]: Let's transform your manual workflows into smart systems.
+          - generic [ref=e43]:
+            - img "Dawn Solomon - GHL Automation Specialist and AI Engineer" [ref=e48]
+            - img [ref=e50]
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Calculate Your ROI" [level=2] [ref=e55]
+            - paragraph [ref=e56]: See how much time and money automation can save your business.
+          - button "Calculate Your ROI" [ref=e58] [cursor=pointer]:
+            - img
+            - text: Calculate Your ROI
+        - generic [ref=e60]:
+          - paragraph [ref=e61]: Better systems. Bigger impact.
+          - paragraph [ref=e62]: — My Motto
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - paragraph [ref=e68]: THE ARCHITECT BEHIND THE AUTOMATION
+          - heading "I'm Dawn Solomon." [level=2] [ref=e69]
+          - paragraph [ref=e70]: Automation Engineer | WordPress SEO | AI Visibility
+          - paragraph [ref=e71]: I design end-to-end automation solutions using tools like GoHighLevel, Zapier (Integromat), and n8n, seamlessly connecting marketing, CRM, and operations into one intelligent ecosystem that runs on autopilot. With a solid foundation in WordPress SEO and LLMS visibility, I understand how systems, data, and strategy work together to create sustainable digital growth.
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - img [ref=e74]
+              - generic [ref=e77]: Laguna, Philippines
+            - generic [ref=e78]:
+              - img [ref=e79]
+              - generic [ref=e82]: dawnsolomon482@gmail.com
+            - generic [ref=e83]:
+              - img [ref=e84]
+              - generic [ref=e87]: Freelancer
+        - generic [ref=e88]:
+          - generic [ref=e91]:
+            - img [ref=e93]
+            - heading "My Vision" [level=3] [ref=e96]
+            - paragraph [ref=e97]: A world where founders and teams focus purely on creative, high-impact work, while robots handle 100% of the repetitive admin.
+          - generic [ref=e100]:
+            - img [ref=e102]
+            - heading "My Goal" [level=3] [ref=e106]
+            - paragraph [ref=e107]: To transform manual workflows into smart, self-running systems that multiply your time, productivity, and revenue.
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - heading "Workflow Automation" [level=2] [ref=e112]
+          - paragraph [ref=e113]: Real-world scenarios solved with precision. These projects showcase my automation expertise.
+        - generic [ref=e114]:
+          - generic [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]:
+              - img "Auto Sort Gmail Attachments" [ref=e118]
+              - generic [ref=e121]: Click to view full image
+            - generic [ref=e122]:
+              - generic [ref=e123]: Automation
+              - heading "Auto Sort Gmail Attachments" [level=3] [ref=e124]
+              - paragraph [ref=e125]: Automated workflow that sorts and organizes Gmail attachments into Google Drive folders.
+              - generic [ref=e126]:
+                - generic [ref=e127]: Make
+                - generic [ref=e128]: Gmail
+                - generic [ref=e129]: Google Drive
+              - generic [ref=e130]:
+                - generic [ref=e131]:
+                  - paragraph [ref=e132]: 5 Hrs/Wk
+                  - paragraph [ref=e133]: Time Saved
+                - generic [ref=e134]:
+                  - paragraph [ref=e135]: 100%
+                  - paragraph [ref=e136]: Accuracy
+          - generic:
+            - generic:
+              - generic:
+                - img "4 Quote Follow up Automation"
+              - generic:
+                - generic: Automation
+                - heading "4 Quote Follow up Automation" [level=3]
+                - paragraph: Zapier automation that handles task tracking and email follow-ups across multiple workflow stages.
+                - generic:
+                  - generic: Zapier
+                  - generic: Asana
+                  - generic: Gmail
+                - generic:
+                  - generic:
+                    - paragraph: 5+
+                    - paragraph: Workflow Stages
+                  - generic:
+                    - paragraph: 20+
+                    - paragraph: Auto Emails
+          - generic:
+            - generic:
+              - generic:
+                - img "Lead to Booking – HVAC NPCS"
+              - generic:
+                - generic: Automation
+                - heading "Lead to Booking – HVAC NPCS" [level=3]
+                - paragraph: "Lead to Booking – HVAC NPCS: A fully automated GoHighLevel workflow that captures leads and books appointments automatically, eliminating manual follow-ups and streamlining the entire sales pipeline."
+                - generic:
+                  - generic: GoHighLevel
+                  - generic: Workflow
+                  - generic: CRM
+                - generic:
+                  - generic:
+                    - paragraph: 100%
+                    - paragraph: Project Base
+                  - generic:
+                    - paragraph: 100%
+                    - paragraph: Accuracy
+          - button [ref=e137] [cursor=pointer]:
+            - img [ref=e138]
+          - button [ref=e140] [cursor=pointer]:
+            - img [ref=e141]
+          - generic [ref=e143]:
+            - button [ref=e144] [cursor=pointer]
+            - button [ref=e145] [cursor=pointer]
+            - button [ref=e146] [cursor=pointer]
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - img "ClickUp" [ref=e151]
+              - generic [ref=e152]: ClickUp
+            - generic [ref=e153]:
+              - img "Tally" [ref=e154]
+              - generic [ref=e155]: Tally
+            - generic [ref=e156]:
+              - img "Jotform" [ref=e157]
+              - generic [ref=e158]: Jotform
+            - generic [ref=e159]:
+              - img "Systeme.io" [ref=e160]
+              - generic [ref=e161]: Systeme.io
+            - generic [ref=e162]:
+              - img "QuickBooks" [ref=e163]
+              - generic [ref=e164]: QuickBooks
+            - generic [ref=e165]:
+              - img "Notion" [ref=e166]
+              - generic [ref=e167]: Notion
+            - generic [ref=e168]:
+              - img "Trello" [ref=e169]
+              - generic [ref=e170]: Trello
+            - generic [ref=e171]:
+              - img "Slack" [ref=e172]
+              - generic [ref=e173]: Slack
+            - generic [ref=e174]:
+              - img "Zoom" [ref=e175]
+              - generic [ref=e176]: Zoom
+            - generic [ref=e177]:
+              - img "ChatGPT" [ref=e178]
+              - generic [ref=e179]: ChatGPT
+            - generic [ref=e180]:
+              - img "Gemini" [ref=e181]
+              - generic [ref=e182]: Gemini
+            - generic [ref=e183]:
+              - img "Mailchimp" [ref=e184]
+              - generic [ref=e185]: Mailchimp
+            - generic [ref=e186]:
+              - img "WordPress" [ref=e187]
+              - generic [ref=e188]: WordPress
+            - generic [ref=e189]:
+              - img "Canva" [ref=e190]
+              - generic [ref=e191]: Canva
+            - generic [ref=e192]:
+              - img "Shopify" [ref=e193]
+              - generic [ref=e194]: Shopify
+            - generic [ref=e195]:
+              - img "Zapier" [ref=e196]
+              - generic [ref=e197]: Zapier
+            - generic [ref=e198]:
+              - img "Airtable" [ref=e199]
+              - generic [ref=e200]: Airtable
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - img "ClickUp" [ref=e203]
+              - generic [ref=e204]: ClickUp
+            - generic [ref=e205]:
+              - img "Tally" [ref=e206]
+              - generic [ref=e207]: Tally
+            - generic [ref=e208]:
+              - img "Jotform" [ref=e209]
+              - generic [ref=e210]: Jotform
+            - generic [ref=e211]:
+              - img "Systeme.io" [ref=e212]
+              - generic [ref=e213]: Systeme.io
+            - generic [ref=e214]:
+              - img "QuickBooks" [ref=e215]
+              - generic [ref=e216]: QuickBooks
+            - generic [ref=e217]:
+              - img "Notion" [ref=e218]
+              - generic [ref=e219]: Notion
+            - generic [ref=e220]:
+              - img "Trello" [ref=e221]
+              - generic [ref=e222]: Trello
+            - generic [ref=e223]:
+              - img "Slack" [ref=e224]
+              - generic [ref=e225]: Slack
+            - generic [ref=e226]:
+              - img "Zoom" [ref=e227]
+              - generic [ref=e228]: Zoom
+            - generic [ref=e229]:
+              - img "ChatGPT" [ref=e230]
+              - generic [ref=e231]: ChatGPT
+            - generic [ref=e232]:
+              - img "Gemini" [ref=e233]
+              - generic [ref=e234]: Gemini
+            - generic [ref=e235]:
+              - img "Mailchimp" [ref=e236]
+              - generic [ref=e237]: Mailchimp
+            - generic [ref=e238]:
+              - img "WordPress" [ref=e239]
+              - generic [ref=e240]: WordPress
+            - generic [ref=e241]:
+              - img "Canva" [ref=e242]
+              - generic [ref=e243]: Canva
+            - generic [ref=e244]:
+              - img "Shopify" [ref=e245]
+              - generic [ref=e246]: Shopify
+            - generic [ref=e247]:
+              - img "Zapier" [ref=e248]
+              - generic [ref=e249]: Zapier
+            - generic [ref=e250]:
+              - img "Airtable" [ref=e251]
+              - generic [ref=e252]: Airtable
+      - generic [ref=e255]:
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - img [ref=e258]
+            - generic [ref=e261]: Live & Interactive
+          - heading "Explore Live Websites" [level=2] [ref=e262]
+          - paragraph [ref=e263]: Browse my live website projects — click to explore them in real-time and see the quality of work firsthand.
+        - generic [ref=e264]:
+          - generic [ref=e265]:
+            - generic [ref=e271]:
+              - img [ref=e272]
+              - generic [ref=e275]: fuelfit-funnel.vercel.app
+            - generic [ref=e276]:
+              - iframe [ref=e277]
+              - generic [ref=e279]:
+                - generic [ref=e280]:
+                  - img [ref=e282]
+                  - img [ref=e285]
+                - generic [ref=e287]: Click to explore
+            - generic [ref=e288]:
+              - generic [ref=e289]:
+                - heading "FuelFit Funnel" [level=3] [ref=e290]
+                - generic [ref=e291]: Sales Funnel
+              - paragraph [ref=e292]: A high-converting sales funnel designed to drive fitness product purchases with compelling copy and seamless checkout.
+              - generic [ref=e293]:
+                - generic [ref=e294]: Sales Funnel
+                - generic [ref=e295]: Conversion
+                - generic [ref=e296]: Landing Page
+              - link "Visit Live Site" [ref=e297] [cursor=pointer]:
+                - /url: https://fuelfit-funnel.vercel.app
+                - button "Visit Live Site" [ref=e298]:
+                  - img
+                  - text: Visit Live Site
+            - link "Visit FuelFit Funnel" [ref=e299] [cursor=pointer]:
+              - /url: https://fuelfit-funnel.vercel.app
+              - generic [ref=e300]: Visit FuelFit Funnel
+          - generic [ref=e301]:
+            - generic [ref=e307]:
+              - img [ref=e308]
+              - generic [ref=e311]: prestige-realty-funnel.vercel.app
+            - generic [ref=e312]:
+              - iframe [ref=e313]
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - img [ref=e318]
+                  - img [ref=e321]
+                - generic [ref=e323]: Click to explore
+            - generic [ref=e324]:
+              - generic [ref=e325]:
+                - heading "Prestige Realty Funnel" [level=3] [ref=e326]
+                - generic [ref=e327]: Appointment Funnel
+              - paragraph [ref=e328]: An appointment booking funnel for real estate businesses, capturing leads and scheduling property viewings automatically.
+              - generic [ref=e329]:
+                - generic [ref=e330]: Appointment Funnel
+                - generic [ref=e331]: Real Estate
+                - generic [ref=e332]: Lead Capture
+              - link "Visit Live Site" [ref=e333] [cursor=pointer]:
+                - /url: https://prestige-realty-funnel.vercel.app
+                - button "Visit Live Site" [ref=e334]:
+                  - img
+                  - text: Visit Live Site
+            - link "Visit Prestige Realty Funnel" [ref=e335] [cursor=pointer]:
+              - /url: https://prestige-realty-funnel.vercel.app
+              - generic [ref=e336]: Visit Prestige Realty Funnel
+          - generic [ref=e337]:
+            - generic [ref=e343]:
+              - img [ref=e344]
+              - generic [ref=e347]: apex-media-funnel.vercel.app
+            - generic [ref=e348]:
+              - iframe [ref=e349]
+              - generic [ref=e351]:
+                - generic [ref=e352]:
+                  - img [ref=e354]
+                  - img [ref=e357]
+                - generic [ref=e359]: Click to explore
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - heading "Apex Media Funnel" [level=3] [ref=e362]
+                - generic [ref=e363]: Lead Funnel
+              - paragraph [ref=e364]: A lead generation funnel for media agencies, designed to capture and qualify prospects through strategic content.
+              - generic [ref=e365]:
+                - generic [ref=e366]: Lead Funnel
+                - generic [ref=e367]: Agency
+                - generic [ref=e368]: Marketing
+              - link "Visit Live Site" [ref=e369] [cursor=pointer]:
+                - /url: https://apex-media-funnel.vercel.app
+                - button "Visit Live Site" [ref=e370]:
+                  - img
+                  - text: Visit Live Site
+            - link "Visit Apex Media Funnel" [ref=e371] [cursor=pointer]:
+              - /url: https://apex-media-funnel.vercel.app
+              - generic [ref=e372]: Visit Apex Media Funnel
+      - generic [ref=e375]:
+        - generic [ref=e376]:
+          - generic [ref=e377]:
+            - img [ref=e378]
+            - generic [ref=e383]: Interactive Planner Tools
+          - heading "Custom Planner Projects" [level=2] [ref=e384]
+          - paragraph [ref=e385]: A collection of custom-built planner and calculator tools designed to streamline real-world workflows.
+        - generic [ref=e386]:
+          - generic [ref=e387]:
+            - generic [ref=e393]:
+              - img [ref=e394]
+              - generic [ref=e399]: Live
+            - img "Fencing Calculator & Planner" [ref=e401]
+            - generic [ref=e402]:
+              - generic [ref=e403]:
+                - heading "Fencing Calculator & Planner" [level=3] [ref=e404]
+                - generic [ref=e405]: Live
+              - paragraph [ref=e406]: Custom planner that lets users design their fence section by section, with real-time material list and cost estimation.
+              - generic [ref=e407]:
+                - generic [ref=e408]: Planner
+                - generic [ref=e409]: Calculator
+                - generic [ref=e410]: Responsive
+              - link "Visit Live Planner" [ref=e411] [cursor=pointer]:
+                - /url: https://hampton-fence-planner.vercel.app
+                - img
+                - text: Visit Live Planner
+          - generic [ref=e412]:
+            - generic [ref=e418]:
+              - img [ref=e419]
+              - generic [ref=e424]: Live
+            - img "HVAC System Planner" [ref=e426]
+            - generic [ref=e427]:
+              - generic [ref=e428]:
+                - heading "HVAC System Planner" [level=3] [ref=e429]
+                - generic [ref=e430]: Live
+              - paragraph [ref=e431]: Interactive HVAC planner that lets users select zones, system types, and add-ons with a live estimate snapshot.
+              - generic [ref=e432]:
+                - generic [ref=e433]: Planner
+                - generic [ref=e434]: HVAC
+                - generic [ref=e435]: Estimator
+              - link "Visit Live Planner" [ref=e436] [cursor=pointer]:
+                - /url: https://hvac-deploy-delta.vercel.app/
+                - img
+                - text: Visit Live Planner
+          - generic [ref=e437]:
+            - generic [ref=e443]:
+              - img [ref=e444]
+              - generic [ref=e449]: Live
+            - img "Roofing Project Planner" [ref=e451]
+            - generic [ref=e452]:
+              - generic [ref=e453]:
+                - heading "Roofing Project Planner" [level=3] [ref=e454]
+                - generic [ref=e455]: Live
+              - paragraph [ref=e456]: Interactive roofing planner to estimate costs, visualize roof sections, and request a free inspection & quote.
+              - generic [ref=e457]:
+                - generic [ref=e458]: Planner
+                - generic [ref=e459]: Roofing
+                - generic [ref=e460]: Estimator
+              - link "Visit Live Planner" [ref=e461] [cursor=pointer]:
+                - /url: https://roofing-planner.vercel.app
+                - img
+                - text: Visit Live Planner
+      - generic [ref=e464]:
+        - generic [ref=e465]:
+          - generic [ref=e466]:
+            - img [ref=e467]
+            - generic [ref=e469]: Interactive Dashboards
+          - heading "Live Dashboards" [level=2] [ref=e470]
+          - paragraph [ref=e471]: Explore real-time dashboards I've built — use the login credentials below to test and interact with each dashboard.
+        - generic [ref=e472]:
+          - generic [ref=e473]:
+            - generic [ref=e474]:
+              - generic [ref=e480]: FuelFit Dashboard
+              - generic [ref=e483]: LIVE
+            - generic [ref=e484]:
+              - img "FuelFit Dashboard" [ref=e485]
+              - generic [ref=e487]:
+                - generic [ref=e488]:
+                  - img [ref=e490]
+                  - img [ref=e493]
+                - generic [ref=e496]: Open Dashboard
+            - generic [ref=e497]:
+              - heading "FuelFit Dashboard" [level=3] [ref=e498]
+              - paragraph [ref=e499]: Real-time analytics dashboard tracking sales, appointments, and website traffic for fitness businesses.
+              - generic [ref=e500]:
+                - generic [ref=e501]: Analytics
+                - generic [ref=e502]: Real-time
+                - generic [ref=e503]: Sales Tracking
+              - generic [ref=e504]:
+                - paragraph [ref=e505]: Demo Login
+                - generic [ref=e506]:
+                  - img [ref=e507]
+                  - generic [ref=e510]: "Email:"
+                  - generic [ref=e511]: admin@fuelfit.com
+                  - button "Copy Email" [ref=e512] [cursor=pointer]:
+                    - img [ref=e513]
+                - generic [ref=e516]:
+                  - img [ref=e517]
+                  - generic [ref=e520]: "Password:"
+                  - generic [ref=e521]: FuelFit2025
+                  - button "Copy Password" [ref=e522] [cursor=pointer]:
+                    - img [ref=e523]
+              - link "Explore Dashboard" [ref=e526] [cursor=pointer]:
+                - /url: https://fuelfit-dashboard.vercel.app
+                - button "Explore Dashboard" [ref=e527]:
+                  - img
+                  - text: Explore Dashboard
+          - generic [ref=e528]:
+            - generic [ref=e529]:
+              - generic [ref=e535]: Prestige Realty Dashboard
+              - generic [ref=e538]: LIVE
+            - generic [ref=e539]:
+              - img "Prestige Realty Dashboard" [ref=e540]
+              - generic [ref=e542]:
+                - generic [ref=e543]:
+                  - img [ref=e545]
+                  - img [ref=e548]
+                - generic [ref=e551]: Open Dashboard
+            - generic [ref=e552]:
+              - heading "Prestige Realty Dashboard" [level=3] [ref=e553]
+              - paragraph [ref=e554]: Real estate analytics dashboard monitoring property leads, bookings, and client engagement metrics.
+              - generic [ref=e555]:
+                - generic [ref=e556]: Real Estate
+                - generic [ref=e557]: Lead Tracking
+                - generic [ref=e558]: Analytics
+              - generic [ref=e559]:
+                - paragraph [ref=e560]: Demo Login
+                - generic [ref=e561]:
+                  - img [ref=e562]
+                  - generic [ref=e565]: "Email:"
+                  - generic [ref=e566]: admin@prestigerealty.com
+                  - button "Copy Email" [ref=e567] [cursor=pointer]:
+                    - img [ref=e568]
+                - generic [ref=e571]:
+                  - img [ref=e572]
+                  - generic [ref=e575]: "Password:"
+                  - generic [ref=e576]: Prestige2025
+                  - button "Copy Password" [ref=e577] [cursor=pointer]:
+                    - img [ref=e578]
+              - link "Explore Dashboard" [ref=e581] [cursor=pointer]:
+                - /url: https://prestige-realty-dashboard.vercel.app
+                - button "Explore Dashboard" [ref=e582]:
+                  - img
+                  - text: Explore Dashboard
+          - generic [ref=e583]:
+            - generic [ref=e584]:
+              - generic [ref=e590]: Apex Media Dashboard
+              - generic [ref=e593]: LIVE
+            - generic [ref=e594]:
+              - img "Apex Media Dashboard" [ref=e595]
+              - generic [ref=e597]:
+                - generic [ref=e598]:
+                  - img [ref=e600]
+                  - img [ref=e603]
+                - generic [ref=e606]: Open Dashboard
+            - generic [ref=e607]:
+              - heading "Apex Media Dashboard" [level=3] [ref=e608]
+              - paragraph [ref=e609]: Media agency dashboard tracking campaign performance, client metrics, and marketing ROI in real-time.
+              - generic [ref=e610]:
+                - generic [ref=e611]: Agency
+                - generic [ref=e612]: Campaign Tracking
+                - generic [ref=e613]: Marketing
+              - generic [ref=e614]:
+                - paragraph [ref=e615]: Demo Login
+                - generic [ref=e616]:
+                  - img [ref=e617]
+                  - generic [ref=e620]: "Email:"
+                  - generic [ref=e621]: admin@apexmedia.com
+                  - button "Copy Email" [ref=e622] [cursor=pointer]:
+                    - img [ref=e623]
+                - generic [ref=e626]:
+                  - img [ref=e627]
+                  - generic [ref=e630]: "Password:"
+                  - generic [ref=e631]: ApexMedia2025
+                  - button "Copy Password" [ref=e632] [cursor=pointer]:
+                    - img [ref=e633]
+              - link "Explore Dashboard" [ref=e636] [cursor=pointer]:
+                - /url: https://apex-media-dashboard.vercel.app/sign-in
+                - button "Explore Dashboard" [ref=e637]:
+                  - img
+                  - text: Explore Dashboard
+      - generic [ref=e640]:
+        - generic [ref=e641]:
+          - generic [ref=e642]:
+            - img [ref=e643]
+            - generic [ref=e645]: Book a Call
+          - heading "Schedule a Meeting" [level=2] [ref=e646]
+          - paragraph [ref=e647]: Ready to discuss your project? Book a free consultation call and let's explore how I can help automate your business processes.
+        - iframe [ref=e650]
+      - generic [ref=e654]:
+        - generic [ref=e655]:
+          - generic [ref=e656]:
+            - heading "Let's Work Together!" [level=2] [ref=e657]
+            - paragraph [ref=e658]: I am available for freelance projects.
+            - link "Book a Call" [ref=e659] [cursor=pointer]:
+              - /url: "#booking"
+              - img
+              - generic [ref=e660]: Book a Call
+          - generic [ref=e661]:
+            - heading "Get In Touch" [level=3] [ref=e662]
+            - generic [ref=e663]:
+              - generic [ref=e664]:
+                - img [ref=e665]
+                - generic [ref=e668]:
+                  - paragraph [ref=e669]: Address
+                  - paragraph [ref=e670]: Laguna, Philippines
+              - generic [ref=e671]:
+                - img [ref=e672]
+                - generic [ref=e675]:
+                  - paragraph [ref=e676]: Email
+                  - link "dawnsolomon482@gmail.com" [ref=e677] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/?view=cm&fs=1&to=dawnsolomon482@gmail.com
+              - link [ref=e679] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dawnsolomon482-automation-wordpress-seo-specialist/
+                - img [ref=e680]
+        - generic [ref=e684]:
+          - generic [ref=e686]: Dawn Solomon
+          - paragraph [ref=e687]: Copyright © 2026 Dawn Solomon. All rights reserved.
+    - button "Chat with AI" [ref=e688] [cursor=pointer]:
+      - img [ref=e689]
+      - generic [ref=e691]: Chat with AI

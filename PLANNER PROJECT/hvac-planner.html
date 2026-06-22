@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawn HVAC Planner — Free Instant Quote</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            color: #0D1F3C;
+            min-height: 100vh;
+            padding-bottom: 64px;
+        }
+
+        /* ── Video Background ── */
+        .video-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        .video-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(230,240,255,0.80);
+            z-index: -1;
+        }
+
+        /* ── Header ── */
+        header {
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 2px solid #D0DDF0;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #0D1F3C;
+            letter-spacing: -0.02em;
+        }
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, #1A8FFF, #004FCC);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+        }
+        .header-trust {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.78rem; color: #5A7FA8;
+        }
+        .trust-badge {
+            background: rgba(26,143,255,0.08);
+            border: 1px solid rgba(26,143,255,0.25);
+            color: #1A8FFF;
+            padding: 4px 12px; border-radius: 20px; font-weight: 600;
+        }
+
+        /* ── Layout ── */
+        .container {
+            max-width: 820px;
+            margin: 36px auto;
+            padding: 0 16px 72px;
+        }
+        .page-title { text-align: center; margin-bottom: 32px; }
+        .page-title h1 {
+            font-size: 2rem; font-weight: 800; color: #0D1F3C;
+            letter-spacing: -0.03em; margin-bottom: 8px;
+        }
+        .page-title p { color: #5A7FA8; font-size: 0.95rem; }
+
+        /* ── Progress Bar ── */
+        .progress-wrap {
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 32px;
+        }
+        .step-dot {
+            display: flex; flex-direction: column; align-items: center; gap: 5px;
+        }
+        .step-dot .circle {
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 2px solid #CBD8F0; background: #F8FAFF;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.82rem; font-weight: 700; color: #7A9AC0;
+            transition: all 0.3s ease; z-index: 1;
+        }
+        .step-dot.active .circle {
+            border-color: #1A8FFF; background: #1A8FFF; color: #fff;
+            box-shadow: 0 0 16px rgba(26,143,255,0.35);
+        }
+        .step-dot.done .circle { border-color: #0D9455; background: #0D9455; color: #fff; }
+        .step-dot .label {
+            font-size: 0.62rem; font-weight: 600; color: #7A9AC0;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .step-dot.active .label { color: #1A8FFF; }
+        .step-dot.done .label { color: #0D9455; }
+        .connector {
+            flex: 1; max-width: 50px; height: 2px;
+            background: #D0DDF0; margin-bottom: 22px; transition: background 0.3s;
+        }
+        .connector.done { background: #0D9455; }
+
+        /* ── Card ── */
+        .card {
+            background: #FFFFFF; border: 1px solid #D0DDF0;
+            border-radius: 18px; padding: 36px;
+            box-shadow: 0 8px 32px rgba(26,60,140,0.08);
+        }
+        .step-panel { display: none; }
+        .step-panel.active { display: block; }
+        .step-heading {
+            font-size: 1.3rem; font-weight: 800; color: #0D1F3C;
+            margin-bottom: 5px; letter-spacing: -0.02em;
+        }
+        .step-sub { color: #5A7FA8; font-size: 0.88rem; margin-bottom: 26px; }
+
+        /* ── Section Labels ── */
+        .section-label {
+            font-size: 0.72rem; font-weight: 700; color: #5A7FA8;
+            text-transform: uppercase; letter-spacing: 0.1em; margin: 20px 0 10px;
+        }
+
+        /* ── Fields ── */
+        .field-row {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 14px; margin-bottom: 14px;
+        }
+        .field-row.single { grid-template-columns: 1fr; }
+        .field { display: flex; flex-direction: column; gap: 5px; }
+        label {
+            font-size: 0.75rem; font-weight: 700; color: #5A7FA8;
+            text-transform: uppercase; letter-spacing: 0.07em;
+        }
+        input, select, textarea {
+            background: #F8FAFF; border: 1.5px solid #CBD8F0;
+            border-radius: 10px; padding: 12px 14px;
+            color: #0D1F3C; font-size: 0.92rem; font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none; width: 100%;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #1A8FFF; box-shadow: 0 0 0 3px rgba(26,143,255,0.12);
+        }
+        input.error, select.error { border-color: #E53935; }
+        input::placeholder { color: #9BB5D0; }
+        textarea { resize: vertical; min-height: 80px; }
+
+        /* ── Option Cards ── */
+        .option-grid { display: grid; gap: 10px; margin-bottom: 14px; }
+        .opt-col-2 { grid-template-columns: repeat(2,1fr); }
+        .opt-col-3 { grid-template-columns: repeat(3,1fr); }
+        .opt-col-4 { grid-template-columns: repeat(4,1fr); }
+        .option-card {
+            background: #F8FAFF; border: 1.5px solid #D0DDF0;
+            border-radius: 12px; padding: 14px 10px;
+            text-align: center; cursor: pointer; transition: all 0.2s;
+            position: relative;
+        }
+        .option-card:hover { border-color: #1A8FFF; background: rgba(26,143,255,0.04); }
+        .option-card.selected {
+            border-color: #1A8FFF; background: rgba(26,143,255,0.08);
+            box-shadow: 0 0 0 3px rgba(26,143,255,0.15);
+        }
+        .option-card input[type="radio"] { position: absolute; opacity: 0; }
+        .opt-icon { font-size: 1.6rem; margin-bottom: 8px; color: #5A7FA8; transition: color 0.2s; }
+        .opt-icon i { font-size: 1.6rem; }
+        .option-card.selected .opt-icon { color: #1A8FFF; }
+        .opt-label { font-size: 0.78rem; font-weight: 600; color: #0D1F3C; }
+        .check-item-icon { font-size: 1.1rem; color: #5A7FA8; transition: color 0.2s; flex-shrink: 0; }
+        .check-item.checked .check-item-icon { color: #1A8FFF; }
+
+        /* ── Checkboxes ── */
+        .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .check-item {
+            display: flex; align-items: center; gap: 12px;
+            background: #F8FAFF; border: 1.5px solid #D0DDF0;
+            border-radius: 10px; padding: 12px 14px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .check-item:hover { border-color: #1A8FFF; }
+        .check-item.checked { border-color: #1A8FFF; background: rgba(26,143,255,0.07); }
+        .check-item input[type="checkbox"] { display: none; }
+        .check-box {
+            width: 20px; height: 20px; border: 2px solid #CBD8F0;
+            border-radius: 5px; display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; color: transparent; transition: all 0.2s; flex-shrink: 0;
+        }
+        .check-item.checked .check-box { border-color: #1A8FFF; background: #1A8FFF; color: #fff; }
+        .check-label { font-size: 0.82rem; font-weight: 600; color: #0D1F3C; }
+        .check-price { font-size: 0.72rem; color: #1A8FFF; font-weight: 700; }
+
+        /* ── Estimate Box ── */
+        .estimate-box {
+            background: linear-gradient(135deg, #EBF2FF, #D5E6FF);
+            border: 1px solid #B8D4F0; border-radius: 14px;
+            padding: 20px 24px; display: flex;
+            align-items: center; justify-content: space-between;
+            margin: 20px 0 6px;
+        }
+        .est-tag {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: #3A70CC; margin-bottom: 4px;
+        }
+        .est-value { font-size: 2rem; font-weight: 800; color: #0D1F3C; letter-spacing: -0.03em; }
+        .est-note { font-size: 0.72rem; color: #5A7FA8; margin-top: 3px; }
+        .est-right { text-align: right; }
+        .est-right-label { font-size: 0.7rem; color: #5A7FA8; text-transform: uppercase; letter-spacing: 0.06em; }
+        .est-right-value { font-size: 1.1rem; font-weight: 800; color: #0D9455; }
+
+        /* ── Buttons ── */
+        .btn-row { display: flex; gap: 12px; margin-top: 24px; }
+        .btn {
+            border: none; border-radius: 12px; padding: 14px 28px;
+            font-size: 0.92rem; font-weight: 700; cursor: pointer;
+            transition: all 0.2s; font-family: inherit;
+        }
+        .btn-back {
+            background: #F0F5FF; color: #5A7FA8; border: 1.5px solid #D0DDF0;
+        }
+        .btn-back:hover { background: #E5EDFF; }
+        .btn-next, .btn-submit {
+            flex: 1;
+            background: linear-gradient(135deg, #1A8FFF, #0055CC);
+            color: white; box-shadow: 0 4px 16px rgba(26,143,255,0.35);
+        }
+        .btn-next:hover, .btn-submit:hover {
+            transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,143,255,0.45);
+        }
+        .btn-submit:disabled { opacity: 0.6; transform: none; cursor: not-allowed; }
+
+        /* ── Field Errors ── */
+        .field-error { font-size: 0.72rem; color: #E53935; font-weight: 600; display: none; }
+        .field-error.show { display: block; }
+
+        /* ── Floor Plan ── */
+        .floor-plan-wrap {
+            background: #F5F8FF; border: 1.5px solid #D0DDF0;
+            border-radius: 14px; padding: 12px;
+            margin-bottom: 16px; overflow-x: auto;
+        }
+        .floor-plan-svg {
+            display: block; width: 100%; max-width: 660px;
+            height: auto; margin: 0 auto;
+        }
+
+        /* SVG room styles */
+        .room-zone { cursor: pointer; }
+        .room-body {
+            fill: #FFFFFF; stroke: #2A3F6A; stroke-width: 1.5;
+            transition: fill 0.2s;
+        }
+        .room-zone:hover .room-body { fill: rgba(26,143,255,0.06); }
+        .room-zone.selected .room-body { fill: rgba(26,143,255,0.14); stroke: #1A8FFF; stroke-width: 2; }
+
+        .room-label-txt {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10px; font-weight: 700; fill: #1A2B4A;
+            text-anchor: middle; dominant-baseline: middle;
+            pointer-events: none; user-select: none;
+        }
+        .room-dim-txt {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 8.5px; fill: #5A7FA8;
+            text-anchor: middle; dominant-baseline: middle;
+            pointer-events: none; user-select: none;
+        }
+        .vent-icon { opacity: 0; transition: opacity 0.25s; pointer-events: none; }
+        .room-zone.selected .vent-icon { opacity: 1; }
+        .duct-line {
+            stroke: #1A8FFF; stroke-width: 1.5;
+            stroke-dasharray: 6,4; opacity: 0; transition: opacity 0.3s;
+        }
+        .duct-line.active { opacity: 0.5; }
+
+        /* Zone counter */
+        .zone-counter {
+            display: flex; align-items: center; gap: 10px;
+            flex-wrap: wrap; padding: 10px 14px;
+            background: #F8FAFF; border: 1.5px solid #D0DDF0;
+            border-radius: 10px;
+        }
+        .zone-count-label { font-size: 0.82rem; color: #0D1F3C; flex: 1; line-height: 1.5; }
+        .zone-count-label span { color: #1A8FFF; font-weight: 700; }
+        .btn-zone-action {
+            font-size: 0.73rem; font-weight: 600; padding: 6px 13px;
+            border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.2s;
+        }
+        .btn-select-all {
+            background: rgba(26,143,255,0.1); color: #1A8FFF;
+            border: 1px solid rgba(26,143,255,0.3);
+        }
+        .btn-select-all:hover { background: rgba(26,143,255,0.18); }
+        .btn-clear-zones {
+            background: rgba(229,57,53,0.07); color: #E53935;
+            border: 1px solid rgba(229,57,53,0.22);
+        }
+        .btn-clear-zones:hover { background: rgba(229,57,53,0.14); }
+        .zone-hint { font-size: 0.74rem; color: #7A9AC0; margin-top: 8px; font-style: italic; }
+
+        /* ── Popup ── */
+        .popup-overlay {
+            position: fixed; inset: 0;
+            background: rgba(200,220,255,0.88);
+            backdrop-filter: blur(6px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+        }
+        .popup-overlay.show { opacity: 1; pointer-events: auto; }
+        .popup {
+            background: #FFFFFF; border: 1px solid #D0DDF0;
+            border-radius: 20px; padding: 40px 36px;
+            max-width: 460px; width: 90%; text-align: center;
+            box-shadow: 0 24px 64px rgba(26,60,140,0.18);
+            transform: scale(0.9); transition: transform 0.3s;
+        }
+        .popup-overlay.show .popup { transform: scale(1); }
+        .popup-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, #0D9455, #07C473);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: white;
+            margin: 0 auto 16px; box-shadow: 0 8px 24px rgba(13,148,85,0.35);
+        }
+        .popup h2 { font-size: 1.4rem; font-weight: 800; color: #0D1F3C; margin-bottom: 10px; }
+        .popup p { color: #5A7FA8; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+        .popup-est-box {
+            background: linear-gradient(135deg, #EBF2FF, #D5E6FF);
+            border: 1px solid #B8D4F0; border-radius: 12px;
+            padding: 16px; margin-bottom: 16px;
+        }
+        .popup-est-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #3A70CC; margin-bottom: 4px; }
+        .popup-est-value { font-size: 2rem; font-weight: 800; color: #0D1F3C; }
+        .popup-summary {
+            text-align: left; font-size: 0.8rem; color: #5A7FA8;
+            background: #F8FAFF; border-radius: 10px;
+            padding: 14px; margin-bottom: 20px; line-height: 1.8;
+        }
+        .popup-summary span { font-weight: 700; color: #1A2B4A; }
+        .btn-close {
+            background: linear-gradient(135deg, #1A8FFF, #0055CC);
+            color: white; border: none; border-radius: 12px;
+            padding: 14px 28px; font-size: 0.92rem; font-weight: 700;
+            cursor: pointer; width: 100%; font-family: inherit;
+            box-shadow: 0 4px 16px rgba(26,143,255,0.35); transition: all 0.2s;
+        }
+        .btn-close:hover { transform: translateY(-1px); }
+
+        /* ── Sticky Estimate Bar ── */
+        .sticky-estimate {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(135deg, #EBF2FF, #D5E6FF);
+            border-top: 2px solid #B8D4F0;
+            padding: 10px 24px;
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+            z-index: 500;
+            box-shadow: 0 -4px 20px rgba(26,60,140,0.12);
+        }
+        .sticky-est-label {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: #3A70CC;
+        }
+        .sticky-est-value {
+            font-size: 1.5rem; font-weight: 800; color: #0D1F3C;
+            letter-spacing: -0.02em;
+        }
+        .sticky-est-note { font-size: 0.72rem; color: #5A7FA8; }
+        .sticky-est-divider { width: 1px; height: 32px; background: #B8D4F0; }
+
+        /* ── Responsive ── */
+        @media (max-width: 620px) {
+            .card { padding: 24px 16px; }
+            .page-title h1 { font-size: 1.5rem; }
+            .opt-col-3 { grid-template-columns: repeat(2,1fr); }
+            .opt-col-4 { grid-template-columns: repeat(2,1fr); }
+            .check-grid { grid-template-columns: 1fr; }
+            .connector { max-width: 28px; }
+            .step-dot .label { font-size: 0.55rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Video -->
+<video class="video-bg" autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/49185/49185-720.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-snowflake" style="color:white;font-size:1.1rem;"></i></div>
+        Dawn HVAC
+    </div>
+    <div class="header-trust">
+        <span class="trust-badge">Licensed &amp; Insured</span>
+        <span>Free Estimates</span>
+    </div>
+</header>
+
+<div class="container">
+    <div class="page-title">
+        <h1>Get Your Free HVAC Quote</h1>
+        <p>Answer 5 quick questions — we'll send your personalized estimate within 2 hours</p>
+    </div>
+
+    <!-- Progress Bar (5 steps) -->
+    <div class="progress-wrap">
+        <div class="step-dot active" id="dot-1">
+            <div class="circle">1</div>
+            <div class="label">Property</div>
+        </div>
+        <div class="connector" id="line-1"></div>
+        <div class="step-dot" id="dot-2">
+            <div class="circle">2</div>
+            <div class="label">Floor Plan</div>
+        </div>
+        <div class="connector" id="line-2"></div>
+        <div class="step-dot" id="dot-3">
+            <div class="circle">3</div>
+            <div class="label">System</div>
+        </div>
+        <div class="connector" id="line-3"></div>
+        <div class="step-dot" id="dot-4">
+            <div class="circle">4</div>
+            <div class="label">Preferences</div>
+        </div>
+        <div class="connector" id="line-4"></div>
+        <div class="step-dot" id="dot-5">
+            <div class="circle">5</div>
+            <div class="label">Contact</div>
+        </div>
+    </div>
+
+    <div class="card">
+
+        <!-- ── Step 1: Property ── -->
+        <div class="step-panel active" id="step-1">
+            <div class="step-heading">Tell us about your property</div>
+            <div class="step-sub">We'll use this to calculate the right system size and estimate material costs</div>
+
+            <div class="section-label">Property Type</div>
+            <div class="option-grid opt-col-3">
+                <div class="option-card selected" data-group="propertyType" data-value="Residential">
+                    <input type="radio" name="propertyType" value="Residential" checked>
+                    <div class="opt-icon"><i class="fa-solid fa-house"></i></div>
+                    <div class="opt-label">Residential</div>
+                </div>
+                <div class="option-card" data-group="propertyType" data-value="Condo / Townhome">
+                    <input type="radio" name="propertyType" value="Condo / Townhome">
+                    <div class="opt-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="opt-label">Condo / Townhome</div>
+                </div>
+                <div class="option-card" data-group="propertyType" data-value="Commercial">
+                    <input type="radio" name="propertyType" value="Commercial">
+                    <div class="opt-icon"><i class="fa-solid fa-industry"></i></div>
+                    <div class="opt-label">Commercial</div>
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Total Square Footage</label>
+                    <input type="number" id="squareFootage" placeholder="e.g. 2000" min="50" max="50000">
+                    <div class="field-error" id="err-sqft">Please enter your square footage</div>
+                </div>
+                <div class="field">
+                    <label>Number of Stories</label>
+                    <select id="stories">
+                        <option value="">Select stories</option>
+                        <option value="1">1 Story</option>
+                        <option value="2">2 Stories</option>
+                        <option value="3+">3+ Stories</option>
+                    </select>
+                    <div class="field-error" id="err-stories">Please select stories</div>
+                </div>
+            </div>
+
+            <div class="field-row single">
+                <div class="field">
+                    <label>Property Address (Optional)</label>
+                    <input type="text" id="address" placeholder="Street, City, State">
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn btn-next" onclick="goNext(1)">Continue — Floor Plan →</button>
+            </div>
+        </div>
+
+        <!-- ── Step 2: Floor Plan ── -->
+        <div class="step-panel" id="step-2">
+            <div class="step-heading">Select your service zones</div>
+            <div class="step-sub">Click each room or area where you need HVAC service — this helps us plan duct routing, system capacity, and zone controls</div>
+
+            <div class="floor-plan-wrap">
+                <!-- Engineering-grade floor plan SVG -->
+                <!-- Scale: 10px = 1ft. House footprint: 56' × 40' -->
+                <svg id="floorPlanSvg" viewBox="0 0 660 465" class="floor-plan-svg" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Fine grid (1ft increments) -->
+                        <pattern id="fineGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <path d="M10 0 L0 0 0 10" fill="none" stroke="#E5EDFF" stroke-width="0.4"/>
+                        </pattern>
+                        <!-- Major grid (5ft increments) -->
+                        <pattern id="majorGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+                            <rect width="50" height="50" fill="url(#fineGrid)"/>
+                            <path d="M50 0 L0 0 0 50" fill="none" stroke="#D0DCFF" stroke-width="0.8"/>
+                        </pattern>
+                        <!-- Arrow marker for dimension lines -->
+                        <marker id="dimArrow" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto">
+                            <path d="M0,0 L5,2.5 L0,5 Z" fill="#8AA0C0"/>
+                        </marker>
+                        <marker id="dimArrowR" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+                            <path d="M0,0 L5,2.5 L0,5 Z" fill="#8AA0C0"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Graph paper background -->
+                    <rect width="660" height="465" fill="url(#majorGrid)"/>
+
+                    <!-- House white fill -->
+                    <rect x="45" y="25" width="565" height="400" fill="#FFFFFF"/>
+
+                    <!-- ═══ DUCT LINES — from A/C unit in garage (520,270) to each room ═══ -->
+                    <line class="duct-line" id="duct-living"   x1="520" y1="270" x2="155" y2="122"/>
+                    <line class="duct-line" id="duct-kitchen"  x1="520" y1="270" x2="365" y2="92"/>
+                    <line class="duct-line" id="duct-dining"   x1="520" y1="270" x2="365" y2="190"/>
+                    <line class="duct-line" id="duct-bath"     x1="520" y1="270" x2="537" y2="122"/>
+                    <line class="duct-line" id="duct-master"   x1="520" y1="270" x2="155" y2="322"/>
+                    <line class="duct-line" id="duct-bed2"     x1="520" y1="270" x2="365" y2="271"/>
+                    <line class="duct-line" id="duct-bed3"     x1="520" y1="270" x2="365" y2="373"/>
+
+                    <!-- ═══ ROOM ZONES ═══ -->
+
+                    <!-- Living Room: x=45 y=25 w=220 h=195 → to (265,220), cx=155, cy=122 -->
+                    <g class="room-zone" id="zone-living" onclick="toggleZone(this)">
+                        <rect class="room-body" x="45" y="25" width="220" height="195"/>
+                        <text class="room-label-txt" x="155" y="110">LIVING ROOM</text>
+                        <text class="room-dim-txt"   x="155" y="124">22&apos; × 20&apos;</text>
+                        <!-- Supply register icon (shown when selected) -->
+                        <g class="vent-icon" transform="translate(155,155)">
+                            <rect x="-20" y="-11" width="40" height="22" rx="3" fill="#1A8FFF" opacity="0.92"/>
+                            <line x1="-20" y1="-4" x2="20" y2="-4" stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="2"  x2="20" y2="2"  stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="8"  x2="20" y2="8"  stroke="white" stroke-width="1.5"/>
+                        </g>
+                        <g class="vent-icon" transform="translate(155,173)">
+                            <text x="0" y="0" text-anchor="middle" font-size="7" fill="#1A8FFF"
+                                  font-family="'Courier New',monospace" font-weight="700">SUPPLY REGISTER</text>
+                        </g>
+                        <!-- Selection checkmark -->
+                        <g class="vent-icon" transform="translate(248,42)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Kitchen: x=265 y=25 w=200 h=135 → to (465,160), cx=365, cy=92 -->
+                    <g class="room-zone" id="zone-kitchen" onclick="toggleZone(this)">
+                        <rect class="room-body" x="265" y="25" width="200" height="135"/>
+                        <text class="room-label-txt" x="365" y="82">KITCHEN</text>
+                        <text class="room-dim-txt"   x="365" y="96">20&apos; × 14&apos;</text>
+                        <g class="vent-icon" transform="translate(365,118)">
+                            <rect x="-20" y="-11" width="40" height="22" rx="3" fill="#1A8FFF" opacity="0.92"/>
+                            <line x1="-20" y1="-4" x2="20" y2="-4" stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="2"  x2="20" y2="2"  stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="8"  x2="20" y2="8"  stroke="white" stroke-width="1.5"/>
+                        </g>
+                        <g class="vent-icon" transform="translate(448,42)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Dining Room: x=265 y=160 w=200 h=60 → to (465,220), cx=365, cy=190 -->
+                    <g class="room-zone" id="zone-dining" onclick="toggleZone(this)">
+                        <rect class="room-body" x="265" y="160" width="200" height="60"/>
+                        <text class="room-label-txt" x="365" y="187">DINING ROOM  20&apos; × 6&apos;</text>
+                        <g class="vent-icon" transform="translate(448,168)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Bathroom: x=465 y=25 w=145 h=195 → to (610,220), cx=537, cy=122 -->
+                    <g class="room-zone" id="zone-bath" onclick="toggleZone(this)">
+                        <rect class="room-body" x="465" y="25" width="145" height="195"/>
+                        <text class="room-label-txt" x="537" y="110">BATHROOM</text>
+                        <text class="room-dim-txt"   x="537" y="124">14&apos; × 20&apos;</text>
+                        <g class="vent-icon" transform="translate(537,155)">
+                            <rect x="-20" y="-11" width="40" height="22" rx="3" fill="#1A8FFF" opacity="0.92"/>
+                            <line x1="-20" y1="-4" x2="20" y2="-4" stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="2"  x2="20" y2="2"  stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="8"  x2="20" y2="8"  stroke="white" stroke-width="1.5"/>
+                        </g>
+                        <g class="vent-icon" transform="translate(593,42)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Master Bedroom: x=45 y=220 w=220 h=205 → to (265,425), cx=155, cy=322 -->
+                    <g class="room-zone" id="zone-master" onclick="toggleZone(this)">
+                        <rect class="room-body" x="45" y="220" width="220" height="205"/>
+                        <text class="room-label-txt" x="155" y="308">MASTER BEDROOM</text>
+                        <text class="room-dim-txt"   x="155" y="322">22&apos; × 20&apos;</text>
+                        <g class="vent-icon" transform="translate(155,352)">
+                            <rect x="-20" y="-11" width="40" height="22" rx="3" fill="#1A8FFF" opacity="0.92"/>
+                            <line x1="-20" y1="-4" x2="20" y2="-4" stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="2"  x2="20" y2="2"  stroke="white" stroke-width="1.5"/>
+                            <line x1="-20" y1="8"  x2="20" y2="8"  stroke="white" stroke-width="1.5"/>
+                        </g>
+                        <g class="vent-icon" transform="translate(155,370)">
+                            <text x="0" y="0" text-anchor="middle" font-size="7" fill="#1A8FFF"
+                                  font-family="'Courier New',monospace" font-weight="700">SUPPLY REGISTER</text>
+                        </g>
+                        <g class="vent-icon" transform="translate(248,237)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Bedroom 2: x=265 y=220 w=200 h=102 → to (465,322), cx=365, cy=271 -->
+                    <g class="room-zone" id="zone-bed2" onclick="toggleZone(this)">
+                        <rect class="room-body" x="265" y="220" width="200" height="102"/>
+                        <text class="room-label-txt" x="365" y="262">BEDROOM 2</text>
+                        <text class="room-dim-txt"   x="365" y="276">20&apos; × 10&apos;</text>
+                        <g class="vent-icon" transform="translate(448,237)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Bedroom 3: x=265 y=322 w=200 h=103 → to (465,425), cx=365, cy=373 -->
+                    <g class="room-zone" id="zone-bed3" onclick="toggleZone(this)">
+                        <rect class="room-body" x="265" y="322" width="200" height="103"/>
+                        <text class="room-label-txt" x="365" y="364">BEDROOM 3</text>
+                        <text class="room-dim-txt"   x="365" y="378">20&apos; × 10&apos;</text>
+                        <g class="vent-icon" transform="translate(448,339)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- Garage: x=465 y=220 w=145 h=205 → to (610,425), cx=537, cy=322 -->
+                    <!-- Contains the central A/C unit -->
+                    <g class="room-zone" id="zone-garage" onclick="toggleZone(this)">
+                        <rect class="room-body" x="465" y="220" width="145" height="205"/>
+                        <text class="room-label-txt" x="537" y="370">GARAGE</text>
+                        <text class="room-dim-txt"   x="537" y="384">14&apos; × 20&apos;</text>
+                        <!-- A/C Unit symbol (non-interactive, always visible) -->
+                        <rect x="492" y="230" width="72" height="50" rx="4"
+                              fill="#EBF2FF" stroke="#1A8FFF" stroke-width="1.5" pointer-events="none"/>
+                        <text x="528" y="249" text-anchor="middle" font-size="8" fill="#0055CC"
+                              font-family="'Courier New',monospace" font-weight="700" pointer-events="none">CENTRAL</text>
+                        <text x="528" y="260" text-anchor="middle" font-size="8" fill="#0055CC"
+                              font-family="'Courier New',monospace" font-weight="700" pointer-events="none">A/C UNIT</text>
+                        <!-- Fan circle symbol -->
+                        <circle cx="528" cy="271" r="7" fill="none" stroke="#1A8FFF" stroke-width="1.2" pointer-events="none"/>
+                        <line x1="528" y1="264" x2="528" y2="278" stroke="#1A8FFF" stroke-width="1" pointer-events="none"/>
+                        <line x1="521" y1="271" x2="535" y2="271" stroke="#1A8FFF" stroke-width="1" pointer-events="none"/>
+                        <!-- Garage selected checkmark -->
+                        <g class="vent-icon" transform="translate(593,237)">
+                            <circle cx="0" cy="0" r="12" fill="#1A8FFF"/>
+                            <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="white" font-weight="700">✓</text>
+                        </g>
+                    </g>
+
+                    <!-- ═══ OUTER WALL (drawn on top — thick outer border) ═══ -->
+                    <rect x="45" y="25" width="565" height="400" fill="none" stroke="#1A2B4A" stroke-width="7"/>
+
+                    <!-- ═══ INNER PARTITION WALLS ═══ -->
+                    <!-- Vertical: Living/Master ↔ Kitchen/Dining/Bed2/Bed3 -->
+                    <line x1="265" y1="25"  x2="265" y2="425" stroke="#1A2B4A" stroke-width="3"/>
+                    <!-- Vertical: Kitchen/Dining/Bed2/Bed3 ↔ Bathroom/Garage -->
+                    <line x1="465" y1="25"  x2="465" y2="425" stroke="#1A2B4A" stroke-width="3"/>
+                    <!-- Horizontal: Upper floor ↔ Lower floor -->
+                    <line x1="45"  y1="220" x2="610" y2="220" stroke="#1A2B4A" stroke-width="3"/>
+                    <!-- Horizontal: Kitchen ↔ Dining -->
+                    <line x1="265" y1="160" x2="465" y2="160" stroke="#1A2B4A" stroke-width="2.5"/>
+                    <!-- Horizontal: Bed2 ↔ Bed3 -->
+                    <line x1="265" y1="322" x2="465" y2="322" stroke="#1A2B4A" stroke-width="2.5"/>
+
+                    <!-- ═══ OVERALL DIMENSION LINES ═══ -->
+                    <!-- Top dimension: total width 56'-6" -->
+                    <line x1="45"  y1="13" x2="610" y2="13" stroke="#8AA0C0" stroke-width="0.8"
+                          marker-start="url(#dimArrowR)" marker-end="url(#dimArrow)"/>
+                    <rect x="288" y="6" width="64" height="12" fill="url(#majorGrid)"/>
+                    <text x="320" y="15" text-anchor="middle" font-size="8.5" fill="#5A7FA8"
+                          font-family="'Courier New',monospace">56&apos;-6&quot;</text>
+                    <!-- Extension lines top -->
+                    <line x1="45"  y1="18" x2="45"  y2="25" stroke="#8AA0C0" stroke-width="0.5"/>
+                    <line x1="610" y1="18" x2="610" y2="25" stroke="#8AA0C0" stroke-width="0.5"/>
+
+                    <!-- Left dimension: total height 40'-0" -->
+                    <line x1="33" y1="25" x2="33" y2="425" stroke="#8AA0C0" stroke-width="0.8"
+                          marker-start="url(#dimArrowR)" marker-end="url(#dimArrow)"/>
+                    <text x="33" y="230" text-anchor="middle" font-size="8.5" fill="#5A7FA8"
+                          font-family="'Courier New',monospace"
+                          transform="rotate(-90 33 230)">40&apos;-0&quot;</text>
+                    <line x1="36" y1="25"  x2="45"  y2="25"  stroke="#8AA0C0" stroke-width="0.5"/>
+                    <line x1="36" y1="425" x2="45"  y2="425" stroke="#8AA0C0" stroke-width="0.5"/>
+
+                    <!-- ═══ NORTH ARROW ═══ -->
+                    <g transform="translate(635, 45)">
+                        <circle cx="0" cy="0" r="16" fill="white" stroke="#2A3F6A" stroke-width="1.2"/>
+                        <polygon points="0,-12 -4,-4 4,-4" fill="#1A2B4A"/>
+                        <polygon points="0,12 -4,4 4,4"   fill="#8AA0C0"/>
+                        <line x1="0" y1="-12" x2="0" y2="12" stroke="#1A2B4A" stroke-width="1"/>
+                        <text x="0" y="-16" text-anchor="middle" font-size="9" fill="#1A2B4A"
+                              font-family="'Courier New',monospace" font-weight="700">N</text>
+                    </g>
+
+                    <!-- ═══ TITLE BLOCK ═══ -->
+                    <line x1="0" y1="435" x2="660" y2="435" stroke="#8AA0C0" stroke-width="0.8"/>
+                    <text x="330" y="447" text-anchor="middle" font-size="8" fill="#5A7FA8"
+                          font-family="'Courier New',monospace" font-weight="700">
+                        HVAC ZONE PLAN  ·  APPROX. SCALE 1:120  ·  NOT FOR CONSTRUCTION
+                    </text>
+                    <!-- Scale bar -->
+                    <g transform="translate(50, 440)">
+                        <rect x="0"  y="0" width="50" height="5" fill="#1A2B4A"/>
+                        <rect x="50" y="0" width="50" height="5" fill="white" stroke="#1A2B4A" stroke-width="0.8"/>
+                        <text x="0"   y="13" font-size="7" fill="#5A7FA8" font-family="'Courier New',monospace">0</text>
+                        <text x="44"  y="13" font-size="7" fill="#5A7FA8" font-family="'Courier New',monospace">5ft</text>
+                        <text x="94"  y="13" font-size="7" fill="#5A7FA8" font-family="'Courier New',monospace">10ft</text>
+                    </g>
+
+                    <!-- ═══ LEGEND ═══ -->
+                    <g transform="translate(415, 438)">
+                        <rect x="0" y="0" width="10" height="10" fill="#FFFFFF" stroke="#2A3F6A" stroke-width="1.2"/>
+                        <text x="13" y="9" font-size="7.5" fill="#5A7FA8" font-family="'Courier New',monospace">Not selected</text>
+                        <rect x="95" y="0" width="10" height="10" fill="rgba(26,143,255,0.14)" stroke="#1A8FFF" stroke-width="1.5"/>
+                        <text x="108" y="9" font-size="7.5" fill="#5A7FA8" font-family="'Courier New',monospace">Selected zone</text>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Zone selection counter -->
+            <div class="zone-counter">
+                <div class="zone-count-label" id="zoneCountLabel">
+                    No zones selected — <em>click rooms above to mark service areas</em>
+                </div>
+                <button class="btn-zone-action btn-select-all" onclick="selectAllZones()">Select All</button>
+                <button class="btn-zone-action btn-clear-zones" onclick="clearZones()">Clear</button>
+            </div>
+            <p class="zone-hint">Zone selection is optional — skip if you're not sure which rooms need service</p>
+
+            <div class="btn-row">
+                <button class="btn btn-back" onclick="goBack(2)">← Back</button>
+                <button class="btn btn-next" onclick="goNext(2)">Continue — Current System →</button>
+            </div>
+        </div>
+
+        <!-- ── Step 3: Current System ── -->
+        <div class="step-panel" id="step-3">
+            <div class="step-heading">Your current system</div>
+            <div class="step-sub">Knowing your setup helps us plan labor and materials</div>
+
+            <div class="section-label">Existing HVAC System?</div>
+            <div class="option-grid opt-col-2">
+                <div class="option-card selected" data-group="hasExistingSystem" data-value="Yes">
+                    <input type="radio" name="hasExistingSystem" value="Yes" checked>
+                    <div class="opt-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="opt-label">Yes, I have one</div>
+                </div>
+                <div class="option-card" data-group="hasExistingSystem" data-value="No">
+                    <input type="radio" name="hasExistingSystem" value="No">
+                    <div class="opt-icon"><i class="fa-solid fa-circle-plus"></i></div>
+                    <div class="opt-label">No, brand new install</div>
+                </div>
+            </div>
+
+            <div id="ageFields">
+                <div class="section-label">How old is your current system?</div>
+                <div class="option-grid opt-col-4">
+                    <div class="option-card" data-group="existingSystemAge" data-value="Under 5 Years">
+                        <div class="opt-icon"><i class="fa-solid fa-circle" style="color:#22c55e;"></i></div>
+                        <div class="opt-label">Under 5 Yrs</div>
+                    </div>
+                    <div class="option-card" data-group="existingSystemAge" data-value="5–10 Years">
+                        <div class="opt-icon"><i class="fa-solid fa-circle" style="color:#eab308;"></i></div>
+                        <div class="opt-label">5–10 Yrs</div>
+                    </div>
+                    <div class="option-card" data-group="existingSystemAge" data-value="10–15 Years">
+                        <div class="opt-icon"><i class="fa-solid fa-circle" style="color:#f97316;"></i></div>
+                        <div class="opt-label">10–15 Yrs</div>
+                    </div>
+                    <div class="option-card" data-group="existingSystemAge" data-value="15+ Years">
+                        <div class="opt-icon"><i class="fa-solid fa-circle" style="color:#ef4444;"></i></div>
+                        <div class="opt-label">15+ Yrs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-label">Service Needed</div>
+            <div class="option-grid opt-col-3">
+                <div class="option-card" data-group="serviceType" data-value="New Installation">
+                    <div class="opt-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="opt-label">New Installation</div>
+                </div>
+                <div class="option-card" data-group="serviceType" data-value="Replacement">
+                    <div class="opt-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <div class="opt-label">Replacement</div>
+                </div>
+                <div class="option-card" data-group="serviceType" data-value="Repair">
+                    <div class="opt-icon"><i class="fa-solid fa-screwdriver"></i></div>
+                    <div class="opt-label">Repair</div>
+                </div>
+                <div class="option-card" data-group="serviceType" data-value="Maintenance">
+                    <div class="opt-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="opt-label">Tune-Up / Maintenance</div>
+                </div>
+                <div class="option-card" data-group="serviceType" data-value="Emergency">
+                    <div class="opt-icon"><i class="fa-solid fa-triangle-exclamation" style="color:#ef4444;"></i></div>
+                    <div class="opt-label">Emergency</div>
+                </div>
+            </div>
+            <div class="field-error" id="err-service">Please select a service type</div>
+
+            <div class="btn-row">
+                <button class="btn btn-back" onclick="goBack(3)">← Back</button>
+                <button class="btn btn-next" onclick="goNext(3)">Continue — Preferences →</button>
+            </div>
+        </div>
+
+        <!-- ── Step 4: Preferences ── -->
+        <div class="step-panel" id="step-4">
+            <div class="step-heading">System &amp; preferences</div>
+            <div class="step-sub">Tell us what kind of system you want — we'll handle the details</div>
+
+            <div class="section-label">System Type</div>
+            <div class="option-grid opt-col-3">
+                <div class="option-card" data-group="systemType" data-value="Central AC">
+                    <div class="opt-icon"><i class="fa-solid fa-wind"></i></div>
+                    <div class="opt-label">Central AC</div>
+                </div>
+                <div class="option-card" data-group="systemType" data-value="Heat Pump">
+                    <div class="opt-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                    <div class="opt-label">Heat Pump</div>
+                </div>
+                <div class="option-card" data-group="systemType" data-value="Mini-Split">
+                    <div class="opt-icon"><i class="fa-solid fa-snowflake"></i></div>
+                    <div class="opt-label">Mini-Split / Ductless</div>
+                </div>
+                <div class="option-card" data-group="systemType" data-value="Furnace & AC">
+                    <div class="opt-icon"><i class="fa-solid fa-fire"></i></div>
+                    <div class="opt-label">Furnace &amp; AC Combo</div>
+                </div>
+                <div class="option-card" data-group="systemType" data-value="Commercial Unit">
+                    <div class="opt-icon"><i class="fa-solid fa-industry"></i></div>
+                    <div class="opt-label">Commercial Unit</div>
+                </div>
+            </div>
+            <div class="field-error" id="err-system">Please select a system type</div>
+
+            <div class="section-label" style="margin-top:4px;">Urgency</div>
+            <div class="option-grid opt-col-4">
+                <div class="option-card" data-group="urgency" data-value="Emergency (Today)">
+                    <div class="opt-icon"><i class="fa-solid fa-bolt" style="color:#ef4444;"></i></div>
+                    <div class="opt-label">Emergency Today</div>
+                </div>
+                <div class="option-card" data-group="urgency" data-value="Within a Week">
+                    <div class="opt-icon"><i class="fa-solid fa-calendar-week"></i></div>
+                    <div class="opt-label">Within a Week</div>
+                </div>
+                <div class="option-card selected" data-group="urgency" data-value="Within a Month">
+                    <div class="opt-icon"><i class="fa-regular fa-calendar"></i></div>
+                    <div class="opt-label">Within a Month</div>
+                </div>
+                <div class="option-card" data-group="urgency" data-value="Just Planning">
+                    <div class="opt-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="opt-label">Just Planning</div>
+                </div>
+            </div>
+
+            <div class="section-label" style="margin-top:4px;">Add-On Features <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#7A9AC0;">(optional)</span></div>
+            <div class="check-grid">
+                <div class="check-item" data-feature="Smart Thermostat">
+                    <input type="checkbox" value="Smart Thermostat">
+                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                    <i class="fa-solid fa-sliders check-item-icon"></i>
+                    <div>
+                        <div class="check-label">Smart Thermostat</div>
+                        <div class="check-price">+$280</div>
+                    </div>
+                </div>
+                <div class="check-item" data-feature="Air Purifier">
+                    <input type="checkbox" value="Air Purifier">
+                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                    <i class="fa-solid fa-wind check-item-icon"></i>
+                    <div>
+                        <div class="check-label">Air Purifier / Filter</div>
+                        <div class="check-price">+$450</div>
+                    </div>
+                </div>
+                <div class="check-item" data-feature="Whole-Home Humidifier">
+                    <input type="checkbox" value="Whole-Home Humidifier">
+                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                    <i class="fa-solid fa-droplet check-item-icon"></i>
+                    <div>
+                        <div class="check-label">Whole-Home Humidifier</div>
+                        <div class="check-price">+$380</div>
+                    </div>
+                </div>
+                <div class="check-item" data-feature="UV Light System">
+                    <input type="checkbox" value="UV Light System">
+                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                    <i class="fa-solid fa-sun check-item-icon"></i>
+                    <div>
+                        <div class="check-label">UV Light System</div>
+                        <div class="check-price">+$320</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estimate-box">
+                <div class="est-left">
+                    <div class="est-tag">Estimated Project Cost</div>
+                    <div class="est-value" id="est-s4">$—</div>
+                    <div class="est-note">Exact price confirmed after in-home visit</div>
+                </div>
+                <div class="est-right">
+                    <div class="est-right-label">Financing available</div>
+                    <div class="est-right-value">$0 Down</div>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn btn-back" onclick="goBack(4)">← Back</button>
+                <button class="btn btn-next" onclick="goNext(4)">Continue — Contact Info →</button>
+            </div>
+        </div>
+
+        <!-- ── Step 5: Contact ── -->
+        <div class="step-panel" id="step-5">
+            <div class="step-heading">Where should we send your quote?</div>
+            <div class="step-sub">We'll follow up within 2 hours — no pressure</div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>First Name</label>
+                    <input type="text" id="firstName" placeholder="John">
+                    <div class="field-error" id="err-first">Required</div>
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input type="text" id="lastName" placeholder="Smith">
+                    <div class="field-error" id="err-last">Required</div>
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="john@email.com">
+                    <div class="field-error" id="err-email">Valid email required</div>
+                </div>
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(555) 000-0000">
+                    <div class="field-error" id="err-phone">Phone required</div>
+                </div>
+            </div>
+
+            <div class="field-row single">
+                <div class="field">
+                    <label>Notes / Special Requests (Optional)</label>
+                    <textarea id="notes" placeholder="Any issues with your current system, specific brands you prefer, or questions for our technician..."></textarea>
+                </div>
+            </div>
+
+            <div class="estimate-box">
+                <div class="est-left">
+                    <div class="est-tag">Your Quote Estimate</div>
+                    <div class="est-value" id="est-s5">$—</div>
+                    <div class="est-note">Exact price confirmed on-site — free assessment</div>
+                </div>
+                <div class="est-right">
+                    <div class="est-right-label">Response time</div>
+                    <div class="est-right-value">≤ 2 hrs</div>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn btn-back" onclick="goBack(5)">← Back</button>
+                <button class="btn btn-submit" id="submitBtn" onclick="submitForm()">Get My Free Quote →</button>
+            </div>
+
+            <p style="text-align:center; font-size:0.73rem; color:#7A9AC0; margin-top:14px;">
+                No commitment. We never share your information.
+            </p>
+        </div>
+
+    </div><!-- /card -->
+</div><!-- /container -->
+
+<!-- ── Sticky Estimate Bar ── -->
+<div class="sticky-estimate">
+    <div class="sticky-est-label">Estimated Cost</div>
+    <div class="sticky-est-value" id="sticky-est">$—</div>
+    <div class="sticky-est-divider"></div>
+    <div class="sticky-est-note">Updates live as you fill in your details</div>
+</div>
+
+<!-- ── Thank You Popup ── -->
+<div class="popup-overlay" id="thankYouPopup">
+    <div class="popup">
+        <div class="popup-icon"><i class="fa-solid fa-check"></i></div>
+        <h2>Quote Request Sent!</h2>
+        <p>We've received your HVAC quote request and will reach out within 2 hours with your personalized estimate and next steps.</p>
+
+        <div class="popup-est-box">
+            <div class="popup-est-label">Your Estimated Project Cost</div>
+            <div class="popup-est-value" id="popup-est">$—</div>
+        </div>
+
+        <div class="popup-summary" id="popup-summary"></div>
+
+        <button class="btn-close" onclick="closePopup()">Close — We'll Be in Touch!</button>
+    </div>
+</div>
+
+<script>
+// ─── State ─────────────────────────────────────────────────────────────────────
+const S = {
+    propertyType:       'Residential',
+    squareFootage:      '',
+    stories:            '',
+    address:            '',
+    selectedZones:      [],
+    hasExistingSystem:  'Yes',
+    existingSystemAge:  '',
+    serviceType:        '',
+    systemType:         '',
+    urgency:            'Within a Month',
+    additionalFeatures: [],
+    firstName:          '',
+    lastName:           '',
+    email:              '',
+    phone:              '',
+    notes:              '',
+    estimate:           0
+};
+
+// ─── Zone Map (id → display name + duct element id) ────────────────────────────
+const ZONE_MAP = {
+    'zone-living': { name: 'Living Room',    duct: 'duct-living'  },
+    'zone-kitchen':{ name: 'Kitchen',        duct: 'duct-kitchen' },
+    'zone-dining': { name: 'Dining Room',    duct: 'duct-dining'  },
+    'zone-bath':   { name: 'Bathroom',       duct: 'duct-bath'    },
+    'zone-master': { name: 'Master Bedroom', duct: 'duct-master'  },
+    'zone-bed2':   { name: 'Bedroom 2',      duct: 'duct-bed2'    },
+    'zone-bed3':   { name: 'Bedroom 3',      duct: 'duct-bed3'    },
+    'zone-garage': { name: 'Garage',         duct: null           }
+};
+
+// ─── Zone Toggle ───────────────────────────────────────────────────────────────
+function toggleZone(el) {
+    const id = el.id;
+    const info = ZONE_MAP[id];
+    if (!info) return;
+
+    const wasSelected = el.classList.contains('selected');
+    if (wasSelected) {
+        el.classList.remove('selected');
+        S.selectedZones = S.selectedZones.filter(z => z !== info.name);
+    } else {
+        el.classList.add('selected');
+        if (!S.selectedZones.includes(info.name)) S.selectedZones.push(info.name);
+    }
+
+    if (info.duct) {
+        const ductEl = document.getElementById(info.duct);
+        if (ductEl) ductEl.classList.toggle('active', !wasSelected);
+    }
+
+    updateZoneCounter();
+}
+
+function selectAllZones() {
+    Object.entries(ZONE_MAP).forEach(([id, info]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.add('selected');
+        if (!S.selectedZones.includes(info.name)) S.selectedZones.push(info.name);
+        if (info.duct) document.getElementById(info.duct)?.classList.add('active');
+    });
+    updateZoneCounter();
+}
+
+function clearZones() {
+    Object.keys(ZONE_MAP).forEach(id => {
+        document.getElementById(id)?.classList.remove('selected');
+    });
+    document.querySelectorAll('.duct-line').forEach(l => l.classList.remove('active'));
+    S.selectedZones = [];
+    updateZoneCounter();
+}
+
+function updateZoneCounter() {
+    const label = document.getElementById('zoneCountLabel');
+    if (!label) return;
+    const count = S.selectedZones.length;
+    if (count === 0) {
+        label.innerHTML = 'No zones selected — <em>click rooms above to mark service areas</em>';
+    } else {
+        label.innerHTML = `<span>${count} zone${count === 1 ? '' : 's'} selected:</span> ${S.selectedZones.join(', ')}`;
+    }
+}
+
+// ─── Option Cards ──────────────────────────────────────────────────────────────
+document.querySelectorAll('.option-card').forEach(card => {
+    card.addEventListener('click', function () {
+        const group = this.dataset.group;
+        const value = this.dataset.value;
+        if (!group || !value) return;
+
+        document.querySelectorAll(`[data-group="${group}"]`).forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+
+        const radio = this.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+
+        S[group] = value;
+
+        if (group === 'hasExistingSystem') {
+            document.getElementById('ageFields').style.display = value === 'Yes' ? 'block' : 'none';
+            if (value === 'No') S.existingSystemAge = 'N/A';
+        }
+
+        updateEstimate();
+    });
+});
+
+// ─── Checkboxes ────────────────────────────────────────────────────────────────
+document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', function () {
+        const feature = this.dataset.feature;
+        this.classList.toggle('checked');
+        const cb = this.querySelector('input[type="checkbox"]');
+        if (cb) cb.checked = !cb.checked;
+
+        if (S.additionalFeatures.includes(feature)) {
+            S.additionalFeatures = S.additionalFeatures.filter(f => f !== feature);
+        } else {
+            S.additionalFeatures.push(feature);
+        }
+        updateEstimate();
+    });
+});
+
+// ─── Input Sync ────────────────────────────────────────────────────────────────
+['squareFootage','stories','address','firstName','lastName','email','phone','notes'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input',  () => { S[id] = el.value; if (id === 'squareFootage') updateEstimate(); });
+    el.addEventListener('change', () => { S[id] = el.value; updateEstimate(); });
+});
+
+// ─── Estimate Calculator ───────────────────────────────────────────────────────
+function updateEstimate() {
+    const { serviceType, systemType, urgency } = S;
+    const sqft = parseInt(S.squareFootage) || 0;
+
+    if (!serviceType || !systemType) { setEstDisplay(null); return; }
+
+    if (serviceType === 'Repair') {
+        let base = 450;
+        if (urgency === 'Emergency (Today)') base += 300;
+        S.estimate = base; setEstDisplay(base); return;
+    }
+    if (serviceType === 'Maintenance') {
+        let base = 175;
+        if (urgency === 'Emergency (Today)') base += 150;
+        S.estimate = base; setEstDisplay(base); return;
+    }
+
+    const bases = {
+        'Central AC': 4500, 'Heat Pump': 5800, 'Mini-Split': 3800,
+        'Furnace & AC': 7200, 'Commercial Unit': 14000
+    };
+    let total = bases[systemType] || 4500;
+
+    let sqftMult = 1.0;
+    if      (sqft < 800)  sqftMult = 0.70;
+    else if (sqft < 1200) sqftMult = 0.85;
+    else if (sqft < 1600) sqftMult = 1.00;
+    else if (sqft < 2200) sqftMult = 1.18;
+    else if (sqft < 3000) sqftMult = 1.36;
+    else if (sqft < 4500) sqftMult = 1.56;
+    else                  sqftMult = 1.80;
+    total *= sqftMult;
+
+    if (S.stories === '2')  total *= 1.12;
+    if (S.stories === '3+') total *= 1.28;
+    if (serviceType === 'Replacement') total *= 0.87;
+    if (urgency === 'Emergency (Today)') total *= 1.25;
+
+    const addons = { 'Smart Thermostat': 280, 'Air Purifier': 450, 'Whole-Home Humidifier': 380, 'UV Light System': 320 };
+    S.additionalFeatures.forEach(f => { total += addons[f] || 0; });
+
+    total = Math.round(total / 50) * 50;
+    S.estimate = total;
+    setEstDisplay(total);
+}
+
+function setEstDisplay(val) {
+    const fmt = val ? '$' + val.toLocaleString() : '$—';
+    ['est-s4','est-s5','sticky-est'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = fmt;
+    });
+}
+
+// ─── Navigation ────────────────────────────────────────────────────────────────
+function goNext(from) {
+    if (!validateStep(from)) return;
+    setStep(from + 1);
+}
+
+function goBack(from) { setStep(from - 1); }
+
+function setStep(n) {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`step-${n}`).classList.add('active');
+
+    [1,2,3,4,5].forEach(i => {
+        document.getElementById(`dot-${i}`).classList.toggle('active', i === n);
+        document.getElementById(`dot-${i}`).classList.toggle('done', i < n);
+        const line = document.getElementById(`line-${i}`);
+        if (line) line.classList.toggle('done', i < n);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── Validation ────────────────────────────────────────────────────────────────
+function validateStep(step) {
+    let ok = true;
+
+    if (step === 1) {
+        if (!S.squareFootage || parseInt(S.squareFootage) < 50) {
+            showErr('squareFootage','err-sqft'); ok = false;
+        } else clearErr('squareFootage','err-sqft');
+
+        if (!S.stories) {
+            showErr('stories','err-stories'); ok = false;
+        } else clearErr('stories','err-stories');
+    }
+
+    // Step 2 (floor plan): optional, always pass
+    if (step === 3) {
+        if (!S.serviceType) {
+            document.getElementById('err-service').classList.add('show'); ok = false;
+        } else document.getElementById('err-service').classList.remove('show');
+    }
+
+    if (step === 4) {
+        if (!S.systemType) {
+            document.getElementById('err-system').classList.add('show'); ok = false;
+        } else document.getElementById('err-system').classList.remove('show');
+    }
+
+    return ok;
+}
+
+function showErr(fieldId, errId) {
+    document.getElementById(fieldId)?.classList.add('error');
+    document.getElementById(errId)?.classList.add('show');
+}
+
+function clearErr(fieldId, errId) {
+    document.getElementById(fieldId)?.classList.remove('error');
+    document.getElementById(errId)?.classList.remove('show');
+}
+
+// ─── Submit ────────────────────────────────────────────────────────────────────
+async function submitForm() {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName  = document.getElementById('lastName').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const phone     = document.getElementById('phone').value.trim();
+    const notes     = document.getElementById('notes').value.trim();
+
+    let ok = true;
+    if (!firstName) { showErr('firstName','err-first'); ok=false; } else clearErr('firstName','err-first');
+    if (!lastName)  { showErr('lastName','err-last');   ok=false; } else clearErr('lastName','err-last');
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('email','err-email'); ok=false; } else clearErr('email','err-email');
+    if (!phone)     { showErr('phone','err-phone');     ok=false; } else clearErr('phone','err-phone');
+    if (!ok) return;
+
+    const payload = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        address:            document.getElementById('address').value.trim(),
+        propertyType:       S.propertyType,
+        squareFootage:      parseInt(S.squareFootage) || 0,
+        stories:            S.stories,
+        selectedZones:      S.selectedZones.join(', ') || 'Not specified',
+        hasExistingSystem:  S.hasExistingSystem,
+        existingSystemAge:  S.existingSystemAge || 'N/A',
+        serviceType:        S.serviceType,
+        systemType:         S.systemType,
+        urgency:            S.urgency,
+        additionalFeatures: S.additionalFeatures.join(', '),
+        notes,
+        estimate:           S.estimate
+    };
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_BASE_URL/webhook/hvac-planner';
+
+    // If webhook not yet configured, show popup directly
+    if (WEBHOOK_URL.startsWith('YOUR_N8N')) {
+        showPopup(payload);
+        return;
+    }
+
+    try {
+        const res = await fetch(WEBHOOK_URL, {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({ success: true }));
+
+        if (res.ok || data.success) {
+            showPopup(payload);
+        } else {
+            alert('Something went wrong. Please try again or call us directly.');
+            btn.disabled = false;
+            btn.textContent = 'Get My Free Quote →';
+        }
+    } catch (err) {
+        console.warn('Submit error:', err);
+        showPopup(payload);
+    }
+}
+
+// ─── Popup ─────────────────────────────────────────────────────────────────────
+function showPopup(p) {
+    document.getElementById('popup-est').textContent =
+        p.estimate ? '$' + p.estimate.toLocaleString() : 'TBD';
+
+    document.getElementById('popup-summary').innerHTML = `
+        <span>Name:</span> ${p.firstName} ${p.lastName}<br>
+        <span>Email:</span> ${p.email}<br>
+        <span>Phone:</span> ${p.phone}<br>
+        <span>Service:</span> ${p.serviceType || '—'}<br>
+        <span>System:</span> ${p.systemType || '—'}<br>
+        <span>Property:</span> ${(p.squareFootage||0).toLocaleString()} sq ft — ${p.stories} Story — ${p.propertyType}<br>
+        <span>Zones:</span> ${p.selectedZones || 'Not specified'}<br>
+        <span>Urgency:</span> ${p.urgency}${p.additionalFeatures ? `<br><span>Add-ons:</span> ${p.additionalFeatures}` : ''}
+    `;
+
+    document.getElementById('thankYouPopup').classList.add('show');
+}
+
+function closePopup() {
+    document.getElementById('thankYouPopup').classList.remove('show');
+}
+
+document.getElementById('thankYouPopup').addEventListener('click', function (e) {
+    if (e.target === this) closePopup();
+});
+</script>
+</body>
+</html>

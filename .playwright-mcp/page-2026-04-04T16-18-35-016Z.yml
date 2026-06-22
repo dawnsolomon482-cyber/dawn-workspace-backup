@@ -1,0 +1,65 @@
+- table [ref=e2]:
+  - rowgroup [ref=e3]:
+    - row [ref=e4]:
+      - cell [ref=e5]:
+        - table [ref=e6]:
+          - rowgroup [ref=e7]:
+            - 'row "Subject: You''re probably losing 5+ jobs a week without knowing it, John" [ref=e8]':
+              - 'cell "Subject: You''re probably losing 5+ jobs a week without knowing it, John" [ref=e9]'
+            - row "Scalgent HVAC Revenue Operating System™" [ref=e10]:
+              - cell "Scalgent HVAC Revenue Operating System™" [ref=e11]:
+                - text: Scalgent
+                - text: HVAC Revenue Operating System™
+            - row [ref=e12]:
+              - cell [ref=e13]:
+                - paragraph [ref=e14]: You're losing jobs this week, John.
+                - paragraph [ref=e15]: "(In GHL this shows as: \"You're losing jobs this week, {{contact.first_name}}.\")"
+                - paragraph [ref=e16]: And you probably don't know exactly how many.
+                - paragraph [ref=e17]: Most HVAC companies we talk to have the same problem — leads come in, but a good chunk of them never get properly followed up. A missed call here, a slow response there, no structured system to catch the ones that slip through.
+                - paragraph [ref=e18]:
+                  - text: "The math is brutal: if just"
+                  - strong [ref=e19]: 5 leads a week
+                  - text: go unmanaged at an average job value of
+                  - strong [ref=e20]: $800
+                  - text: ", that's"
+                  - strong [ref=e21]: $20,000/month
+                  - text: walking out the door.
+                - table [ref=e22]:
+                  - rowgroup [ref=e23]:
+                    - row "The 4 Silent Killers 1. Missed calls with no callback system 2. Leads that wait 24+ hours for a response 3. No structured follow-up after the estimate 4. Zero review automation after job completion" [ref=e24]:
+                      - cell "The 4 Silent Killers 1. Missed calls with no callback system 2. Leads that wait 24+ hours for a response 3. No structured follow-up after the estimate 4. Zero review automation after job completion" [ref=e25]:
+                        - paragraph [ref=e26]: The 4 Silent Killers
+                        - paragraph [ref=e27]:
+                          - text: 1. Missed calls with no callback system
+                          - text: 2. Leads that wait 24+ hours for a response
+                          - text: 3. No structured follow-up after the estimate
+                          - text: 4. Zero review automation after job completion
+                - paragraph [ref=e28]:
+                  - text: We built the
+                  - strong [ref=e29]: HVAC Revenue Operating System™
+                  - text: specifically to fix all four — not with a pile of software you have to manage, but a complete system installed and running in your business.
+                - table [ref=e30]:
+                  - rowgroup [ref=e31]:
+                    - row "Book a Free 20-Min Strategy Call →" [ref=e32]:
+                      - cell "Book a Free 20-Min Strategy Call →" [ref=e33]:
+                        - link "Book a Free 20-Min Strategy Call →" [ref=e34] [cursor=pointer]:
+                          - /url: https://api.leadconnectorhq.com/widget/bookings/ai-free-strategy-consultation
+                - table [ref=e35]:
+                  - rowgroup [ref=e36]:
+                    - row "\"What used to take our front desk staff hours now runs automatically. They focus on the work — the system handles the follow-up.\" — Scalgent Client, HVAC Business Owner" [ref=e37]:
+                      - cell "\"What used to take our front desk staff hours now runs automatically. They focus on the work — the system handles the follow-up.\" — Scalgent Client, HVAC Business Owner" [ref=e38]:
+                        - paragraph [ref=e39]: "\"What used to take our front desk staff hours now runs automatically. They focus on the work — the system handles the follow-up.\""
+                        - paragraph [ref=e40]: — Scalgent Client, HVAC Business Owner
+            - row [ref=e41]:
+              - cell [ref=e42]:
+                - separator [ref=e43]
+            - row "Kier Siquete Founder, Scalgent | scalgent.com You're receiving this because you were identified as an HVAC business owner in your area. Unsubscribe" [ref=e44]:
+              - cell "Kier Siquete Founder, Scalgent | scalgent.com You're receiving this because you were identified as an HVAC business owner in your area. Unsubscribe" [ref=e45]:
+                - paragraph [ref=e46]:
+                  - strong [ref=e47]: Kier Siquete
+                - paragraph [ref=e48]: Founder, Scalgent | scalgent.com
+                - paragraph [ref=e49]:
+                  - text: You're receiving this because you were identified as an HVAC business owner in your area.
+                  - link "Unsubscribe" [ref=e50] [cursor=pointer]:
+                    - /url: "#"
+        - paragraph [ref=e51]: Scalgent · scalgent.com

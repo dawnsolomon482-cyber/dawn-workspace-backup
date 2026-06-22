@@ -1,0 +1,1579 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e6]:
+        - link "Dawn Solomon" [ref=e7] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e9]: Dawn Solomon
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - img "Dawn Solomon - GHL Automation Specialist and AI Engineer" [ref=e23]
+            - img [ref=e25]
+          - generic [ref=e33]: Open for Freelance Projects
+          - heading "Automation That Saves Time, Money, and Focus." [level=1] [ref=e34]:
+            - text: Automation That Saves Time, Money,
+            - text: and Focus.
+          - paragraph [ref=e35]: Your Partner in AI & Business Automation.
+          - generic [ref=e36]:
+            - link "Book a Call" [ref=e37] [cursor=pointer]:
+              - /url: "#booking"
+              - generic [ref=e38]: Book a Call
+            - link "View My Work" [ref=e39] [cursor=pointer]:
+              - /url: "#projects"
+              - generic [ref=e40]: View My Work
+              - img
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - generic [ref=e45]: Let's transform your manual workflows into smart systems.
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - heading "Calculate Your ROI" [level=2] [ref=e48]
+            - paragraph [ref=e49]: See how much time and money automation can save your business.
+          - button "Calculate Your ROI" [ref=e51] [cursor=pointer]:
+            - img
+            - text: Calculate Your ROI
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: Better systems. Bigger impact.
+          - paragraph [ref=e55]: — My Motto
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - paragraph [ref=e61]: THE ARCHITECT BEHIND THE AUTOMATION
+          - heading "I'm Dawn Solomon." [level=2] [ref=e62]
+          - paragraph [ref=e63]: Automation Engineer | WordPress SEO | AI Visibility
+          - paragraph [ref=e64]: I design end-to-end automation solutions using tools like GoHighLevel, Zapier (Integromat), and n8n, seamlessly connecting marketing, CRM, and operations into one intelligent ecosystem that runs on autopilot. With a solid foundation in WordPress SEO and LLMS visibility, I understand how systems, data, and strategy work together to create sustainable digital growth.
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e70]: Laguna, Philippines
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - generic [ref=e75]: dawnsolomon482@gmail.com
+            - generic [ref=e76]:
+              - img [ref=e77]
+              - generic [ref=e80]: Freelancer
+        - generic [ref=e81]:
+          - generic [ref=e84]:
+            - img [ref=e86]
+            - heading "My Vision" [level=3] [ref=e89]
+            - paragraph [ref=e90]: A world where founders and teams focus purely on creative, high-impact work, while robots handle 100% of the repetitive admin.
+          - generic [ref=e93]:
+            - img [ref=e95]
+            - heading "My Goal" [level=3] [ref=e99]
+            - paragraph [ref=e100]: To transform manual workflows into smart, self-running systems that multiply your time, productivity, and revenue.
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - heading "Workflow Automation" [level=2] [ref=e105]
+          - paragraph [ref=e106]: Real-world scenarios solved with precision. These projects showcase my automation expertise.
+        - generic [ref=e107]:
+          - generic [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]:
+              - img "Auto Sort Gmail Attachments" [ref=e111]
+              - generic [ref=e371]: Click to view full image
+            - generic [ref=e115]:
+              - generic [ref=e116]: Automation
+              - heading "Auto Sort Gmail Attachments" [level=3] [ref=e117]
+              - paragraph [ref=e118]: Automated workflow that sorts and organizes Gmail attachments into Google Drive folders.
+              - generic [ref=e119]:
+                - generic [ref=e120]: Make
+                - generic [ref=e121]: Gmail
+                - generic [ref=e122]: Google Drive
+              - generic [ref=e123]:
+                - generic [ref=e124]:
+                  - paragraph [ref=e125]: 5 Hrs/Wk
+                  - paragraph [ref=e126]: Time Saved
+                - generic [ref=e127]:
+                  - paragraph [ref=e128]: 100%
+                  - paragraph [ref=e129]: Accuracy
+          - generic:
+            - generic:
+              - generic:
+                - img "4 Quote Follow up Automation"
+              - generic:
+                - generic: Automation
+                - heading "4 Quote Follow up Automation" [level=3]
+                - paragraph: Zapier automation that handles task tracking and email follow-ups across multiple workflow stages.
+                - generic:
+                  - generic: Zapier
+                  - generic: Asana
+                  - generic: Gmail
+                - generic:
+                  - generic:
+                    - paragraph: 5+
+                    - paragraph: Workflow Stages
+                  - generic:
+                    - paragraph: 20+
+                    - paragraph: Auto Emails
+          - generic:
+            - generic:
+              - generic:
+                - img "Lead to Booking – HVAC NPCS"
+              - generic:
+                - generic: Automation
+                - heading "Lead to Booking – HVAC NPCS" [level=3]
+                - paragraph: "Lead to Booking – HVAC NPCS: A fully automated GoHighLevel workflow that captures leads and books appointments automatically, eliminating manual follow-ups and streamlining the entire sales pipeline."
+                - generic:
+                  - generic: GoHighLevel
+                  - generic: Workflow
+                  - generic: CRM
+                - generic:
+                  - generic:
+                    - paragraph: 100%
+                    - paragraph: Project Base
+                  - generic:
+                    - paragraph: 100%
+                    - paragraph: Accuracy
+          - button [ref=e130] [cursor=pointer]:
+            - img [ref=e131]
+          - button [ref=e133] [cursor=pointer]:
+            - img [ref=e134]
+          - generic [ref=e136]:
+            - button [ref=e137] [cursor=pointer]
+            - button [ref=e138] [cursor=pointer]
+            - button [ref=e139] [cursor=pointer]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - img "ClickUp" [ref=e144]
+              - generic [ref=e145]: ClickUp
+            - generic [ref=e146]:
+              - img "Tally" [ref=e147]
+              - generic [ref=e148]: Tally
+            - generic [ref=e149]:
+              - img "Jotform" [ref=e150]
+              - generic [ref=e151]: Jotform
+            - generic [ref=e152]:
+              - img "Systeme.io" [ref=e153]
+              - generic [ref=e154]: Systeme.io
+            - generic [ref=e155]:
+              - img "QuickBooks" [ref=e156]
+              - generic [ref=e157]: QuickBooks
+            - generic [ref=e158]:
+              - img "Notion" [ref=e159]
+              - generic [ref=e160]: Notion
+            - generic [ref=e161]:
+              - img "Trello" [ref=e162]
+              - generic [ref=e163]: Trello
+            - generic [ref=e164]:
+              - img "Slack" [ref=e165]
+              - generic [ref=e166]: Slack
+            - generic [ref=e167]:
+              - img "Zoom" [ref=e168]
+              - generic [ref=e169]: Zoom
+            - generic [ref=e170]:
+              - img "ChatGPT" [ref=e171]
+              - generic [ref=e172]: ChatGPT
+            - generic [ref=e173]:
+              - img "Gemini" [ref=e174]
+              - generic [ref=e175]: Gemini
+            - generic [ref=e176]:
+              - img "Mailchimp" [ref=e177]
+              - generic [ref=e178]: Mailchimp
+            - generic [ref=e179]:
+              - img "WordPress" [ref=e180]
+              - generic [ref=e181]: WordPress
+            - generic [ref=e182]:
+              - img "Canva" [ref=e183]
+              - generic [ref=e184]: Canva
+            - generic [ref=e185]:
+              - img "Shopify" [ref=e186]
+              - generic [ref=e187]: Shopify
+            - generic [ref=e188]:
+              - img "Zapier" [ref=e189]
+              - generic [ref=e190]: Zapier
+            - generic [ref=e191]:
+              - img "Airtable" [ref=e192]
+              - generic [ref=e193]: Airtable
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - img "ClickUp" [ref=e196]
+              - generic [ref=e197]: ClickUp
+            - generic [ref=e198]:
+              - img "Tally" [ref=e199]
+              - generic [ref=e200]: Tally
+            - generic [ref=e201]:
+              - img "Jotform" [ref=e202]
+              - generic [ref=e203]: Jotform
+            - generic [ref=e204]:
+              - img "Systeme.io" [ref=e205]
+              - generic [ref=e206]: Systeme.io
+            - generic [ref=e207]:
+              - img "QuickBooks" [ref=e208]
+              - generic [ref=e209]: QuickBooks
+            - generic [ref=e210]:
+              - img "Notion" [ref=e211]
+              - generic [ref=e212]: Notion
+            - generic [ref=e213]:
+              - img "Trello" [ref=e214]
+              - generic [ref=e215]: Trello
+            - generic [ref=e216]:
+              - img "Slack" [ref=e217]
+              - generic [ref=e218]: Slack
+            - generic [ref=e219]:
+              - img "Zoom" [ref=e220]
+              - generic [ref=e221]: Zoom
+            - generic [ref=e222]:
+              - img "ChatGPT" [ref=e223]
+              - generic [ref=e224]: ChatGPT
+            - generic [ref=e225]:
+              - img "Gemini" [ref=e226]
+              - generic [ref=e227]: Gemini
+            - generic [ref=e228]:
+              - img "Mailchimp" [ref=e229]
+              - generic [ref=e230]: Mailchimp
+            - generic [ref=e231]:
+              - img "WordPress" [ref=e232]
+              - generic [ref=e233]: WordPress
+            - generic [ref=e234]:
+              - img "Canva" [ref=e235]
+              - generic [ref=e236]: Canva
+            - generic [ref=e237]:
+              - img "Shopify" [ref=e238]
+              - generic [ref=e239]: Shopify
+            - generic [ref=e240]:
+              - img "Zapier" [ref=e241]
+              - generic [ref=e242]: Zapier
+            - generic [ref=e243]:
+              - img "Airtable" [ref=e244]
+              - generic [ref=e245]: Airtable
+      - generic [ref=e248]:
+        - generic [ref=e249]:
+          - generic [ref=e250]:
+            - img [ref=e251]
+            - generic [ref=e254]: Live & Interactive
+          - heading "Explore Live Websites" [level=2] [ref=e255]
+          - paragraph [ref=e256]: Browse my live website projects — click to explore them in real-time and see the quality of work firsthand.
+        - generic [ref=e257]:
+          - button "Close folder" [ref=e373] [cursor=pointer]:
+            - img [ref=e374]
+            - text: Close folder
+          - generic [ref=e376]:
+            - generic [ref=e377]:
+              - generic [ref=e383]:
+                - img [ref=e384]
+                - generic [ref=e387]: fuelfit-funnel.vercel.app
+              - generic [ref=e388]:
+                - iframe [ref=e389]:
+                  - generic [active] [ref=f15e1]:
+                    - navigation [ref=f15e2]:
+                      - generic [ref=f15e3]: FUELFIT
+                      - generic [ref=f15e4]:
+                        - link "Programs" [ref=f15e5] [cursor=pointer]:
+                          - /url: "#programs"
+                        - link "The Plan" [ref=f15e6] [cursor=pointer]:
+                          - /url: "#plan"
+                        - link "Results" [ref=f15e7] [cursor=pointer]:
+                          - /url: "#results"
+                        - link "FAQ" [ref=f15e8] [cursor=pointer]:
+                          - /url: "#faq"
+                      - link "Get Free Plan" [ref=f15e9] [cursor=pointer]:
+                        - /url: "#hero-form"
+                    - generic [ref=f15e10]:
+                      - generic [ref=f15e13]:
+                        - generic [ref=f15e14]: 🔥 Limited Time — 100% Free
+                        - heading "TRANSFORM YOUR BODY. ACHIEVE YOUR GOALS." [level=1] [ref=f15e15]:
+                          - text: TRANSFORM
+                          - text: YOUR
+                          - emphasis [ref=f15e16]: BODY.
+                          - text: ACHIEVE
+                          - text: YOUR GOALS.
+                        - paragraph [ref=f15e17]: Get our proven 7-Day Fat-Burning Meal Plan — 21 nutritionist-approved meals that torch fat without starving yourself.
+                        - generic [ref=f15e18]:
+                          - generic [ref=f15e19]:
+                            - generic [ref=f15e20]: 12K+
+                            - generic [ref=f15e21]: Downloads
+                          - generic [ref=f15e22]:
+                            - generic [ref=f15e23]: 94%
+                            - generic [ref=f15e24]: See Results
+                          - generic [ref=f15e25]:
+                            - generic [ref=f15e26]: 7 Days
+                            - generic [ref=f15e27]: To Results
+                        - generic [ref=f15e30]: 47 people viewing this page right now
+                      - generic [ref=f15e32]:
+                        - generic [ref=f15e33]: ⏰ Only 47 spots remaining today
+                        - heading "Get Your Free Plan" [level=3] [ref=f15e34]
+                        - paragraph [ref=f15e35]:
+                          - text: Instant access. No spam.
+                          - strong [ref=f15e36]: 100% Free.
+                        - generic [ref=f15e37]:
+                          - textbox "Your First Name" [ref=f15e38]
+                          - textbox "Your Best Email Address" [ref=f15e39]
+                          - combobox [ref=f15e40] [cursor=pointer]:
+                            - option "Your Goal..." [selected]
+                            - option "Lose Weight Fast"
+                            - option "Eat Healthier"
+                            - option "Build Lean Muscle"
+                            - option "Increase Energy"
+                          - button "🔥 SEND ME THE FREE MEAL PLAN" [ref=f15e41] [cursor=pointer]
+                        - paragraph [ref=f15e42]: 🔒 No credit card. No spam. Unsubscribe anytime.
+                    - paragraph [ref=f15e44]: 🔥 12,847 people downloaded this plan and started their transformation this week
+                    - generic [ref=f15e46]:
+                      - generic [ref=f15e47]:
+                        - paragraph [ref=f15e48]: What's Inside
+                        - heading "OUR PROGRAMS" [level=2] [ref=f15e49]
+                        - paragraph [ref=f15e50]: Three powerful approaches — all included in your free 7-day plan.
+                      - generic [ref=f15e51]:
+                        - generic [ref=f15e57] [cursor=pointer]:
+                          - generic [ref=f15e58]: Program 01
+                          - generic [ref=f15e59]: Strength Training
+                          - generic [ref=f15e60]: Build lean muscle while burning fat with our strength-optimized meal timing
+                        - generic [ref=f15e66] [cursor=pointer]:
+                          - generic [ref=f15e67]: Program 02
+                          - generic [ref=f15e68]: Fat Loss
+                          - generic [ref=f15e69]: Aggressive calorie deficit with high protein — lose up to 8 lbs in week one
+                        - generic [ref=f15e75] [cursor=pointer]:
+                          - generic [ref=f15e76]: Program 03
+                          - generic [ref=f15e77]: Yoga & Flexibility
+                          - generic [ref=f15e78]: Anti-inflammatory meals to fuel mobility, recovery, and mental clarity
+                    - generic [ref=f15e80]:
+                      - generic [ref=f15e81]:
+                        - paragraph [ref=f15e82]: The 7-Day Plan
+                        - heading "YOUR DAILY BREAKDOWN" [level=2] [ref=f15e83]
+                        - paragraph [ref=f15e84]: Each day is carefully designed to maximize fat burn while keeping you satisfied.
+                      - generic [ref=f15e85]:
+                        - generic [ref=f15e87]:
+                          - generic [ref=f15e88]:
+                            - img "Clean Slate Reset" [ref=f15e89]
+                            - generic [ref=f15e91]: Day 1
+                          - generic [ref=f15e92]:
+                            - generic [ref=f15e93]: Clean Slate Reset
+                            - generic [ref=f15e94]: 1,380 cal
+                        - generic [ref=f15e96]:
+                          - generic [ref=f15e97]:
+                            - img "Protein Power" [ref=f15e98]
+                            - generic [ref=f15e100]: Day 2
+                          - generic [ref=f15e101]:
+                            - generic [ref=f15e102]: Protein Power
+                            - generic [ref=f15e103]: 1,420 cal
+                        - generic [ref=f15e105]:
+                          - generic [ref=f15e106]:
+                            - img "Healthy Fats" [ref=f15e107]
+                            - generic [ref=f15e109]: Day 3
+                          - generic [ref=f15e110]:
+                            - generic [ref=f15e111]: Healthy Fats
+                            - generic [ref=f15e112]: 1,390 cal
+                        - generic [ref=f15e114]:
+                          - generic [ref=f15e115]:
+                            - img "Carb Cycle" [ref=f15e116]
+                            - generic [ref=f15e118]: Day 4
+                          - generic [ref=f15e119]:
+                            - generic [ref=f15e120]: Carb Cycle
+                            - generic [ref=f15e121]: 1,450 cal
+                        - generic [ref=f15e123]:
+                          - generic [ref=f15e124]:
+                            - img "Detox Boost" [ref=f15e125]
+                            - generic [ref=f15e127]: Day 5
+                          - generic [ref=f15e128]:
+                            - generic [ref=f15e129]: Detox Boost
+                            - generic [ref=f15e130]: 1,310 cal
+                        - generic [ref=f15e132]:
+                          - generic [ref=f15e133]:
+                            - img "Lean & Clean" [ref=f15e134]
+                            - generic [ref=f15e136]: Day 6
+                          - generic [ref=f15e137]:
+                            - generic [ref=f15e138]: Lean & Clean
+                            - generic [ref=f15e139]: 1,400 cal
+                        - generic [ref=f15e141]:
+                          - generic [ref=f15e142]:
+                            - img "Victory Day!" [ref=f15e143]
+                            - generic [ref=f15e145]: Day 7
+                          - generic [ref=f15e146]:
+                            - generic [ref=f15e147]: Victory Day!
+                            - generic [ref=f15e148]: 1,360 cal
+                    - generic [ref=f15e150]:
+                      - generic [ref=f15e151]:
+                        - paragraph [ref=f15e152]: Success Stories
+                        - heading "REAL RESULTS" [level=2] [ref=f15e153]
+                        - paragraph [ref=f15e154]: Real people. Real transformations. No filters.
+                      - generic [ref=f15e155]:
+                        - generic [ref=f15e157]:
+                          - img "Sarah M. — Austin, TX" [ref=f15e159]
+                          - generic [ref=f15e160]:
+                            - generic [ref=f15e161]: Sarah M. — Austin, TX
+                            - generic [ref=f15e162]: "-11 lbs / 3 weeks"
+                            - generic [ref=f15e163]: "\"I wasn't starving — I was satisfied and losing weight at the same time.\""
+                        - generic [ref=f15e165]:
+                          - img "James R. — Chicago, IL" [ref=f15e167]
+                          - generic [ref=f15e168]:
+                            - generic [ref=f15e169]: James R. — Chicago, IL
+                            - generic [ref=f15e170]: "-17 lbs / 5 weeks"
+                            - generic [ref=f15e171]: "\"Simple meals, real food. My energy levels are through the roof now.\""
+                        - generic [ref=f15e173]:
+                          - img "Maria L. — Miami, FL" [ref=f15e175]
+                          - generic [ref=f15e176]:
+                            - generic [ref=f15e177]: Maria L. — Miami, FL
+                            - generic [ref=f15e178]: "-8 lbs / 2 weeks"
+                            - generic [ref=f15e179]: "\"As a busy mom of 3, I lost 8 lbs without spending hours in the kitchen.\""
+                    - generic [ref=f15e181]:
+                      - generic [ref=f15e182]:
+                        - paragraph [ref=f15e183]: Real Reviews From Real People
+                        - heading "WHAT PEOPLE SAY" [level=2] [ref=f15e184]
+                        - paragraph [ref=f15e185]: Facebook · Messenger · Email
+                      - generic [ref=f15e186]:
+                        - generic [ref=f15e188]:
+                          - generic [ref=f15e189]:
+                            - generic [ref=f15e190]:
+                              - generic [ref=f15e191]:
+                                - img "Karen" [ref=f15e192]
+                                - img [ref=f15e194]
+                              - generic [ref=f15e196]:
+                                - generic [ref=f15e197]: Karen Thompson
+                                - generic [ref=f15e198]: 3 days ago · 🌐
+                              - img [ref=f15e199]
+                            - generic [ref=f15e201]: 🔥 -6 lbs in Week 1
+                            - paragraph [ref=f15e202]: I downloaded this on a whim and ended up losing 6 pounds in the first week!! The meals are SO delicious and the grocery list is a total lifesaver. Showed my sister and she started it too 😭❤️
+                          - img "meal" [ref=f15e204]
+                          - generic [ref=f15e205]:
+                            - generic [ref=f15e206]:
+                              - generic [ref=f15e207]:
+                                - generic [ref=f15e208]:
+                                  - generic [ref=f15e209]: 👍
+                                  - generic [ref=f15e210]: ❤️
+                                - generic [ref=f15e211]: "247"
+                              - generic [ref=f15e212]: 38 comments
+                            - generic [ref=f15e213]:
+                              - button "👍 Like" [ref=f15e214]
+                              - button "💬 Comment" [ref=f15e215]
+                              - button "↗ Share" [ref=f15e216]
+                        - generic [ref=f15e218]:
+                          - generic [ref=f15e219]:
+                            - img "David" [ref=f15e221]
+                            - generic [ref=f15e223]:
+                              - generic [ref=f15e224]: David Kim
+                              - generic [ref=f15e225]: Active now
+                            - generic [ref=f15e226]:
+                              - img [ref=f15e227]
+                              - img [ref=f15e229]
+                          - generic [ref=f15e231]:
+                            - generic [ref=f15e232]: Today 2:14 PM
+                            - generic [ref=f15e233]:
+                              - img "David" [ref=f15e234]
+                              - paragraph [ref=f15e236]: hey just wanted to say this meal plan is insane 😭 lost 14 lbs total and I haven't even finished week 3
+                            - generic [ref=f15e237]:
+                              - img "David" [ref=f15e238]
+                              - paragraph [ref=f15e240]: the grocery list alone is worth it. so easy to follow 🙏🏽
+                            - paragraph [ref=f15e243]: That's amazing David!! Keep going 💪🔥
+                            - generic [ref=f15e244]:
+                              - img "David" [ref=f15e245]
+                              - paragraph [ref=f15e247]: already recommended it to literally everyone 😂💯
+                          - generic [ref=f15e248]:
+                            - generic [ref=f15e249]: Aa
+                            - img [ref=f15e250]
+                        - generic [ref=f15e253]:
+                          - generic [ref=f15e259]: Gmail — Inbox
+                          - generic [ref=f15e260]:
+                            - generic [ref=f15e261]:
+                              - generic [ref=f15e262]: OMG this actually worked 😭🙏
+                              - generic [ref=f15e263]:
+                                - img "Lisa" [ref=f15e264]
+                                - generic [ref=f15e265]:
+                                  - strong [ref=f15e266]: Lisa Parrish
+                                  - text: <lisa.p@gmail.com>
+                              - generic [ref=f15e267]: "To: fuelfit@support.com · 2 weeks ago"
+                            - generic [ref=f15e268]:
+                              - paragraph [ref=f15e269]: Hi there,
+                              - paragraph [ref=f15e270]:
+                                - text: I just had to email you guys because I am on
+                                - strong [ref=f15e271]: Week 4
+                                - text: and I have now lost
+                                - strong [ref=f15e272]: 19 lbs total
+                                - text: 😭
+                              - paragraph [ref=f15e273]: I was SO skeptical when I first downloaded this. But the calorie counts are perfect and I genuinely enjoy eating this way now. I never thought I'd say that!!
+                              - paragraph [ref=f15e274]: Please keep doing what you're doing. This changed my life.
+                              - paragraph [ref=f15e275]: — Lisa 🙏✨
+                            - generic [ref=f15e276]:
+                              - button "↩ Reply" [ref=f15e277]
+                              - button "→ Forward" [ref=f15e278]
+                    - generic [ref=f15e280]:
+                      - generic [ref=f15e281]:
+                        - paragraph [ref=f15e282]: Simple Process
+                        - heading "HOW IT WORKS" [level=2] [ref=f15e283]
+                      - generic [ref=f15e284]:
+                        - generic [ref=f15e287]:
+                          - generic [ref=f15e288]: "1"
+                          - heading "Enter Your Details" [level=4] [ref=f15e289]
+                          - paragraph [ref=f15e290]: Just your name and email. 30 seconds. No credit card needed.
+                        - generic [ref=f15e292]:
+                          - generic [ref=f15e293]: "2"
+                          - heading "Get Instant Access" [level=4] [ref=f15e294]
+                          - paragraph [ref=f15e295]: Your 7-day meal plan lands in your inbox immediately.
+                        - generic [ref=f15e297]:
+                          - generic [ref=f15e298]: "3"
+                          - heading "Start Your Journey" [level=4] [ref=f15e299]
+                          - paragraph [ref=f15e300]: Follow the plan, see results by Day 3. It's that simple.
+                    - generic [ref=f15e302]:
+                      - generic [ref=f15e303]:
+                        - paragraph [ref=f15e304]: Got Questions?
+                        - heading "FREQUENTLY ASKED QUESTIONS" [level=2] [ref=f15e305]
+                      - generic [ref=f15e306]:
+                        - generic [ref=f15e308]:
+                          - button "Is this meal plan really free? +" [ref=f15e309] [cursor=pointer]:
+                            - generic [ref=f15e310]: Is this meal plan really free?
+                            - generic [ref=f15e311]: +
+                          - generic [ref=f15e312]: 100% free. No credit card, no hidden fees, no subscription. We offer it free because we want you to experience real results — and if you love it, we have premium programs available.
+                        - button "Do I need to be a good cook? +" [ref=f15e315] [cursor=pointer]:
+                          - generic [ref=f15e316]: Do I need to be a good cook?
+                          - generic [ref=f15e317]: +
+                        - button "Will I be hungry following this plan? +" [ref=f15e320] [cursor=pointer]:
+                          - generic [ref=f15e321]: Will I be hungry following this plan?
+                          - generic [ref=f15e322]: +
+                        - button "How fast will I see results? +" [ref=f15e325] [cursor=pointer]:
+                          - generic [ref=f15e326]: How fast will I see results?
+                          - generic [ref=f15e327]: +
+                        - button "Is this suitable for vegetarians? +" [ref=f15e330] [cursor=pointer]:
+                          - generic [ref=f15e331]: Is this suitable for vegetarians?
+                          - generic [ref=f15e332]: +
+                    - generic [ref=f15e335]:
+                      - paragraph [ref=f15e336]: Limited Time — 100% Free
+                      - heading "START YOUR 7-DAY FAT-BURN RESET TODAY" [level=2] [ref=f15e337]:
+                        - text: START YOUR 7-DAY
+                        - text: FAT-BURN RESET TODAY
+                      - paragraph [ref=f15e338]: Join 47,000+ people who have already transformed their bodies with this free plan. No gym required. No starvation. Just results.
+                      - link "Get Your Free Meal Plan →" [ref=f15e339] [cursor=pointer]:
+                        - /url: "#hero"
+                      - paragraph [ref=f15e340]: No credit card · Instant email delivery · Cancel anytime
+                    - contentinfo [ref=f15e341]:
+                      - generic [ref=f15e342]:
+                        - generic [ref=f15e343]: FUELFIT
+                        - paragraph [ref=f15e344]: © 2026 FuelFit. All rights reserved. Results may vary. This plan is for informational purposes only.
+                        - generic [ref=f15e345]:
+                          - link "Privacy" [ref=f15e346] [cursor=pointer]:
+                            - /url: "#"
+                          - link "Terms" [ref=f15e347] [cursor=pointer]:
+                            - /url: "#"
+                          - link "Contact" [ref=f15e348] [cursor=pointer]:
+                            - /url: "#"
+                    - alert [ref=f15e349]
+                - generic [ref=e391]:
+                  - generic [ref=e392]:
+                    - img [ref=e394]
+                    - img [ref=e397]
+                  - generic [ref=e399]: Click to explore
+              - generic [ref=e400]:
+                - generic [ref=e401]:
+                  - heading "FuelFit Funnel" [level=3] [ref=e402]
+                  - generic [ref=e403]: Sales Funnel
+                - paragraph [ref=e404]: A high-converting sales funnel designed to drive fitness product purchases with compelling copy and seamless checkout.
+                - generic [ref=e405]:
+                  - generic [ref=e406]: Sales Funnel
+                  - generic [ref=e407]: Conversion
+                  - generic [ref=e408]: Landing Page
+                - link "Visit Live Site" [ref=e409] [cursor=pointer]:
+                  - /url: https://fuelfit-funnel.vercel.app
+                  - button "Visit Live Site" [ref=e410]:
+                    - img
+                    - text: Visit Live Site
+              - link "Visit FuelFit Funnel" [ref=e411] [cursor=pointer]:
+                - /url: https://fuelfit-funnel.vercel.app
+                - generic [ref=e412]: Visit FuelFit Funnel
+            - generic [ref=e413]:
+              - generic [ref=e419]:
+                - img [ref=e420]
+                - generic [ref=e423]: prestige-realty-funnel.vercel.app
+              - generic [ref=e424]:
+                - iframe [ref=e425]:
+                  - generic [active] [ref=f16e1]:
+                    - navigation [ref=f16e2]:
+                      - generic [ref=f16e3]:
+                        - generic [ref=f16e4]: PRESTIGE REALTY
+                        - generic [ref=f16e5]:
+                          - link "Properties" [ref=f16e6] [cursor=pointer]:
+                            - /url: "#properties"
+                          - link "Services" [ref=f16e7] [cursor=pointer]:
+                            - /url: "#services"
+                          - link "About" [ref=f16e8] [cursor=pointer]:
+                            - /url: "#about"
+                          - link "Contact" [ref=f16e9] [cursor=pointer]:
+                            - /url: "#booking"
+                        - link "Book Viewing" [ref=f16e10] [cursor=pointer]:
+                          - /url: "#booking"
+                    - generic [ref=f16e15]:
+                      - generic [ref=f16e16]:
+                        - generic [ref=f16e18]: Exclusive Private Viewings
+                        - heading "Where Luxury Meets Home." [level=1] [ref=f16e21]:
+                          - text: Where Luxury
+                          - emphasis [ref=f16e22]: Meets
+                          - text: Home.
+                        - paragraph [ref=f16e24]: Access the most coveted properties in your city. Our experts provide concierge-level service from your first viewing to the day you get the keys.
+                        - generic [ref=f16e26]:
+                          - generic [ref=f16e27]:
+                            - generic [ref=f16e28]: $2.4B+
+                            - generic [ref=f16e29]: In Sales Volume
+                          - generic [ref=f16e30]:
+                            - generic [ref=f16e31]: 850+
+                            - generic [ref=f16e32]: Luxury Homes Sold
+                          - generic [ref=f16e33]:
+                            - generic [ref=f16e34]: 15+
+                            - generic [ref=f16e35]: Years of Excellence
+                        - generic [ref=f16e37]:
+                          - generic [ref=f16e38]:
+                            - img "client" [ref=f16e39]
+                            - img "client" [ref=f16e40]
+                            - img "client" [ref=f16e41]
+                          - paragraph [ref=f16e42]:
+                            - text: Trusted by
+                            - strong [ref=f16e43]: 2,300+
+                            - text: luxury home buyers
+                      - generic [ref=f16e45]:
+                        - paragraph [ref=f16e48]: Complimentary
+                        - heading "Book a Private Viewing" [level=3] [ref=f16e49]
+                        - paragraph [ref=f16e50]: No obligation. Our specialist will contact you within 2 hours.
+                        - generic [ref=f16e51]:
+                          - textbox "Full Name" [ref=f16e52]
+                          - textbox "Email Address" [ref=f16e53]
+                          - textbox "Phone Number (optional)" [ref=f16e54]
+                          - combobox [ref=f16e55] [cursor=pointer]:
+                            - option "Budget Range" [selected]
+                            - option "Under $500K"
+                            - option "$500K – $1M"
+                            - option "$1M – $3M"
+                            - option "$3M – $5M"
+                            - option "$5M+"
+                          - button "Request Private Viewing →" [ref=f16e56] [cursor=pointer]
+                        - generic [ref=f16e57]:
+                          - generic [ref=f16e58]: ✓ Confidential
+                          - generic [ref=f16e59]: ✓ No pressure
+                          - generic [ref=f16e60]: ✓ Expert guided
+                    - generic [ref=f16e62]:
+                      - paragraph [ref=f16e63]: "🏆 #1 Luxury Brokerage in the Metro"
+                      - paragraph [ref=f16e64]: ⭐ 4.9/5 from 800+ Verified Reviews
+                      - paragraph [ref=f16e65]: "🔑 Average Sale: 3% Above Asking Price"
+                      - paragraph [ref=f16e66]: 📞 24/7 Concierge Support
+                    - generic [ref=f16e68]:
+                      - generic [ref=f16e69]:
+                        - paragraph [ref=f16e70]: Our Portfolio
+                        - heading "Featured Properties" [level=2] [ref=f16e71]:
+                          - text: Featured
+                          - emphasis [ref=f16e72]: Properties
+                        - paragraph [ref=f16e73]: Every home in our portfolio is hand-selected for its exceptional quality, location, and investment potential.
+                      - generic [ref=f16e74]:
+                        - generic [ref=f16e76]:
+                          - generic [ref=f16e79]: Featured
+                          - generic [ref=f16e80]:
+                            - paragraph [ref=f16e81]: Beverly Hills, CA
+                            - heading "The Ridgeline Estate" [level=3] [ref=f16e82]
+                            - generic [ref=f16e83]: $4,850,000
+                            - generic [ref=f16e84]:
+                              - generic [ref=f16e85]: 5 Beds
+                              - generic [ref=f16e86]: 6 Baths
+                              - generic [ref=f16e87]: 7,200 sqft
+                        - generic [ref=f16e89]:
+                          - generic [ref=f16e92]: New Listing
+                          - generic [ref=f16e93]:
+                            - paragraph [ref=f16e94]: Manhattan, NY
+                            - heading "Skyline Penthouse" [level=3] [ref=f16e95]
+                            - generic [ref=f16e96]: $8,200,000
+                            - generic [ref=f16e97]:
+                              - generic [ref=f16e98]: 4 Beds
+                              - generic [ref=f16e99]: 4 Baths
+                              - generic [ref=f16e100]: 4,800 sqft
+                        - generic [ref=f16e102]:
+                          - generic [ref=f16e105]: Exclusive
+                          - generic [ref=f16e106]:
+                            - paragraph [ref=f16e107]: Lake Geneva, WI
+                            - heading "The Lakefront Manor" [level=3] [ref=f16e108]
+                            - generic [ref=f16e109]: $3,100,000
+                            - generic [ref=f16e110]:
+                              - generic [ref=f16e111]: 6 Beds
+                              - generic [ref=f16e112]: 7 Baths
+                              - generic [ref=f16e113]: 9,400 sqft
+                        - generic [ref=f16e115]:
+                          - generic [ref=f16e118]: Hot
+                          - generic [ref=f16e119]:
+                            - paragraph [ref=f16e120]: Malibu, CA
+                            - heading "Coastal Villa" [level=3] [ref=f16e121]
+                            - generic [ref=f16e122]: $6,750,000
+                            - generic [ref=f16e123]:
+                              - generic [ref=f16e124]: 5 Beds
+                              - generic [ref=f16e125]: 5 Baths
+                              - generic [ref=f16e126]: 5,600 sqft
+                        - generic [ref=f16e128]:
+                          - generic [ref=f16e131]: Sold
+                          - generic [ref=f16e132]:
+                            - paragraph [ref=f16e133]: New York, NY
+                            - heading "Park Avenue Classic" [level=3] [ref=f16e134]
+                            - generic [ref=f16e135]: $5,400,000
+                            - generic [ref=f16e136]:
+                              - generic [ref=f16e137]: 3 Beds
+                              - generic [ref=f16e138]: 4 Baths
+                              - generic [ref=f16e139]: 3,200 sqft
+                        - generic [ref=f16e141]:
+                          - generic [ref=f16e144]: Exclusive
+                          - generic [ref=f16e145]:
+                            - paragraph [ref=f16e146]: Napa Valley, CA
+                            - heading "Napa Valley Retreat" [level=3] [ref=f16e147]
+                            - generic [ref=f16e148]: $2,900,000
+                            - generic [ref=f16e149]:
+                              - generic [ref=f16e150]: 4 Beds
+                              - generic [ref=f16e151]: 4 Baths
+                              - generic [ref=f16e152]: 4,100 sqft
+                      - link "View All Properties" [ref=f16e155] [cursor=pointer]:
+                        - /url: "#booking"
+                    - generic [ref=f16e157]:
+                      - generic [ref=f16e158]:
+                        - paragraph [ref=f16e159]: What We Offer
+                        - heading "Our Services" [level=2] [ref=f16e160]:
+                          - text: Our
+                          - emphasis [ref=f16e161]: Services
+                      - generic [ref=f16e162]:
+                        - generic [ref=f16e164]:
+                          - img [ref=f16e166]
+                          - heading "Buyer Representation" [level=3] [ref=f16e169]
+                          - paragraph [ref=f16e170]: We negotiate on your behalf with proven strategies that consistently achieve below-asking prices in competitive markets.
+                        - generic [ref=f16e172]:
+                          - img [ref=f16e174]
+                          - heading "Seller Strategy" [level=3] [ref=f16e177]
+                          - paragraph [ref=f16e178]: Our marketing system exposes your property to 10,000+ qualified buyers within 72 hours of listing.
+                        - generic [ref=f16e180]:
+                          - img [ref=f16e182]
+                          - heading "Private Viewings" [level=3] [ref=f16e185]
+                          - paragraph [ref=f16e186]: Exclusive access to off-market properties before they're available to the general public.
+                        - generic [ref=f16e188]:
+                          - img [ref=f16e190]
+                          - heading "Investment Advisory" [level=3] [ref=f16e193]
+                          - paragraph [ref=f16e194]: Portfolio analysis, ROI projections, and market data to help you build long-term real estate wealth.
+                        - generic [ref=f16e196]:
+                          - img [ref=f16e198]
+                          - heading "Relocation Concierge" [level=3] [ref=f16e201]
+                          - paragraph [ref=f16e202]: White-glove relocation assistance for executives and families moving to a new city or country.
+                        - generic [ref=f16e204]:
+                          - img [ref=f16e206]
+                          - heading "Estate & Legacy" [level=3] [ref=f16e208]
+                          - paragraph [ref=f16e209]: Discreet estate sales, probate assistance, and multi-generational property planning for high-net-worth families.
+                    - generic [ref=f16e211]:
+                      - generic [ref=f16e213]:
+                        - img "Prestige Realty team" [ref=f16e215]
+                        - generic [ref=f16e216]:
+                          - generic [ref=f16e217]: 15+
+                          - generic [ref=f16e218]: Years of Excellence
+                      - generic [ref=f16e219]:
+                        - paragraph [ref=f16e220]: Our Story
+                        - heading "Redefining Luxury Real Estate" [level=2] [ref=f16e221]:
+                          - text: Redefining Luxury
+                          - emphasis [ref=f16e222]: Real Estate
+                        - generic [ref=f16e223]:
+                          - paragraph [ref=f16e224]: "Founded in 2009, Prestige Realty was built on a single conviction: that every luxury transaction deserves concierge-level care, deep market intelligence, and relentless advocacy for our clients."
+                          - paragraph [ref=f16e225]: We serve buyers and sellers in the most coveted zip codes across the country — from coastal estates to urban penthouses. Our team of 40+ specialists brings decades of combined experience and an unmatched network of off-market connections.
+                          - paragraph [ref=f16e226]: When you work with Prestige, you gain more than an agent. You gain a partner invested in your outcome.
+                        - generic [ref=f16e227]:
+                          - generic [ref=f16e228]:
+                            - generic [ref=f16e229]: $2.4B+
+                            - generic [ref=f16e230]: Total Sales
+                          - generic [ref=f16e231]:
+                            - generic [ref=f16e232]: 850+
+                            - generic [ref=f16e233]: Homes Sold
+                          - generic [ref=f16e234]:
+                            - generic [ref=f16e235]: 4.9★
+                            - generic [ref=f16e236]: Client Rating
+                    - generic [ref=f16e238]:
+                      - generic [ref=f16e239]:
+                        - paragraph [ref=f16e240]: Client Stories
+                        - heading "What Our Clients Say" [level=2] [ref=f16e241]:
+                          - text: What Our Clients
+                          - emphasis [ref=f16e242]: Say
+                        - paragraph [ref=f16e243]: LinkedIn · Messenger · Email
+                      - generic [ref=f16e244]:
+                        - generic [ref=f16e247]:
+                          - generic [ref=f16e248]:
+                            - img "Michael" [ref=f16e249]
+                            - generic [ref=f16e250]:
+                              - generic [ref=f16e251]: Michael & Sarah Torres
+                              - generic [ref=f16e252]: VP Operations · Beverly Hills, CA · 1st
+                              - generic [ref=f16e253]:
+                                - text: 1 week ago ·
+                                - img [ref=f16e254]
+                            - generic [ref=f16e256]: + Follow
+                          - paragraph [ref=f16e257]:
+                            - text: 🏡
+                            - strong [ref=f16e258]: We just closed on our dream home — $200K under asking price.
+                            - text: Prestige Realty found us an off-market property before it ever went public. Their negotiation was surgical.
+                            - text: If you're in the luxury market, there is no one else I would trust with a transaction this size.
+                            - text: "#RealEstate #LuxuryHomes #BeverlyHills"
+                          - generic [ref=f16e259]:
+                            - generic [ref=f16e260]:
+                              - generic [ref=f16e261]:
+                                - generic [ref=f16e262]: 👍
+                                - generic [ref=f16e263]: 💡
+                                - generic [ref=f16e264]: ❤
+                              - generic [ref=f16e265]: 528 · 84 comments
+                            - generic [ref=f16e266]:
+                              - button "👍 Like" [ref=f16e267]
+                              - button "💬 Comment" [ref=f16e268]
+                              - button "↗ Repost" [ref=f16e269]
+                              - button "✉ Send" [ref=f16e270]
+                        - generic [ref=f16e272]:
+                          - generic [ref=f16e273]:
+                            - img "Jonathan" [ref=f16e275]
+                            - generic [ref=f16e277]:
+                              - generic [ref=f16e278]: Jonathan Kim
+                              - generic [ref=f16e279]: Active now
+                            - img [ref=f16e281]
+                          - generic [ref=f16e283]:
+                            - generic [ref=f16e284]: Monday 11:18 AM
+                            - generic [ref=f16e285]:
+                              - img "Jonathan" [ref=f16e286]
+                              - paragraph [ref=f16e288]: just wanted to say — my penthouse sold in 4 days 😭
+                            - generic [ref=f16e289]:
+                              - img "Jonathan" [ref=f16e290]
+                              - paragraph [ref=f16e292]: 8% OVER asking price. had 14 qualified buyers on day 1 🤯
+                            - paragraph [ref=f16e295]: Jonathan!! That's incredible! 🎉🥂
+                            - generic [ref=f16e296]:
+                              - img "Jonathan" [ref=f16e297]
+                              - paragraph [ref=f16e299]: unbelievable from start to finish. you guys are the best 🙏🏽
+                          - generic [ref=f16e300]:
+                            - generic [ref=f16e301]: Aa
+                            - img [ref=f16e302]
+                        - generic [ref=f16e305]:
+                          - generic [ref=f16e311]: Gmail — Inbox
+                          - generic [ref=f16e312]:
+                            - generic [ref=f16e313]:
+                              - generic [ref=f16e314]: Relocated in 30 days — thank you!! 🙏
+                              - generic [ref=f16e315]:
+                                - img "Rachel" [ref=f16e316]
+                                - generic [ref=f16e317]:
+                                  - strong [ref=f16e318]: Rachel & David Lee
+                                  - text: <rachel.lee@gmail.com>
+                              - generic [ref=f16e319]: "To: concierge@prestigerealty.com · 3 weeks ago"
+                            - generic [ref=f16e320]:
+                              - paragraph [ref=f16e321]: Hi,
+                              - paragraph [ref=f16e322]:
+                                - text: We moved from Chicago and had
+                                - strong [ref=f16e323]: zero time
+                                - text: to be physically present. Prestige handled absolutely everything — virtual tours, all the paperwork, even coordinated our movers.
+                              - paragraph [ref=f16e324]:
+                                - text: We closed in
+                                - strong [ref=f16e325]: 30 days flat
+                                - text: . I still can't believe how flawless the whole process was.
+                              - paragraph [ref=f16e326]: We will be recommending you to everyone we know. Thank you from the bottom of our hearts.
+                              - paragraph [ref=f16e327]: — Rachel & David 🏡
+                            - generic [ref=f16e328]:
+                              - button "↩ Reply" [ref=f16e329]
+                              - button "→ Forward" [ref=f16e330]
+                    - generic [ref=f16e332]:
+                      - generic [ref=f16e333]:
+                        - paragraph [ref=f16e334]: Got Questions?
+                        - heading "Frequently Asked Questions" [level=2] [ref=f16e335]:
+                          - text: Frequently Asked
+                          - emphasis [ref=f16e336]: Questions
+                      - generic [ref=f16e337]:
+                        - generic [ref=f16e339]:
+                          - button "Is the private viewing really free? +" [ref=f16e340] [cursor=pointer]:
+                            - generic [ref=f16e341]: Is the private viewing really free?
+                            - generic [ref=f16e342]: +
+                          - generic [ref=f16e343]: Absolutely. There is no cost or obligation attached to booking a private viewing. We believe in earning your trust first — fees only apply when you choose to proceed with a transaction.
+                        - button "How quickly can I schedule a viewing? +" [ref=f16e346] [cursor=pointer]:
+                          - generic [ref=f16e347]: How quickly can I schedule a viewing?
+                          - generic [ref=f16e348]: +
+                        - button "Do you have access to off-market properties? +" [ref=f16e351] [cursor=pointer]:
+                          - generic [ref=f16e352]: Do you have access to off-market properties?
+                          - generic [ref=f16e353]: +
+                        - button "What areas do you serve? +" [ref=f16e356] [cursor=pointer]:
+                          - generic [ref=f16e357]: What areas do you serve?
+                          - generic [ref=f16e358]: +
+                        - button "Can you help if I'm relocating from another city? +" [ref=f16e361] [cursor=pointer]:
+                          - generic [ref=f16e362]: Can you help if I'm relocating from another city?
+                          - generic [ref=f16e363]: +
+                    - generic [ref=f16e365]:
+                      - generic [ref=f16e366]:
+                        - paragraph [ref=f16e367]: Take the First Step
+                        - heading "Your Dream Home Awaits" [level=2] [ref=f16e368]:
+                          - text: Your Dream Home
+                          - emphasis [ref=f16e369]: Awaits
+                        - paragraph [ref=f16e370]: Schedule a complimentary private viewing today. No pressure, no obligation — just expert guidance and exclusive access to the finest homes on the market.
+                        - generic [ref=f16e371]:
+                          - generic [ref=f16e372]:
+                            - generic [ref=f16e373]: 📞
+                            - generic [ref=f16e374]:
+                              - generic [ref=f16e375]: Rapid Response
+                              - generic [ref=f16e376]: Our specialists contact you within 2 hours
+                          - generic [ref=f16e377]:
+                            - generic [ref=f16e378]: 🔑
+                            - generic [ref=f16e379]:
+                              - generic [ref=f16e380]: Exclusive Access
+                              - generic [ref=f16e381]: Off-market properties not listed publicly
+                          - generic [ref=f16e382]:
+                            - generic [ref=f16e383]: 🤝
+                            - generic [ref=f16e384]:
+                              - generic [ref=f16e385]: Zero Obligation
+                              - generic [ref=f16e386]: No fees until you decide to move forward
+                      - generic [ref=f16e388]:
+                        - paragraph [ref=f16e391]: Complimentary
+                        - heading "Book a Private Viewing" [level=3] [ref=f16e392]
+                        - paragraph [ref=f16e393]: No obligation. Our specialist will contact you within 2 hours.
+                        - generic [ref=f16e394]:
+                          - textbox "Full Name" [ref=f16e395]
+                          - textbox "Email Address" [ref=f16e396]
+                          - textbox "Phone Number (optional)" [ref=f16e397]
+                          - combobox [ref=f16e398] [cursor=pointer]:
+                            - option "Budget Range" [selected]
+                            - option "Under $500K"
+                            - option "$500K – $1M"
+                            - option "$1M – $3M"
+                            - option "$3M – $5M"
+                            - option "$5M+"
+                          - button "Request Private Viewing →" [ref=f16e399] [cursor=pointer]
+                        - generic [ref=f16e400]:
+                          - generic [ref=f16e401]: ✓ Confidential
+                          - generic [ref=f16e402]: ✓ No pressure
+                          - generic [ref=f16e403]: ✓ Expert guided
+                    - contentinfo [ref=f16e404]:
+                      - generic [ref=f16e405]:
+                        - generic [ref=f16e406]: PRESTIGE REALTY
+                        - paragraph [ref=f16e407]: © 2026 Prestige Realty. All rights reserved. Licensed Real Estate Brokerage.
+                        - generic [ref=f16e408]:
+                          - link "Privacy" [ref=f16e409] [cursor=pointer]:
+                            - /url: "#"
+                          - link "Terms" [ref=f16e410] [cursor=pointer]:
+                            - /url: "#"
+                          - link "Licensing" [ref=f16e411] [cursor=pointer]:
+                            - /url: "#"
+                          - link "Contact" [ref=f16e412] [cursor=pointer]:
+                            - /url: "#"
+                - generic [ref=e427]:
+                  - generic [ref=e428]:
+                    - img [ref=e430]
+                    - img [ref=e433]
+                  - generic [ref=e435]: Click to explore
+              - generic [ref=e436]:
+                - generic [ref=e437]:
+                  - heading "Prestige Realty Funnel" [level=3] [ref=e438]
+                  - generic [ref=e439]: Appointment Funnel
+                - paragraph [ref=e440]: An appointment booking funnel for real estate businesses, capturing leads and scheduling property viewings automatically.
+                - generic [ref=e441]:
+                  - generic [ref=e442]: Appointment Funnel
+                  - generic [ref=e443]: Real Estate
+                  - generic [ref=e444]: Lead Capture
+                - link "Visit Live Site" [ref=e445] [cursor=pointer]:
+                  - /url: https://prestige-realty-funnel.vercel.app
+                  - button "Visit Live Site" [ref=e446]:
+                    - img
+                    - text: Visit Live Site
+              - link "Visit Prestige Realty Funnel" [ref=e447] [cursor=pointer]:
+                - /url: https://prestige-realty-funnel.vercel.app
+                - generic [ref=e448]: Visit Prestige Realty Funnel
+            - generic [ref=e449]:
+              - generic [ref=e455]:
+                - img [ref=e456]
+                - generic [ref=e459]: apex-media-funnel.vercel.app
+              - generic [ref=e460]:
+                - iframe [ref=e461]:
+                  - generic [active] [ref=f17e1]:
+                    - main [ref=f17e2]:
+                      - generic [ref=f17e3]: ⚡ LIMITED SLOTS AVAILABLE — Free Marketing Audit Closing Soon!
+                      - navigation [ref=f17e4]:
+                        - generic [ref=f17e5]: APEX MEDIA
+                        - button "Book a Call" [ref=f17e6]
+                      - generic [ref=f17e11]:
+                        - generic [ref=f17e12]:
+                          - paragraph [ref=f17e13]: Free Marketing Audit — No Credit Card Required
+                          - heading "Is Your Business Bleeding Revenue Every Single Day?" [level=1] [ref=f17e14]
+                          - paragraph [ref=f17e15]:
+                            - text: Get a
+                            - strong [ref=f17e16]: FREE, no-fluff audit
+                            - text: of your marketing strategy and discover exactly where you're losing money — and how to fix it fast.
+                          - generic [ref=f17e17]:
+                            - generic [ref=f17e19]:
+                              - generic [ref=f17e20]: 50+
+                              - generic [ref=f17e21]: Clients Helped
+                            - generic [ref=f17e24]:
+                              - generic [ref=f17e25]: 3.2x
+                              - generic [ref=f17e26]: Avg. ROI Increase
+                            - generic [ref=f17e29]:
+                              - generic [ref=f17e30]: 98%
+                              - generic [ref=f17e31]: Client Satisfaction
+                            - generic [ref=f17e34]:
+                              - generic [ref=f17e35]: "#1"
+                              - generic [ref=f17e36]: Rated Agency
+                          - generic [ref=f17e37]:
+                            - generic [ref=f17e38]: ★★★★★
+                            - generic [ref=f17e39]: 4.9/5 from 120+ reviews
+                        - generic [ref=f17e40]:
+                          - heading "Claim Your FREE Marketing Audit Now" [level=3] [ref=f17e41]:
+                            - text: Claim Your FREE
+                            - text: Marketing Audit Now
+                          - paragraph [ref=f17e42]: Takes less than 60 seconds. 100% free. No strings attached.
+                          - generic [ref=f17e43]:
+                            - generic [ref=f17e44]:
+                              - generic [ref=f17e45]: Full Name
+                              - textbox "Juan dela Cruz" [ref=f17e46]
+                            - generic [ref=f17e47]:
+                              - generic [ref=f17e48]: Email Address
+                              - textbox "juan@business.com" [ref=f17e49]
+                            - generic [ref=f17e50]:
+                              - generic [ref=f17e51]: Business Website
+                              - textbox "https://yourbusiness.com" [ref=f17e52]
+                            - button "YES! I Want My Free Audit →" [ref=f17e53]
+                          - generic [ref=f17e54]:
+                            - generic [ref=f17e55]: 🔒
+                            - paragraph [ref=f17e56]: Your info is 100% secure. We never spam or sell your data.
+                      - generic [ref=f17e58]:
+                        - paragraph [ref=f17e59]: Trusted By 50+ Growing Businesses
+                        - generic [ref=f17e60]:
+                          - generic [ref=f17e61]: NexGen Solutions
+                          - generic [ref=f17e62]: Boldco Digital
+                          - generic [ref=f17e63]: Vantara Group
+                          - generic [ref=f17e64]: PeakScale Media
+                          - generic [ref=f17e65]: CoreLift Agency
+                          - generic [ref=f17e66]: UpTrend Labs
+                          - generic [ref=f17e67]: BrightPath Co.
+                          - generic [ref=f17e68]: Scaleworks HQ
+                      - generic [ref=f17e69]:
+                        - generic [ref=f17e70]:
+                          - paragraph [ref=f17e71]: What You'll Discover
+                          - heading "Here's Exactly What You Get In Your Free Audit" [level=2] [ref=f17e72]
+                        - generic [ref=f17e73]:
+                          - generic [ref=f17e75]:
+                            - generic [ref=f17e76]: ✓
+                            - paragraph [ref=f17e77]:
+                              - strong [ref=f17e78]: "Your #1 traffic leak"
+                              - text: — the exact place where customers leave before buying
+                          - generic [ref=f17e80]:
+                            - generic [ref=f17e81]: ✓
+                            - paragraph [ref=f17e82]:
+                              - strong [ref=f17e83]: Conversion rate analysis
+                              - text: — see how your site stacks up vs. industry benchmarks
+                          - generic [ref=f17e85]:
+                            - generic [ref=f17e86]: ✓
+                            - paragraph [ref=f17e87]:
+                              - strong [ref=f17e88]: Ad spend waste report
+                              - text: — find out exactly where your budget is being burned
+                          - generic [ref=f17e90]:
+                            - generic [ref=f17e91]: ✓
+                            - paragraph [ref=f17e92]:
+                              - strong [ref=f17e93]: SEO opportunity map
+                              - text: — keywords and content gaps your competitors are winning
+                          - generic [ref=f17e95]:
+                            - generic [ref=f17e96]: ✓
+                            - paragraph [ref=f17e97]:
+                              - strong [ref=f17e98]: Quick-win action plan
+                              - text: — 3 things you can do THIS WEEK to see results
+                          - generic [ref=f17e100]:
+                            - generic [ref=f17e101]: ✓
+                            - paragraph [ref=f17e102]:
+                              - strong [ref=f17e103]: Competitor breakdown
+                              - text: — see what your top competitors are doing better
+                      - generic [ref=f17e105]:
+                        - generic [ref=f17e106]:
+                          - paragraph [ref=f17e107]: Proven Results
+                          - heading "Real Numbers From Real Audits" [level=2] [ref=f17e108]
+                          - paragraph [ref=f17e109]: These aren't estimates. These are actual results from businesses who went through our free audit.
+                        - generic [ref=f17e110]:
+                          - generic [ref=f17e112]:
+                            - generic [ref=f17e113]:
+                              - generic [ref=f17e114]:
+                                - paragraph [ref=f17e115]: NexGen Solutions
+                                - paragraph [ref=f17e116]: B2B SaaS
+                              - generic [ref=f17e117]: 47 days
+                            - generic [ref=f17e118]:
+                              - generic [ref=f17e119]:
+                                - generic [ref=f17e120]: BEFORE
+                                - paragraph [ref=f17e121]: $1,200/mo revenue from ads
+                              - generic [ref=f17e122]:
+                                - generic [ref=f17e123]: AFTER
+                                - paragraph [ref=f17e124]: $14,800/mo revenue from ads
+                              - paragraph [ref=f17e126]: 12.3x ROAS
+                          - generic [ref=f17e128]:
+                            - generic [ref=f17e129]:
+                              - generic [ref=f17e130]:
+                                - paragraph [ref=f17e131]: Boldco Digital
+                                - paragraph [ref=f17e132]: E-Commerce
+                              - generic [ref=f17e133]: 30 days
+                            - generic [ref=f17e134]:
+                              - generic [ref=f17e135]:
+                                - generic [ref=f17e136]: BEFORE
+                                - paragraph [ref=f17e137]: $8 cost per lead
+                              - generic [ref=f17e138]:
+                                - generic [ref=f17e139]: AFTER
+                                - paragraph [ref=f17e140]: $1.90 cost per lead
+                              - paragraph [ref=f17e142]: 76% reduction in CPL
+                          - generic [ref=f17e144]:
+                            - generic [ref=f17e145]:
+                              - generic [ref=f17e146]:
+                                - paragraph [ref=f17e147]: PeakScale Media
+                                - paragraph [ref=f17e148]: Coaching & Consulting
+                              - generic [ref=f17e149]: 21 days
+                            - generic [ref=f17e150]:
+                              - generic [ref=f17e151]:
+                                - generic [ref=f17e152]: BEFORE
+                                - paragraph [ref=f17e153]: 1.2% landing page CVR
+                              - generic [ref=f17e154]:
+                                - generic [ref=f17e155]: AFTER
+                                - paragraph [ref=f17e156]: 7.8% landing page CVR
+                              - paragraph [ref=f17e158]: 6.5x conversion lift
+                      - generic [ref=f17e159]:
+                        - generic [ref=f17e160]:
+                          - paragraph [ref=f17e161]: What Others Are Saying
+                          - heading "Real Results From Real Clients" [level=2] [ref=f17e162]
+                          - paragraph [ref=f17e163]: LinkedIn · Messenger · Email
+                        - generic [ref=f17e164]:
+                          - generic [ref=f17e167]:
+                            - generic [ref=f17e168]:
+                              - img "Marco" [ref=f17e170]
+                              - generic [ref=f17e171]:
+                                - generic [ref=f17e172]: Marco Reyes
+                                - generic [ref=f17e173]: CEO at NexGen Solutions · 1st
+                                - generic [ref=f17e174]:
+                                  - text: 3 days ago ·
+                                  - img [ref=f17e175]
+                              - generic [ref=f17e177]: + Follow
+                            - paragraph [ref=f17e178]:
+                              - text: 🚀
+                              - strong [ref=f17e179]: "Real talk: the Apex Media audit changed our business."
+                              - text: Found 3 major gaps in our funnel we had NO idea about. Within 60 days — leads doubled, CPA dropped 40%.
+                              - text: If you're running paid ads and haven't had an audit done, you're leaving serious money on the table.
+                              - text: "#DigitalMarketing #PaidAds #GrowthHacking"
+                            - generic [ref=f17e180]:
+                              - generic [ref=f17e181]:
+                                - generic [ref=f17e182]:
+                                  - generic [ref=f17e183]: 👍
+                                  - generic [ref=f17e184]: 💡
+                                - generic [ref=f17e185]: 312 · 47 comments
+                              - generic [ref=f17e186]:
+                                - button "👍 Like" [ref=f17e187]
+                                - button "💬 Comment" [ref=f17e188]
+                                - button "↗ Repost" [ref=f17e189]
+                                - button "✉ Send" [ref=f17e190]
+                          - generic [ref=f17e192]:
+                            - generic [ref=f17e193]:
+                              - img "Ana" [ref=f17e195]
+                              - generic [ref=f17e197]:
+                                - generic [ref=f17e198]: Ana Santos
+                                - generic [ref=f17e199]: Active now
+                              - img [ref=f17e201]
+                            - generic [ref=f17e203]:
+                              - generic [ref=f17e204]: Yesterday 4:52 PM
+                              - generic [ref=f17e205]:
+                                - img "Ana" [ref=f17e206]
+                                - paragraph [ref=f17e208]: hi!! i had to message you — the audit was a game changer 😭
+                              - generic [ref=f17e209]:
+                                - img "Ana" [ref=f17e210]
+                                - paragraph [ref=f17e212]: our ads went from 0.8x ROAS to 2.5x in 3 weeks after the fixes 🤯
+                              - paragraph [ref=f17e215]: Ana that's incredible!! So happy for you 🙌
+                              - generic [ref=f17e216]:
+                                - img "Ana" [ref=f17e217]
+                                - paragraph [ref=f17e219]: already referred 2 other founders. you guys are the real deal 💯
+                            - generic [ref=f17e220]:
+                              - generic [ref=f17e221]: Aa
+                              - img [ref=f17e222]
+                          - generic [ref=f17e225]:
+                            - generic [ref=f17e231]: Gmail — Inbox
+                            - generic [ref=f17e232]:
+                              - generic [ref=f17e233]:
+                                - generic [ref=f17e234]: Found $80k/month in waste 🤯
+                                - generic [ref=f17e235]:
+                                  - img "Rico" [ref=f17e236]
+                                  - generic [ref=f17e237]:
+                                    - strong [ref=f17e238]: Rico Mendoza
+                                    - text: <rico@vantaragroup.com>
+                                - generic [ref=f17e239]: "To: apex@apexmedia.com · 5 days ago"
+                              - generic [ref=f17e240]:
+                                - paragraph [ref=f17e241]: Team,
+                                - paragraph [ref=f17e242]:
+                                  - text: Just had to send a quick note — the audit you ran last month uncovered
+                                  - strong [ref=f17e243]: $80,000/month in wasted ad spend
+                                  - text: we had no idea about.
+                                - paragraph [ref=f17e244]: We've already recovered most of it. Best decision I've made for the business this year, by a wide margin.
+                                - paragraph [ref=f17e245]: Worth every single second. Thank you.
+                                - paragraph [ref=f17e246]:
+                                  - text: — Rico
+                                  - text: Owner, Vantara Group
+                              - generic [ref=f17e247]:
+                                - button "↩ Reply" [ref=f17e248]
+                                - button "→ Forward" [ref=f17e249]
+                      - generic [ref=f17e250]:
+                        - generic [ref=f17e251]:
+                          - paragraph [ref=f17e252]: Here's How It Works
+                          - heading "3 Simple Steps To Your Free Audit" [level=2] [ref=f17e253]
+                        - generic [ref=f17e254]:
+                          - generic [ref=f17e256]:
+                            - generic [ref=f17e257]:
+                              - generic [ref=f17e258]: "1"
+                              - heading "Fill the Form" [level=4] [ref=f17e259]
+                              - paragraph [ref=f17e260]: Enter your name, email, and website. Takes less than 60 seconds.
+                            - generic [ref=f17e261]: →
+                          - generic [ref=f17e263]:
+                            - generic [ref=f17e264]:
+                              - generic [ref=f17e265]: "2"
+                              - heading "We Run the Audit" [level=4] [ref=f17e266]
+                              - paragraph [ref=f17e267]: Our team analyzes your marketing within 24–48 hours.
+                            - generic [ref=f17e268]: →
+                          - generic [ref=f17e271]:
+                            - generic [ref=f17e272]: "3"
+                            - heading "Get Your Report" [level=4] [ref=f17e273]
+                            - paragraph [ref=f17e274]: Receive a detailed audit + action plan delivered to your inbox.
+                      - generic [ref=f17e276]:
+                        - generic [ref=f17e277]:
+                          - paragraph [ref=f17e278]: Got Questions?
+                          - heading "Frequently Asked Questions" [level=2] [ref=f17e279]
+                        - generic [ref=f17e280]:
+                          - generic [ref=f17e282]:
+                            - button "Is this audit really free? What's the catch? +" [ref=f17e283] [cursor=pointer]:
+                              - generic [ref=f17e284]: Is this audit really free? What's the catch?
+                              - generic [ref=f17e285]: +
+                            - paragraph [ref=f17e287]: No catch. We offer this free audit because it's the best way to show you the value we provide. If you see the results and want to work with us, great. If not, you still walk away with a full audit report — no cost, no pressure.
+                          - button "How long does the audit take? +" [ref=f17e290] [cursor=pointer]:
+                            - generic [ref=f17e291]: How long does the audit take?
+                            - generic [ref=f17e292]: +
+                          - button "What information do you need from me? +" [ref=f17e295] [cursor=pointer]:
+                            - generic [ref=f17e296]: What information do you need from me?
+                            - generic [ref=f17e297]: +
+                          - button "Will you try to sell me something after the audit? +" [ref=f17e300] [cursor=pointer]:
+                            - generic [ref=f17e301]: Will you try to sell me something after the audit?
+                            - generic [ref=f17e302]: +
+                          - button "What if my business is small — is this audit still relevant? +" [ref=f17e305] [cursor=pointer]:
+                            - generic [ref=f17e306]: What if my business is small — is this audit still relevant?
+                            - generic [ref=f17e307]: +
+                          - button "How many audits do you offer per week? +" [ref=f17e310] [cursor=pointer]:
+                            - generic [ref=f17e311]: How many audits do you offer per week?
+                            - generic [ref=f17e312]: +
+                      - generic [ref=f17e313]:
+                        - heading "Get Your FREE Audit Before Slots Run Out" [level=2] [ref=f17e314]:
+                          - text: Get Your FREE Audit
+                          - text: Before Slots Run Out
+                        - paragraph [ref=f17e315]: We only take 10 free audits per month. Don't miss your slot.
+                        - button "YES! Claim My Free Audit Now →" [ref=f17e316]
+                        - paragraph [ref=f17e317]: "⚠️ Warning: Slots Disappear When the 10 Spots Are Filled!"
+                      - paragraph [ref=f17e319]: © 2026 Apex Media. All rights reserved. | Privacy Policy | Terms of Service
+                    - alert [ref=f17e320]
+                - generic [ref=e463]:
+                  - generic [ref=e464]:
+                    - img [ref=e466]
+                    - img [ref=e469]
+                  - generic [ref=e471]: Click to explore
+              - generic [ref=e472]:
+                - generic [ref=e473]:
+                  - heading "Apex Media Funnel" [level=3] [ref=e474]
+                  - generic [ref=e475]: Lead Funnel
+                - paragraph [ref=e476]: A lead generation funnel for media agencies, designed to capture and qualify prospects through strategic content.
+                - generic [ref=e477]:
+                  - generic [ref=e478]: Lead Funnel
+                  - generic [ref=e479]: Agency
+                  - generic [ref=e480]: Marketing
+                - link "Visit Live Site" [ref=e481] [cursor=pointer]:
+                  - /url: https://apex-media-funnel.vercel.app
+                  - button "Visit Live Site" [ref=e482]:
+                    - img
+                    - text: Visit Live Site
+              - link "Visit Apex Media Funnel" [ref=e483] [cursor=pointer]:
+                - /url: https://apex-media-funnel.vercel.app
+                - generic [ref=e484]: Visit Apex Media Funnel
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - generic [ref=e273]:
+            - img [ref=e274]
+            - generic [ref=e279]: Interactive Planner Tools
+          - heading "Custom Planner Projects" [level=2] [ref=e280]
+          - paragraph [ref=e281]: A collection of custom-built planner and calculator tools designed to streamline real-world workflows.
+        - generic [ref=e282]:
+          - button "Open Custom Planner Projects folder" [ref=e485] [cursor=pointer]:
+            - generic [ref=e490]:
+              - img [ref=e491]
+              - generic [ref=e493]: Custom Planner Projects
+              - generic [ref=e494]: 3 projects inside
+          - paragraph [ref=e495]: Click the folder to view projects
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - img [ref=e299]
+            - generic [ref=e301]: Interactive Dashboards
+          - heading "Live Dashboards" [level=2] [ref=e302]
+          - paragraph [ref=e303]: Explore real-time dashboards I've built — use the login credentials below to test and interact with each dashboard.
+        - generic [ref=e304]:
+          - button "Open Live Dashboards folder" [ref=e305] [cursor=pointer]:
+            - generic [ref=e310]:
+              - img [ref=e311]
+              - generic [ref=e313]: Live Dashboards
+              - generic [ref=e314]: 3 projects inside
+          - paragraph [ref=e315]: Click the folder to view projects
+      - generic [ref=e318]:
+        - generic [ref=e319]:
+          - generic [ref=e320]:
+            - img [ref=e321]
+            - generic [ref=e323]: Book a Call
+          - heading "Schedule a Meeting" [level=2] [ref=e324]
+          - paragraph [ref=e325]: Ready to discuss your project? Book a free consultation call and let's explore how I can help automate your business processes.
+        - iframe [ref=e328]:
+          - generic [active] [ref=f11e1]:
+            - img
+            - main [ref=f11e3]:
+              - generic [ref=f11e4]:
+                - generic [ref=f11e5]:
+                  - generic [ref=f11e9]:
+                    - switch [ref=f11e11] [cursor=pointer]
+                    - generic [ref=f11e12]: Overlay my calendar
+                  - generic [ref=f11e16]:
+                    - list [ref=f11e17]:
+                      - listitem [ref=f11e18]:
+                        - link "Dawn Solomon" [ref=f11e19] [cursor=pointer]:
+                          - /url: https://cal.com/dawn-solomon-gseqme?redirect=false
+                          - img "Dawn Solomon" [ref=f11e21]
+                    - paragraph [ref=f11e22]: Dawn Solomon
+                    - heading "15 min meeting" [level=1] [ref=f11e23]
+                    - generic [ref=f11e24]:
+                      - generic [ref=f11e25]:
+                        - img [ref=f11e26]
+                        - generic [ref=f11e29]: 15m
+                      - generic [ref=f11e32]:
+                        - img "map-pin" [ref=f11e33]
+                        - paragraph [ref=f11e34]: 2 location options
+                      - generic [ref=f11e36] [cursor=pointer]:
+                        - img [ref=f11e37]
+                        - generic [ref=f11e46]:
+                          - generic [ref=f11e47]:
+                            - paragraph [ref=f11e49]: Asia/Manila
+                            - combobox "Timezone Select" [ref=f11e51]
+                          - img [ref=f11e55]
+                  - generic [ref=f11e58]:
+                    - generic [ref=f11e59]:
+                      - time [ref=f11e61]:
+                        - strong [ref=f11e62]: May
+                        - text: "2026"
+                      - generic [ref=f11e64]:
+                        - button "View previous month" [disabled] [ref=f11e65]:
+                          - img [ref=f11e66]
+                        - button "View next month" [ref=f11e68] [cursor=pointer]:
+                          - img [ref=f11e69]
+                    - generic [ref=f11e71]:
+                      - generic [ref=f11e72]: Sun
+                      - generic [ref=f11e73]: Mon
+                      - generic [ref=f11e74]: Tue
+                      - generic [ref=f11e75]: Wed
+                      - generic [ref=f11e76]: Thu
+                      - generic [ref=f11e77]: Fri
+                      - generic [ref=f11e78]: Sat
+                    - generic [ref=f11e79]:
+                      - button "1" [disabled] [ref=f11e86]
+                      - button "2" [disabled] [ref=f11e88]
+                      - button "3" [disabled] [ref=f11e90]
+                      - button "4" [disabled] [ref=f11e92]
+                      - button "5" [disabled] [ref=f11e94]
+                      - button "6" [disabled] [ref=f11e96]
+                      - button "7" [disabled] [ref=f11e98]
+                      - button "8" [disabled] [ref=f11e100]
+                      - button "9" [disabled] [ref=f11e102]
+                      - button "10" [disabled] [ref=f11e104]
+                      - button "11" [disabled] [ref=f11e106]
+                      - button "12" [disabled] [ref=f11e108]
+                      - button "13" [disabled] [ref=f11e110]
+                      - button "14 Today" [ref=f11e112]:
+                        - text: "14"
+                        - generic [ref=f11e114]: Today
+                      - button "15" [ref=f11e116]
+                      - button "16" [ref=f11e118]
+                      - button "17" [ref=f11e120]
+                      - button "18" [ref=f11e122]
+                      - button "19" [ref=f11e124]
+                      - button "20" [ref=f11e126]
+                      - button "21" [ref=f11e128]
+                      - button "22" [ref=f11e130]
+                      - button "23" [ref=f11e132]
+                      - button "24" [ref=f11e134]
+                      - button "25" [ref=f11e136]
+                      - button "26" [ref=f11e138]
+                      - button "27" [ref=f11e140]
+                      - button "28" [ref=f11e142]
+                      - button "29" [ref=f11e144]
+                      - button "30" [ref=f11e146]
+                      - button "31" [ref=f11e148]
+                  - generic [ref=f11e149]:
+                    - generic [ref=f11e151]:
+                      - generic [ref=f11e152]:
+                        - text: Thu
+                        - generic [ref=f11e153]: "14"
+                      - group "Time format" [ref=f11e155]:
+                        - radio "12h" [checked] [ref=f11e156] [cursor=pointer]:
+                          - generic [ref=f11e157]: 12h
+                        - radio "24h" [ref=f11e158] [cursor=pointer]:
+                          - generic [ref=f11e159]: 24h
+                    - generic [ref=f11e163]:
+                      - button "5:45am" [ref=f11e165] [cursor=pointer]:
+                        - generic [ref=f11e168]: 5:45am
+                      - button "6:00am" [ref=f11e170] [cursor=pointer]:
+                        - generic [ref=f11e173]: 6:00am
+                      - button "6:15am" [ref=f11e175] [cursor=pointer]:
+                        - generic [ref=f11e178]: 6:15am
+                      - button "6:30am" [ref=f11e180] [cursor=pointer]:
+                        - generic [ref=f11e183]: 6:30am
+                      - button "6:45am" [ref=f11e185] [cursor=pointer]:
+                        - generic [ref=f11e188]: 6:45am
+                      - button "7:00am" [ref=f11e190] [cursor=pointer]:
+                        - generic [ref=f11e193]: 7:00am
+                      - button "7:15am" [ref=f11e195] [cursor=pointer]:
+                        - generic [ref=f11e198]: 7:15am
+                      - button "7:30am" [ref=f11e200] [cursor=pointer]:
+                        - generic [ref=f11e203]: 7:30am
+                      - button "7:45am" [ref=f11e205] [cursor=pointer]:
+                        - generic [ref=f11e208]: 7:45am
+                      - button "8:00am" [ref=f11e210] [cursor=pointer]:
+                        - generic [ref=f11e213]: 8:00am
+                      - button "8:15am" [ref=f11e215] [cursor=pointer]:
+                        - generic [ref=f11e218]: 8:15am
+                      - button "8:30am" [ref=f11e220] [cursor=pointer]:
+                        - generic [ref=f11e223]: 8:30am
+                      - button "8:45am" [ref=f11e225] [cursor=pointer]:
+                        - generic [ref=f11e228]: 8:45am
+                      - button "9:00am" [ref=f11e230] [cursor=pointer]:
+                        - generic [ref=f11e233]: 9:00am
+                      - button "9:15am" [ref=f11e235] [cursor=pointer]:
+                        - generic [ref=f11e238]: 9:15am
+                      - button "9:30am" [ref=f11e240] [cursor=pointer]:
+                        - generic [ref=f11e243]: 9:30am
+                      - button "9:45am" [ref=f11e245] [cursor=pointer]:
+                        - generic [ref=f11e248]: 9:45am
+                      - button "10:00am" [ref=f11e250] [cursor=pointer]:
+                        - generic [ref=f11e253]: 10:00am
+                      - button "10:15am" [ref=f11e255] [cursor=pointer]:
+                        - generic [ref=f11e258]: 10:15am
+                      - button "10:30am" [ref=f11e260] [cursor=pointer]:
+                        - generic [ref=f11e263]: 10:30am
+                      - button "10:45am" [ref=f11e265] [cursor=pointer]:
+                        - generic [ref=f11e268]: 10:45am
+                      - button "11:00am" [ref=f11e270] [cursor=pointer]:
+                        - generic [ref=f11e273]: 11:00am
+                      - button "11:15am" [ref=f11e275] [cursor=pointer]:
+                        - generic [ref=f11e278]: 11:15am
+                      - button "11:30am" [ref=f11e280] [cursor=pointer]:
+                        - generic [ref=f11e283]: 11:30am
+                      - button "11:45am" [ref=f11e285] [cursor=pointer]:
+                        - generic [ref=f11e288]: 11:45am
+                      - button "12:00pm" [ref=f11e290] [cursor=pointer]:
+                        - generic [ref=f11e293]: 12:00pm
+                      - button "12:15pm" [ref=f11e295] [cursor=pointer]:
+                        - generic [ref=f11e298]: 12:15pm
+                      - button "12:30pm" [ref=f11e300] [cursor=pointer]:
+                        - generic [ref=f11e303]: 12:30pm
+                      - button "1:00pm" [ref=f11e305] [cursor=pointer]:
+                        - generic [ref=f11e308]: 1:00pm
+                      - button "1:15pm" [ref=f11e310] [cursor=pointer]:
+                        - generic [ref=f11e313]: 1:15pm
+                      - button "1:30pm" [ref=f11e315] [cursor=pointer]:
+                        - generic [ref=f11e318]: 1:30pm
+                      - button "1:45pm" [ref=f11e320] [cursor=pointer]:
+                        - generic [ref=f11e323]: 1:45pm
+                      - button "2:00pm" [ref=f11e325] [cursor=pointer]:
+                        - generic [ref=f11e328]: 2:00pm
+                      - button "2:15pm" [ref=f11e330] [cursor=pointer]:
+                        - generic [ref=f11e333]: 2:15pm
+                      - button "2:30pm" [ref=f11e335] [cursor=pointer]:
+                        - generic [ref=f11e338]: 2:30pm
+                      - button "2:45pm" [ref=f11e340] [cursor=pointer]:
+                        - generic [ref=f11e343]: 2:45pm
+                      - button "3:00pm" [ref=f11e345] [cursor=pointer]:
+                        - generic [ref=f11e348]: 3:00pm
+                      - button "3:15pm" [ref=f11e350] [cursor=pointer]:
+                        - generic [ref=f11e353]: 3:15pm
+                      - button "3:30pm" [ref=f11e355] [cursor=pointer]:
+                        - generic [ref=f11e358]: 3:30pm
+                      - button "3:45pm" [ref=f11e360] [cursor=pointer]:
+                        - generic [ref=f11e363]: 3:45pm
+                      - button "4:00pm" [ref=f11e365] [cursor=pointer]:
+                        - generic [ref=f11e368]: 4:00pm
+                      - button "4:15pm" [ref=f11e370] [cursor=pointer]:
+                        - generic [ref=f11e373]: 4:15pm
+                      - button "4:30pm" [ref=f11e375] [cursor=pointer]:
+                        - generic [ref=f11e378]: 4:30pm
+                      - button "4:45pm" [ref=f11e380] [cursor=pointer]:
+                        - generic [ref=f11e383]: 4:45pm
+                      - button "5:00pm" [ref=f11e385] [cursor=pointer]:
+                        - generic [ref=f11e388]: 5:00pm
+                      - button "5:15pm" [ref=f11e390] [cursor=pointer]:
+                        - generic [ref=f11e393]: 5:15pm
+                      - button "5:30pm" [ref=f11e395] [cursor=pointer]:
+                        - generic [ref=f11e398]: 5:30pm
+                      - button "5:45pm" [ref=f11e400] [cursor=pointer]:
+                        - generic [ref=f11e403]: 5:45pm
+                      - button "6:00pm" [ref=f11e405] [cursor=pointer]:
+                        - generic [ref=f11e408]: 6:00pm
+                      - button "6:15pm" [ref=f11e410] [cursor=pointer]:
+                        - generic [ref=f11e413]: 6:15pm
+                      - button "6:30pm" [ref=f11e415] [cursor=pointer]:
+                        - generic [ref=f11e418]: 6:30pm
+                      - button "6:45pm" [ref=f11e420] [cursor=pointer]:
+                        - generic [ref=f11e423]: 6:45pm
+                      - button "7:00pm" [ref=f11e425] [cursor=pointer]:
+                        - generic [ref=f11e428]: 7:00pm
+                      - button "7:15pm" [ref=f11e430] [cursor=pointer]:
+                        - generic [ref=f11e433]: 7:15pm
+                      - button "7:30pm" [ref=f11e435] [cursor=pointer]:
+                        - generic [ref=f11e438]: 7:30pm
+                      - button "7:45pm" [ref=f11e440] [cursor=pointer]:
+                        - generic [ref=f11e443]: 7:45pm
+                      - button "8:00pm" [ref=f11e445] [cursor=pointer]:
+                        - generic [ref=f11e448]: 8:00pm
+                      - button "8:15pm" [ref=f11e450] [cursor=pointer]:
+                        - generic [ref=f11e453]: 8:15pm
+                      - button "8:30pm" [ref=f11e455] [cursor=pointer]:
+                        - generic [ref=f11e458]: 8:30pm
+                      - button "8:45pm" [ref=f11e460] [cursor=pointer]:
+                        - generic [ref=f11e463]: 8:45pm
+                      - button "9:00pm" [ref=f11e465] [cursor=pointer]:
+                        - generic [ref=f11e468]: 9:00pm
+                      - button "9:15pm" [ref=f11e470] [cursor=pointer]:
+                        - generic [ref=f11e473]: 9:15pm
+                      - button "9:30pm" [ref=f11e475] [cursor=pointer]:
+                        - generic [ref=f11e478]: 9:30pm
+                      - button "9:45pm" [ref=f11e480] [cursor=pointer]:
+                        - generic [ref=f11e483]: 9:45pm
+                      - button "10:00pm" [ref=f11e485] [cursor=pointer]:
+                        - generic [ref=f11e488]: 10:00pm
+                      - button "10:15pm" [ref=f11e490] [cursor=pointer]:
+                        - generic [ref=f11e493]: 10:15pm
+                      - button "10:30pm" [ref=f11e495] [cursor=pointer]:
+                        - generic [ref=f11e498]: 10:30pm
+                      - button "10:45pm" [ref=f11e500] [cursor=pointer]:
+                        - generic [ref=f11e503]: 10:45pm
+                      - button "11:00pm" [ref=f11e505] [cursor=pointer]:
+                        - generic [ref=f11e508]: 11:00pm
+                      - button "11:15pm" [ref=f11e510] [cursor=pointer]:
+                        - generic [ref=f11e513]: 11:15pm
+                      - button "11:30pm" [ref=f11e515] [cursor=pointer]:
+                        - generic [ref=f11e518]: 11:30pm
+                      - button "11:45pm" [ref=f11e520] [cursor=pointer]:
+                        - generic [ref=f11e523]: 11:45pm
+                - link "Cal.com Logo" [ref=f11e526] [cursor=pointer]:
+                  - /url: https://go.cal.com/booking
+                  - img "Cal.com Logo" [ref=f11e527]
+              - region "Notifications alt+T"
+            - alert [ref=f11e528]
+            - generic:
+              - region "Notifications"
+            - generic:
+              - region "Notifications"
+      - generic [ref=e332]:
+        - generic [ref=e333]:
+          - generic [ref=e334]:
+            - heading "Let's Work Together!" [level=2] [ref=e335]
+            - paragraph [ref=e336]: I am available for freelance projects.
+            - link "Book a Call" [ref=e337] [cursor=pointer]:
+              - /url: "#booking"
+              - img
+              - generic [ref=e338]: Book a Call
+          - generic [ref=e339]:
+            - heading "Get In Touch" [level=3] [ref=e340]
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - img [ref=e343]
+                - generic [ref=e346]:
+                  - paragraph [ref=e347]: Address
+                  - paragraph [ref=e348]: Laguna, Philippines
+              - generic [ref=e349]:
+                - img [ref=e350]
+                - generic [ref=e353]:
+                  - paragraph [ref=e354]: Email
+                  - link "dawnsolomon482@gmail.com" [ref=e355] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/?view=cm&fs=1&to=dawnsolomon482@gmail.com
+              - link [ref=e357] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dawnsolomon482-automation-wordpress-seo-specialist/
+                - img [ref=e358]
+        - generic [ref=e362]:
+          - generic [ref=e364]: Dawn Solomon
+          - paragraph [ref=e365]: Copyright © 2026 Dawn Solomon. All rights reserved.
+    - button "Chat with AI" [ref=e366] [cursor=pointer]:
+      - img [ref=e367]
+      - generic [ref=e369]: Chat with AI

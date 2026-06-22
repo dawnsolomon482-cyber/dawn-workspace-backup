@@ -1,0 +1,326 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e6]:
+        - link "Dawn Solomon" [ref=e7] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e9]: Dawn Solomon
+        - button [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - img "Dawn Solomon - GHL Automation Specialist and AI Engineer" [ref=e23]
+            - img [ref=e25]
+          - generic [ref=e33]: Open for Freelance Projects
+          - heading "Automation That Saves Time, Money, and Focus." [level=1] [ref=e34]:
+            - text: Automation That Saves Time, Money,
+            - text: and Focus.
+          - paragraph [ref=e35]: Your Partner in AI & Business Automation.
+          - generic [ref=e36]:
+            - link "Book a Call" [ref=e37] [cursor=pointer]:
+              - /url: "#booking"
+              - generic [ref=e38]: Book a Call
+            - link "View My Work" [ref=e39] [cursor=pointer]:
+              - /url: "#projects"
+              - generic [ref=e40]: View My Work
+              - img
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - generic [ref=e45]: Let's transform your manual workflows into smart systems.
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - heading "Calculate Your ROI" [level=2] [ref=e48]
+            - paragraph [ref=e49]: See how much time and money automation can save your business.
+          - button "Calculate Your ROI" [ref=e51] [cursor=pointer]:
+            - img
+            - text: Calculate Your ROI
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: Better systems. Bigger impact.
+          - paragraph [ref=e55]: — My Motto
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - paragraph [ref=e61]: THE ARCHITECT BEHIND THE AUTOMATION
+          - heading "I'm Dawn Solomon." [level=2] [ref=e62]
+          - paragraph [ref=e63]: Automation Engineer | WordPress SEO | AI Visibility
+          - paragraph [ref=e64]: I design end-to-end automation solutions using tools like GoHighLevel, Zapier (Integromat), and n8n, seamlessly connecting marketing, CRM, and operations into one intelligent ecosystem that runs on autopilot. With a solid foundation in WordPress SEO and LLMS visibility, I understand how systems, data, and strategy work together to create sustainable digital growth.
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - generic [ref=e70]: Laguna, Philippines
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - generic [ref=e75]: dawnsolomon482@gmail.com
+            - generic [ref=e76]:
+              - img [ref=e77]
+              - generic [ref=e80]: Freelancer
+        - generic [ref=e81]:
+          - generic [ref=e84]:
+            - img [ref=e86]
+            - heading "My Vision" [level=3] [ref=e89]
+            - paragraph [ref=e90]: A world where founders and teams focus purely on creative, high-impact work, while robots handle 100% of the repetitive admin.
+          - generic [ref=e93]:
+            - img [ref=e95]
+            - heading "My Goal" [level=3] [ref=e99]
+            - paragraph [ref=e100]: To transform manual workflows into smart, self-running systems that multiply your time, productivity, and revenue.
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - heading "Workflow Automation" [level=2] [ref=e105]
+          - paragraph [ref=e106]: Real-world scenarios solved with precision. These projects showcase my automation expertise.
+        - generic [ref=e107]:
+          - generic [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]:
+              - img "Auto Sort Gmail Attachments" [ref=e111]
+              - generic [ref=e114]: Click to view full image
+            - generic [ref=e115]:
+              - generic [ref=e116]: Automation
+              - heading "Auto Sort Gmail Attachments" [level=3] [ref=e117]
+              - paragraph [ref=e118]: Automated workflow that sorts and organizes Gmail attachments into Google Drive folders.
+              - generic [ref=e119]:
+                - generic [ref=e120]: Make
+                - generic [ref=e121]: Gmail
+                - generic [ref=e122]: Google Drive
+              - generic [ref=e123]:
+                - generic [ref=e124]:
+                  - paragraph [ref=e125]: 5 Hrs/Wk
+                  - paragraph [ref=e126]: Time Saved
+                - generic [ref=e127]:
+                  - paragraph [ref=e128]: 100%
+                  - paragraph [ref=e129]: Accuracy
+          - generic:
+            - generic:
+              - generic:
+                - img "4 Quote Follow up Automation"
+              - generic:
+                - generic: Automation
+                - heading "4 Quote Follow up Automation" [level=3]
+                - paragraph: Zapier automation that handles task tracking and email follow-ups across multiple workflow stages.
+                - generic:
+                  - generic: Zapier
+                  - generic: Asana
+                  - generic: Gmail
+                - generic:
+                  - generic:
+                    - paragraph: 5+
+                    - paragraph: Workflow Stages
+                  - generic:
+                    - paragraph: 20+
+                    - paragraph: Auto Emails
+          - generic:
+            - generic:
+              - generic:
+                - img "Lead to Booking – HVAC NPCS"
+              - generic:
+                - generic: Automation
+                - heading "Lead to Booking – HVAC NPCS" [level=3]
+                - paragraph: "Lead to Booking – HVAC NPCS: A fully automated GoHighLevel workflow that captures leads and books appointments automatically, eliminating manual follow-ups and streamlining the entire sales pipeline."
+                - generic:
+                  - generic: GoHighLevel
+                  - generic: Workflow
+                  - generic: CRM
+                - generic:
+                  - generic:
+                    - paragraph: 100%
+                    - paragraph: Project Base
+                  - generic:
+                    - paragraph: 100%
+                    - paragraph: Accuracy
+          - button [ref=e130] [cursor=pointer]:
+            - img [ref=e131]
+          - button [ref=e133] [cursor=pointer]:
+            - img [ref=e134]
+          - generic [ref=e136]:
+            - button [ref=e137] [cursor=pointer]
+            - button [ref=e138] [cursor=pointer]
+            - button [ref=e139] [cursor=pointer]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - img "ClickUp" [ref=e144]
+              - generic [ref=e145]: ClickUp
+            - generic [ref=e146]:
+              - img "Tally" [ref=e147]
+              - generic [ref=e148]: Tally
+            - generic [ref=e149]:
+              - img "Jotform" [ref=e150]
+              - generic [ref=e151]: Jotform
+            - generic [ref=e152]:
+              - img "Systeme.io" [ref=e153]
+              - generic [ref=e154]: Systeme.io
+            - generic [ref=e155]:
+              - img "QuickBooks" [ref=e156]
+              - generic [ref=e157]: QuickBooks
+            - generic [ref=e158]:
+              - img "Notion" [ref=e159]
+              - generic [ref=e160]: Notion
+            - generic [ref=e161]:
+              - img "Trello" [ref=e162]
+              - generic [ref=e163]: Trello
+            - generic [ref=e164]:
+              - img "Slack" [ref=e165]
+              - generic [ref=e166]: Slack
+            - generic [ref=e167]:
+              - img "Zoom" [ref=e168]
+              - generic [ref=e169]: Zoom
+            - generic [ref=e170]:
+              - img "ChatGPT" [ref=e171]
+              - generic [ref=e172]: ChatGPT
+            - generic [ref=e173]:
+              - img "Gemini" [ref=e174]
+              - generic [ref=e175]: Gemini
+            - generic [ref=e176]:
+              - img "Mailchimp" [ref=e177]
+              - generic [ref=e178]: Mailchimp
+            - generic [ref=e179]:
+              - img "WordPress" [ref=e180]
+              - generic [ref=e181]: WordPress
+            - generic [ref=e182]:
+              - img "Canva" [ref=e183]
+              - generic [ref=e184]: Canva
+            - generic [ref=e185]:
+              - img "Shopify" [ref=e186]
+              - generic [ref=e187]: Shopify
+            - generic [ref=e188]:
+              - img "Zapier" [ref=e189]
+              - generic [ref=e190]: Zapier
+            - generic [ref=e191]:
+              - img "Airtable" [ref=e192]
+              - generic [ref=e193]: Airtable
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - img "ClickUp" [ref=e196]
+              - generic [ref=e197]: ClickUp
+            - generic [ref=e198]:
+              - img "Tally" [ref=e199]
+              - generic [ref=e200]: Tally
+            - generic [ref=e201]:
+              - img "Jotform" [ref=e202]
+              - generic [ref=e203]: Jotform
+            - generic [ref=e204]:
+              - img "Systeme.io" [ref=e205]
+              - generic [ref=e206]: Systeme.io
+            - generic [ref=e207]:
+              - img "QuickBooks" [ref=e208]
+              - generic [ref=e209]: QuickBooks
+            - generic [ref=e210]:
+              - img "Notion" [ref=e211]
+              - generic [ref=e212]: Notion
+            - generic [ref=e213]:
+              - img "Trello" [ref=e214]
+              - generic [ref=e215]: Trello
+            - generic [ref=e216]:
+              - img "Slack" [ref=e217]
+              - generic [ref=e218]: Slack
+            - generic [ref=e219]:
+              - img "Zoom" [ref=e220]
+              - generic [ref=e221]: Zoom
+            - generic [ref=e222]:
+              - img "ChatGPT" [ref=e223]
+              - generic [ref=e224]: ChatGPT
+            - generic [ref=e225]:
+              - img "Gemini" [ref=e226]
+              - generic [ref=e227]: Gemini
+            - generic [ref=e228]:
+              - img "Mailchimp" [ref=e229]
+              - generic [ref=e230]: Mailchimp
+            - generic [ref=e231]:
+              - img "WordPress" [ref=e232]
+              - generic [ref=e233]: WordPress
+            - generic [ref=e234]:
+              - img "Canva" [ref=e235]
+              - generic [ref=e236]: Canva
+            - generic [ref=e237]:
+              - img "Shopify" [ref=e238]
+              - generic [ref=e239]: Shopify
+            - generic [ref=e240]:
+              - img "Zapier" [ref=e241]
+              - generic [ref=e242]: Zapier
+            - generic [ref=e243]:
+              - img "Airtable" [ref=e244]
+              - generic [ref=e245]: Airtable
+      - generic [ref=e248]:
+        - generic [ref=e249]:
+          - generic [ref=e250]:
+            - img [ref=e251]
+            - generic [ref=e254]: Live & Interactive
+          - heading "Explore Live Websites" [level=2] [ref=e255]
+          - paragraph [ref=e256]: Browse my live website projects — click to explore them in real-time and see the quality of work firsthand.
+        - generic [ref=e257]:
+          - button "Open Explore Live Websites folder" [ref=e258] [cursor=pointer]:
+            - generic [ref=e263]:
+              - img [ref=e264]
+              - generic [ref=e266]: Explore Live Websites
+              - generic [ref=e267]: 3 projects inside
+          - paragraph [ref=e268]: Click the folder to view projects
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - generic [ref=e273]:
+            - img [ref=e274]
+            - generic [ref=e279]: Interactive Planner Tools
+          - heading "Custom Planner Projects" [level=2] [ref=e280]
+          - paragraph [ref=e281]: A collection of custom-built planner and calculator tools designed to streamline real-world workflows.
+        - generic [ref=e282]:
+          - button "Open Custom Planner Projects folder" [ref=e283] [cursor=pointer]:
+            - generic [ref=e288]:
+              - img [ref=e289]
+              - generic [ref=e291]: Custom Planner Projects
+              - generic [ref=e292]: 3 projects inside
+          - paragraph [ref=e293]: Click the folder to view projects
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - img [ref=e299]
+            - generic [ref=e301]: Interactive Dashboards
+          - heading "Live Dashboards" [level=2] [ref=e302]
+          - paragraph [ref=e303]: Explore real-time dashboards I've built — use the login credentials below to test and interact with each dashboard.
+        - generic [ref=e304]:
+          - button "Open Live Dashboards folder" [ref=e305] [cursor=pointer]:
+            - generic [ref=e310]:
+              - img [ref=e311]
+              - generic [ref=e313]: Live Dashboards
+              - generic [ref=e314]: 3 projects inside
+          - paragraph [ref=e315]: Click the folder to view projects
+      - generic [ref=e318]:
+        - generic [ref=e319]:
+          - generic [ref=e320]:
+            - img [ref=e321]
+            - generic [ref=e323]: Book a Call
+          - heading "Schedule a Meeting" [level=2] [ref=e324]
+          - paragraph [ref=e325]: Ready to discuss your project? Book a free consultation call and let's explore how I can help automate your business processes.
+        - iframe [ref=e328]
+      - generic [ref=e332]:
+        - generic [ref=e333]:
+          - generic [ref=e334]:
+            - heading "Let's Work Together!" [level=2] [ref=e335]
+            - paragraph [ref=e336]: I am available for freelance projects.
+            - link "Book a Call" [ref=e337] [cursor=pointer]:
+              - /url: "#booking"
+              - img
+              - generic [ref=e338]: Book a Call
+          - generic [ref=e339]:
+            - heading "Get In Touch" [level=3] [ref=e340]
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - img [ref=e343]
+                - generic [ref=e346]:
+                  - paragraph [ref=e347]: Address
+                  - paragraph [ref=e348]: Laguna, Philippines
+              - generic [ref=e349]:
+                - img [ref=e350]
+                - generic [ref=e353]:
+                  - paragraph [ref=e354]: Email
+                  - link "dawnsolomon482@gmail.com" [ref=e355] [cursor=pointer]:
+                    - /url: https://mail.google.com/mail/?view=cm&fs=1&to=dawnsolomon482@gmail.com
+              - link [ref=e357] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dawnsolomon482-automation-wordpress-seo-specialist/
+                - img [ref=e358]
+        - generic [ref=e362]:
+          - generic [ref=e364]: Dawn Solomon
+          - paragraph [ref=e365]: Copyright © 2026 Dawn Solomon. All rights reserved.
+    - button "Chat with AI" [ref=e366] [cursor=pointer]:
+      - img [ref=e367]
+      - generic [ref=e369]: Chat with AI

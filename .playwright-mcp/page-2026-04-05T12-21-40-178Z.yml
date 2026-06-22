@@ -1,0 +1,266 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e3]:
+    - generic [ref=e9]:
+      - text: Book A 30-Min. Discovery Call with our team Today
+      - strong [ref=e10]:
+        - link "+1 (800) 230-5165" [ref=e11] [cursor=pointer]:
+          - /url: tel:18002305165
+      - link "Book a Call" [ref=e12] [cursor=pointer]:
+        - /url: https://calendly.com/cci-schedule/30-minute-discovery-call-with-chris-collins-inc?utm_source=website&utm_medium=site-traffic&utm_campaign=null&utm_content=discovery-call&utm_term=null
+    - generic [ref=e15]:
+      - link "Stylized face graphic with “Chris Collins Inc.” text logo" [ref=e19] [cursor=pointer]:
+        - /url: /
+        - img "Stylized face graphic with “Chris Collins Inc.” text logo" [ref=e20]
+      - button "Menu Toggle" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: 
+        - text: 
+  - generic [ref=e26]:
+    - generic [ref=e31]:
+      - heading "2026 is the year for fixed ops" [level=1] [ref=e33]:
+        - text: 2026 is the year
+        - text: for fixed ops
+      - heading "Get ahead of your competition" [level=3] [ref=e35]
+      - generic [ref=e37]:
+        - generic [ref=e39]:
+          - generic [ref=e41]:
+            - figure [ref=e42]:
+              - img "Black icon of a person with a speech bubble containing a heart symbol representing customer feedback or positive communication." [ref=e43]
+            - generic [ref=e44]:
+              - heading "Dealer Support" [level=3] [ref=e45]
+              - paragraph [ref=e46]: I'm aN OWNER/GM/Dealer Principal seeking support for my ENTIRE fixed opERATIONs department
+          - link "shop support" [ref=e48] [cursor=pointer]:
+            - /url: "#support"
+            - generic [ref=e49]:
+              - generic [ref=e51]: 
+              - generic [ref=e52]: shop support
+        - generic [ref=e54]:
+          - generic [ref=e56]:
+            - figure [ref=e57]:
+              - img "Black icon of a hand holding a coin symbolizing financial support or payment." [ref=e58]
+            - generic [ref=e59]:
+              - heading "FULL Team Training" [level=3] [ref=e60]
+              - paragraph [ref=e61]: I'm a SERVICE manager looking to equip my FIXED OPS staff with the skills we need
+          - link "shop training" [ref=e63] [cursor=pointer]:
+            - /url: "#team"
+            - generic [ref=e64]:
+              - generic [ref=e66]: 
+              - generic [ref=e67]: shop training
+        - generic [ref=e69]:
+          - generic [ref=e71]:
+            - figure [ref=e72]:
+              - img "Black icon showing a bar graph with an upward arrow and a dollar symbol representing financial growth." [ref=e73]
+            - generic [ref=e74]:
+              - heading "Individual Skills" [level=3] [ref=e75]
+              - paragraph [ref=e76]: I'm aN AUTOMOTIVE technician or SERVICE advisor seeking skills to thrive in the industry
+          - link "shop skills" [ref=e78] [cursor=pointer]:
+            - /url: "#skills"
+            - generic [ref=e79]:
+              - generic [ref=e81]: 
+              - generic [ref=e82]: shop skills
+    - generic [ref=e84]:
+      - heading "Trusted By" [level=3] [ref=e88]
+      - region "Image Carousel" [ref=e92]:
+        - generic [ref=e93]:
+          - group "1 of 4" [ref=e94]:
+            - figure [ref=e95]:
+              - img "Penske automotive group logo inside a rounded rectangle border." [ref=e96]
+          - group "2 of 4" [ref=e97]:
+            - figure [ref=e98]:
+              - img "Lithia Motors Inc. dealership logo." [ref=e99]
+          - group "3 of 4" [ref=e100]:
+            - figure [ref=e101]:
+              - img "Checkered Flag automotive dealership logo with laurel wreath symbol." [ref=e102]
+          - group "4 of 4" [ref=e103]:
+            - figure [ref=e104]:
+              - img "Morgan Automotive Group wordmark logo." [ref=e105]
+        - button [ref=e106] [cursor=pointer]:
+          - generic [ref=e107]: 
+        - button [ref=e108] [cursor=pointer]:
+          - generic [ref=e109]: 
+    - generic [ref=e113]:
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - heading [level=2]
+          - 'heading "FIXED OPERATIONS COACHING FOR AUTOMOTIVE DEALERSHIPS: A PROVEN SYSTEM WITH MASSIVE ROI IN PARTS, SERVICE & CSI IMMEDIATE IMPACT. DEDICATED COACHES. INCREADED PROFITS." [level=2] [ref=e119]':
+            - strong [ref=e120]: "FIXED OPERATIONS COACHING FOR AUTOMOTIVE DEALERSHIPS:"
+            - text: A PROVEN SYSTEM WITH MASSIVE ROI IN PARTS, SERVICE & CSI
+            - text: IMMEDIATE IMPACT.
+            - text: DEDICATED COACHES.
+            - text: INCREADED PROFITS.
+        - heading "Our highly trained coaches in your dealership solving your unique challenges & building a custom plan for success!" [level=3] [ref=e124]
+      - region "Image Carousel" [ref=e133]:
+        - generic [ref=e134]:
+          - group "1 of 5" [ref=e135]:
+            - figure [ref=e136]:
+              - img "Premier Honda Dealership net profit chart with Chris Collins Training branding" [ref=e137]
+          - group "2 of 5" [ref=e138]:
+            - figure [ref=e139]:
+              - img "Infographic showing CJDR dealership turnaround from $31K net loss to $59K profit in just 4 months" [ref=e140]
+          - group "3 of 5" [ref=e141]:
+            - figure [ref=e142]:
+              - img "Honda dealership monthly net profit growth from $86K to $331K within 7 months after training program" [ref=e143]
+          - group "4 of 5" [ref=e144]:
+            - figure [ref=e145]:
+              - img "Small Town Toyota dealership net profit chart with Chris Collins Training branding" [ref=e146]
+          - group "5 of 5" [ref=e147]:
+            - figure [ref=e148]:
+              - img "Committed Nissan dealership net profit chart with Chris Collins Training branding" [ref=e149]
+        - button [ref=e150] [cursor=pointer]:
+          - generic [ref=e151]: 
+        - button [ref=e152] [cursor=pointer]:
+          - generic [ref=e153]: 
+    - generic [ref=e157]:
+      - generic [ref=e161]:
+        - heading "WHO WE ARE" [level=2] [ref=e163]
+        - 'heading "THE INDUSTRY STANDARD: FOR 30 YEARS, CHRIS COLLINS HAS BEEN OPTIMIZING, SYSTEMATIZING AND GAMIFYING FIXED OPERATIONS FOR MAXIMUM PROFIT. HE’S WRITTEN 4 BOOKS ON THE SUBJECT AND IS RECOGNIZED AT THE TOP EXPERT IN THE FIRLD." [level=3] [ref=e165]':
+          - generic [ref=e166]:
+            - strong [ref=e167]: "THE INDUSTRY STANDARD:"
+            - text: FOR 30 YEARS, CHRIS COLLINS HAS BEEN OPTIMIZING, SYSTEMATIZING AND GAMIFYING FIXED OPERATIONS FOR MAXIMUM PROFIT. HE’S WRITTEN 4 BOOKS ON THE SUBJECT AND IS RECOGNIZED AT THE TOP EXPERT IN THE FIRLD.
+        - heading "WHAT WE DO" [level=2] [ref=e169]
+        - 'heading "DEDICATED EXPERT COACHES: WE EMBED SPECIALIZED COACHES TO SOLVE YOUR BIGGEST CHALLENGES, FIND MONEY LEAKS, TRAIN MANAGERS & SERVICE ADVISORS TO MAXIMIZE PROFITS." [level=3] [ref=e171]':
+          - generic [ref=e172]:
+            - strong [ref=e173]: "DEDICATED EXPERT COACHES:"
+            - text: WE EMBED SPECIALIZED COACHES TO SOLVE YOUR BIGGEST CHALLENGES, FIND MONEY LEAKS, TRAIN MANAGERS & SERVICE ADVISORS TO MAXIMIZE PROFITS.
+        - heading "HOW WE'RE DIFFERENT" [level=2] [ref=e175]
+        - 'heading "WE DON’T TRAIN FROM THE STAGE: OUR COACHES WORK ALONGSIDE YOUR LEADERS, OBSERVE REAL PROBLEMS & BEHAVIORS, AND CORRECT THEM IN REAL TIME. WE INSTALL SYSTEMS THAT SCALE EASILY AND PRODUCE CONSISTENCY, CLARITY, AND MEASURABLE ROI THROUGHOUT YOUR FIXED OPS." [level=3] [ref=e177]':
+          - generic [ref=e178]:
+            - strong [ref=e179]: "WE DON’T TRAIN FROM THE STAGE:"
+            - text: OUR COACHES WORK ALONGSIDE YOUR LEADERS, OBSERVE REAL PROBLEMS & BEHAVIORS, AND CORRECT THEM IN REAL TIME. WE INSTALL SYSTEMS THAT SCALE EASILY AND PRODUCE CONSISTENCY, CLARITY, AND MEASURABLE ROI THROUGHOUT YOUR FIXED OPS.
+      - generic [ref=e184]:
+        - img "Service department employees holding a Service Manager Challenge poster inside a garage." [ref=e188]
+        - img "Team of service department employees standing together and holding a service manager challenge poster inside an auto shop" [ref=e192]
+        - img "Group of automotive service employees posing together while holding a performance challenge poster" [ref=e196]
+      - generic [ref=e198]:
+        - img "Automotive service team at Yorkdale Toyota standing beside the Service Manager Challenge results board outside the service reception area." [ref=e202]
+        - img "Automotive service managers holding a Service Manager Challenge results board inside a dealership" [ref=e206]
+        - img "Damon Egan Sherwood Ford" [ref=e210]
+    - generic [ref=e214]:
+      - heading "dealership support" [level=2] [ref=e216]
+      - generic [ref=e218]:
+        - generic [ref=e220]:
+          - generic [ref=e224]: 
+          - heading "On Demand Training" [level=1] [ref=e226]
+          - heading "Equip your team to succeed in the evolving landscape with the crucial tactics and training" [level=3] [ref=e228]
+          - link "get instant access now" [ref=e230] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/op/ondemand-sales-page/?utm_source=Shop-Landing&utm_medium=FD-SupportDM&utm_campaign=DM&utm_term=&utm_content=ondemand-sales-page
+            - generic [ref=e232]: get instant access now
+        - generic [ref=e234]:
+          - generic [ref=e238]: 
+          - heading "BOOK A CALL HERE" [level=1] [ref=e240]
+          - heading "Chat with one of our top advisors in a complimentary 15 minute strategy session to get the results you need" [level=3] [ref=e242]
+          - link "Book Your call Here" [ref=e244] [cursor=pointer]:
+            - /url: https://chriscollins5.typeform.com/to/sp9OcBVB?utm_source=Shop-Landing&utm_medium=FD-SupportDM&utm_campaign=DM&utm_term=&utm_content=discovery
+            - generic [ref=e246]: Book Your call Here
+        - generic [ref=e248]:
+          - generic [ref=e252]: 
+          - heading "BOOK A CALL HERE" [level=1] [ref=e254]
+          - heading "Our signature coaching program to build and implement a personalized plan for dealership success." [level=3] [ref=e256]
+          - link "Learn More" [ref=e258] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/services/coaching/?utm_source=Shop-Landing&utm_medium=FD-SupportDM&utm_campaign=DM&utm_term=&utm_content=sig-coaching
+            - generic [ref=e260]: Learn More
+    - generic [ref=e262]:
+      - heading "Change YOUR Service Departments into Net Profit Making Machines." [level=3] [ref=e266]
+      - generic [ref=e270]:
+        - generic [ref=e274]:
+          - figure [ref=e275]:
+            - img "Black icon of a person with a speech bubble containing a heart symbol representing customer feedback or positive communication." [ref=e276]
+          - paragraph [ref=e278]: Increase customer satisfaction
+        - generic [ref=e282]:
+          - figure [ref=e283]:
+            - img "Black icon of a hand holding a coin symbolizing financial support or payment." [ref=e284]
+          - paragraph [ref=e286]: Increase customer retention
+        - generic [ref=e290]:
+          - figure [ref=e291]:
+            - img "Black icon showing a bar graph with an upward arrow and a dollar symbol representing financial growth." [ref=e292]
+          - paragraph [ref=e294]: skyrocket your profits
+    - generic [ref=e298]:
+      - heading "Team training" [level=2] [ref=e300]
+      - generic [ref=e302]:
+        - generic [ref=e304]:
+          - generic [ref=e308]: 
+          - heading "On Demand Training" [level=1] [ref=e310]
+          - heading "Equip your team to succeed in the evolving landscape with the crucial tactics and training" [level=3] [ref=e312]
+          - link "Access for just $249/mo" [ref=e314] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/op/ondemand-sales-page/?utm_source=Shop-Landing&utm_medium=FD-TeamHR&utm_campaign=HandRaisers&utm_term=&utm_content=ondemand-sales-page
+            - generic [ref=e316]: Access for just $249/mo
+        - generic [ref=e318]:
+          - generic [ref=e322]: 
+          - heading "Fixed Ops Training" [level=1] [ref=e324]
+          - heading "Frustrated Your Service Team Isn't Driving More Revenue? Here's How to Catch Up Fast" [level=3] [ref=e326]
+          - link "Find out more" [ref=e328] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/sp/irreplaceable-u/
+            - generic [ref=e330]: Find out more
+        - generic [ref=e332]:
+          - generic [ref=e336]: 
+          - heading "BOOK A CALL HERE" [level=1] [ref=e338]
+          - heading "Chat with one of our top advisors in a complimentary 15 minute strategy session to get the results you need" [level=3] [ref=e340]
+          - link "Book Your call Here" [ref=e342] [cursor=pointer]:
+            - /url: https://chriscollins5.typeform.com/to/sp9OcBVB?utm_source=Shop-Landing&utm_medium=FD-SupportDM&utm_campaign=DM&utm_term=&utm_content=discovery
+            - generic [ref=e344]: Book Your call Here
+        - generic [ref=e346]:
+          - generic [ref=e350]: 
+          - heading "book bundles" [level=1] [ref=e352]
+          - heading "Save in bulk when outfitting your entire team with our top selling advisor training books" [level=3] [ref=e354]
+          - link "learn more" [ref=e356] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/op/fast-advisor-training/?utm_source=Shop-Landing&utm_medium=FD-TeamHR&utm_campaign=HandRaisers&utm_term=&utm_content=MSABundle
+            - generic [ref=e358]: learn more
+    - generic [ref=e360]:
+      - generic [ref=e362]:
+        - heading "WISH YOU HAD AN “INSTANT PROFITS” BUTTON?" [level=2] [ref=e364]
+        - paragraph [ref=e366]: It’s not quite that easy. It takes hard work to transform your business into a well-oiled, profitable machine. The good news is that we’ve put together everything you need to succeed, with customizable options so you can choose what’s best for your business.
+      - generic [ref=e372]:
+        - heading "DIY Instruction Manuals" [level=3] [ref=e374]
+        - paragraph [ref=e376]: Get our no-nonsense advice delivered directly to your door via our comprehensive books. When you follow the steps outlined in our books, the impact on your business will be like having your own personal genie in a bottle granting your wishes.
+    - generic [ref=e380]:
+      - heading "individual skills (diy training)" [level=2] [ref=e382]
+      - generic [ref=e384]:
+        - generic [ref=e386]:
+          - heading "On Demand Training" [level=1] [ref=e389]
+          - heading "Equip your team to succeed in the evolving landscape with the crucial tactics and training" [level=3] [ref=e391]
+          - link "get instant access now" [ref=e393] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/op/ondemand-sales-page/?utm_source=Shop-Landing&utm_medium=FD-IndividualSkills&utm_campaign=SM&utm_term=&utm_content=ondemand-sales-page
+            - generic [ref=e395]: get instant access now
+        - generic [ref=e397]:
+          - heading "irreplaceable service manager book" [level=1] [ref=e400]
+          - heading "The 90-Day Roadmap to Your Best Fixed-Ops Month EVER - the perfect DIY option that fits your budget" [level=3] [ref=e402]
+          - link "shop irsm book" [ref=e404] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/sp/irreplaceable-u/#compare?utm_source=Shop-Landing&utm_medium=FD-IndividualSkills&utm_campaign=SM&utm_term=&utm_content=IRSMBook
+            - generic [ref=e406]: shop irsm book
+        - generic [ref=e408]:
+          - img "Millionaire Service Advisor" [ref=e410]
+          - heading "millionaire service advisor book" [level=1] [ref=e412]
+          - heading "the diy training book for service advisors & technicians" [level=3] [ref=e414]
+          - link "shop msa books" [ref=e416] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/op/fast-advisor-training/?utm_source=Shop-Landing&utm_medium=FD-IndividualSkills&utm_campaign=SM&utm_term=&utm_content=MSABundle
+            - generic [ref=e418]: shop msa books
+      - generic [ref=e420]:
+        - generic [ref=e422]:
+          - img "Top Dog Advisor Book" [ref=e424]
+          - heading "log books" [level=1] [ref=e426]
+          - heading "Stock up your department with our signature log books" [level=3] [ref=e428]
+          - link "shop log books" [ref=e430] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/product/top-dog-service-advisor-logbook-small-8-5-x-11/?utm_source=Shop-Landing&utm_medium=FD-IndividualSkills&utm_campaign=SM&utm_term=&utm_content=LogBooks
+            - generic [ref=e432]: shop log books
+        - generic [ref=e434]:
+          - img "ervice Drive Revolution Episode 317 – How to Make the Best Technician Videos with Chris Collins" [ref=e436]
+          - heading "sdr podcast" [level=1] [ref=e438]
+          - heading "Tune in to our podcast and blog with service drive revolution - new content weekly" [level=3] [ref=e440]
+          - link "watch on YouTube" [ref=e442] [cursor=pointer]:
+            - /url: https://www.youtube.com/playlist?list=PLxE3XASkn8NtOgsH6rBRSWwUn8XFJWtoy
+            - generic [ref=e444]: watch on YouTube
+        - generic [ref=e446]:
+          - img "Call 8333 ASK SDR to ask Chris Collins a question for Drive By podcast episode" [ref=e448]
+          - heading "blog" [level=1] [ref=e450]
+          - heading "read our blog with weekly updates and call in your questions to 8333-ASK-SDR" [level=3] [ref=e452]
+          - link "Visit the blog" [ref=e454] [cursor=pointer]:
+            - /url: https://chriscollinsinc.com/blog/?utm_source=Shop-Landing&utm_medium=FD-IndividualSkills&utm_campaign=SM&utm_term=&utm_content=SDRBlog
+            - generic [ref=e456]: Visit the blog
+    - generic [ref=e458]:
+      - heading "Get 2 FREE Training Videos" [level=2] [ref=e462]
+      - paragraph [ref=e466]: Are you working in the business or on the business? It is possible to stop ‘spinning your wheels’ and get back into the black.
+      - link "Learn more" [ref=e470] [cursor=pointer]:
+        - /url: https://chriscollinsinc.com/#?utm_source=Shop-Landing&utm_medium=FD-IndividualSkills&utm_campaign=SM&utm_term=&utm_content=FreeTrainings
+        - generic [ref=e472]: Learn more
+  - contentinfo [ref=e476]

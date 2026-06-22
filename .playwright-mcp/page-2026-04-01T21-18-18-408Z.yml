@@ -1,0 +1,227 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - heading "NorthPeak Climate Solutions" [level=1] [ref=e4]
+      - heading "Email Campaign — Project Scope" [level=2] [ref=e5]
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - strong [ref=e8]: "Date:"
+        - text: April 2, 2026
+      - generic [ref=e9]:
+        - strong [ref=e10]: "Platform:"
+        - text: GoHighLevel (GHL)
+      - generic [ref=e11]:
+        - strong [ref=e12]: "Version:"
+        - text: "1.0"
+  - generic [ref=e13]: Heating • Cooling • Air Quality | Reliability • Efficiency • Comfort
+  - heading "Project Overview" [level=3] [ref=e14]
+  - paragraph [ref=e16]:
+    - text: Design and build a
+    - strong [ref=e17]: 15-touch automated email campaign
+    - text: inside GoHighLevel for NorthPeak Climate Solutions. The campaign covers the full customer lifecycle — from the moment a lead submits a form, through the quote process, and after the job is complete.
+  - paragraph [ref=e18]:
+    - strong [ref=e19]: "Goal:"
+    - text: Ensure every lead and customer receives timely, relevant communication without manual effort — converting more leads, closing more quotes, and retaining past customers.
+  - heading "What We're Building" [level=3] [ref=e20]
+  - paragraph [ref=e21]:
+    - text: One GHL workflow with
+    - strong [ref=e22]: 3 automated email sequences
+    - text: "running in parallel:"
+  - table [ref=e23]:
+    - rowgroup [ref=e24]:
+      - row "Segment Entry Point Purpose Emails" [ref=e25]:
+        - columnheader "Segment" [ref=e26]
+        - columnheader "Entry Point" [ref=e27]
+        - columnheader "Purpose" [ref=e28]
+        - columnheader "Emails" [ref=e29]
+    - rowgroup [ref=e30]:
+      - row "New Leads Form submitted Convert lead to booked estimate 5" [ref=e31]:
+        - cell "New Leads" [ref=e32]:
+          - strong [ref=e33]: New Leads
+        - cell "Form submitted" [ref=e34]
+        - cell "Convert lead to booked estimate" [ref=e35]
+        - cell "5" [ref=e36]
+      - row "Active Pipeline Estimate scheduled Move quote to close 5" [ref=e37]:
+        - cell "Active Pipeline" [ref=e38]:
+          - strong [ref=e39]: Active Pipeline
+        - cell "Estimate scheduled" [ref=e40]
+        - cell "Move quote to close" [ref=e41]
+        - cell "5" [ref=e42]
+      - row "Past Customers Job completed Retain, review, referral 5" [ref=e43]:
+        - cell "Past Customers" [ref=e44]:
+          - strong [ref=e45]: Past Customers
+        - cell "Job completed" [ref=e46]
+        - cell "Retain, review, referral" [ref=e47]
+        - cell "5" [ref=e48]
+      - row "Total 15" [ref=e49]:
+        - cell "Total" [ref=e50]:
+          - strong [ref=e51]: Total
+        - cell "15" [ref=e52]:
+          - strong [ref=e53]: "15"
+  - heading "Segment Breakdown" [level=3] [ref=e54]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - text: 1. New Leads
+      - generic [ref=e57]: 5 Emails · Days 0–7
+    - paragraph [ref=e58]: Triggers when a prospect submits the inquiry form.
+    - table [ref=e59]:
+      - rowgroup [ref=e60]:
+        - row "# Timing Purpose" [ref=e61]:
+          - columnheader "#" [ref=e62]
+          - columnheader "Timing" [ref=e63]
+          - columnheader "Purpose" [ref=e64]
+      - rowgroup [ref=e65]:
+        - row "Email 1 Immediately Confirm request received + next steps" [ref=e66]:
+          - cell "Email 1" [ref=e67]
+          - cell "Immediately" [ref=e68]
+          - cell "Confirm request received + next steps" [ref=e69]
+        - row "Email 2 Day 1 Build trust — why NorthPeak" [ref=e70]:
+          - cell "Email 2" [ref=e71]
+          - cell "Day 1" [ref=e72]
+          - cell "Build trust — why NorthPeak" [ref=e73]
+        - row "Email 3 Day 3 Set expectations for the estimate visit" [ref=e74]:
+          - cell "Email 3" [ref=e75]
+          - cell "Day 3" [ref=e76]
+          - cell "Set expectations for the estimate visit" [ref=e77]
+        - row "Email 4 Day 5 Urgency — seasonal angle" [ref=e78]:
+          - cell "Email 4" [ref=e79]
+          - cell "Day 5" [ref=e80]
+          - cell "Urgency — seasonal angle" [ref=e81]
+        - row "Email 5 Day 7 Last touch — re-engage or close file" [ref=e82]:
+          - cell "Email 5" [ref=e83]
+          - cell "Day 7" [ref=e84]
+          - cell "Last touch — re-engage or close file" [ref=e85]
+    - generic [ref=e86]: Email 5 only sends if the lead has NOT yet booked an estimate.
+  - generic [ref=e87]:
+    - generic [ref=e88]:
+      - text: 2. Active Pipeline
+      - generic [ref=e89]: 5 Emails · Stage-based
+    - paragraph [ref=e90]: Triggers when a lead enters the estimate and quote stage.
+    - table [ref=e91]:
+      - rowgroup [ref=e92]:
+        - row "# Trigger Purpose" [ref=e93]:
+          - columnheader "#" [ref=e94]
+          - columnheader "Trigger" [ref=e95]
+          - columnheader "Purpose" [ref=e96]
+      - rowgroup [ref=e97]:
+        - row "Email 1 Estimate scheduled Confirmation + prep tips" [ref=e98]:
+          - cell "Email 1" [ref=e99]
+          - cell "Estimate scheduled" [ref=e100]
+          - cell "Confirmation + prep tips" [ref=e101]
+        - row "Email 2 After site visit \"Your quote is being prepared\"" [ref=e102]:
+          - cell "Email 2" [ref=e103]
+          - cell "After site visit" [ref=e104]
+          - cell "\"Your quote is being prepared\"" [ref=e105]
+        - row "Email 3 Quote sent \"Your proposal is ready\"" [ref=e106]:
+          - cell "Email 3" [ref=e107]
+          - cell "Quote sent" [ref=e108]
+          - cell "\"Your proposal is ready\"" [ref=e109]
+        - row "Email 4 3 days after quote Follow-up — any questions?" [ref=e110]:
+          - cell "Email 4" [ref=e111]
+          - cell "3 days after quote" [ref=e112]
+          - cell "Follow-up — any questions?" [ref=e113]
+        - row "Email 5 7 days after quote Final nudge to move forward" [ref=e114]:
+          - cell "Email 5" [ref=e115]
+          - cell "7 days after quote" [ref=e116]
+          - cell "Final nudge to move forward" [ref=e117]
+    - generic [ref=e118]: Emails 4 and 5 stop automatically if the client approves the quote.
+  - generic [ref=e119]:
+    - generic [ref=e120]:
+      - text: 3. Past Customers
+      - generic [ref=e121]: 5 Emails · Days 3–90
+    - paragraph [ref=e122]: Triggers when the job is marked complete in the pipeline.
+    - table [ref=e123]:
+      - rowgroup [ref=e124]:
+        - row "# Timing Purpose" [ref=e125]:
+          - columnheader "#" [ref=e126]
+          - columnheader "Timing" [ref=e127]
+          - columnheader "Purpose" [ref=e128]
+      - rowgroup [ref=e129]:
+        - row "Email 1 Day 3 Thank you + Google review request" [ref=e130]:
+          - cell "Email 1" [ref=e131]
+          - cell "Day 3" [ref=e132]
+          - cell "Thank you + Google review request" [ref=e133]
+        - row "Email 2 Day 14 Check-in — how's everything running?" [ref=e134]:
+          - cell "Email 2" [ref=e135]
+          - cell "Day 14" [ref=e136]
+          - cell "Check-in — how's everything running?" [ref=e137]
+        - row "Email 3 Day 30 Seasonal maintenance tip" [ref=e138]:
+          - cell "Email 3" [ref=e139]
+          - cell "Day 30" [ref=e140]
+          - cell "Seasonal maintenance tip" [ref=e141]
+        - row "Email 4 Day 60 Re-activation — seasonal check-up offer" [ref=e142]:
+          - cell "Email 4" [ref=e143]
+          - cell "Day 60" [ref=e144]
+          - cell "Re-activation — seasonal check-up offer" [ref=e145]
+        - row "Email 5 Day 90 Referral ask" [ref=e146]:
+          - cell "Email 5" [ref=e147]
+          - cell "Day 90" [ref=e148]
+          - cell "Referral ask" [ref=e149]
+  - heading "Technical Delivery" [level=3] [ref=e150]
+  - table [ref=e151]:
+    - rowgroup [ref=e152]:
+      - row "Item Detail" [ref=e153]:
+        - columnheader "Item" [ref=e154]
+        - columnheader "Detail" [ref=e155]
+    - rowgroup [ref=e156]:
+      - row "Platform GoHighLevel (GHL)" [ref=e157]:
+        - cell "Platform" [ref=e158]:
+          - strong [ref=e159]: Platform
+        - cell "GoHighLevel (GHL)" [ref=e160]
+      - row "Workflow 1 published workflow — NorthPeak 15 Touch Email Campaign" [ref=e161]:
+        - cell "Workflow" [ref=e162]:
+          - strong [ref=e163]: Workflow
+        - cell "1 published workflow — NorthPeak 15 Touch Email Campaign" [ref=e164]
+      - row "Email Templates 15 templates (written, formatted, ready to send)" [ref=e165]:
+        - cell "Email Templates" [ref=e166]:
+          - strong [ref=e167]: Email Templates
+        - cell "15 templates (written, formatted, ready to send)" [ref=e168]
+      - row "Structure Single workflow with 3 branches (one per segment)" [ref=e169]:
+        - cell "Structure" [ref=e170]:
+          - strong [ref=e171]: Structure
+        - cell "Single workflow with 3 branches (one per segment)" [ref=e172]
+      - row "Triggers Form submission + pipeline stage changes" [ref=e173]:
+        - cell "Triggers" [ref=e174]:
+          - strong [ref=e175]: Triggers
+        - cell "Form submission + pipeline stage changes" [ref=e176]
+      - row "Smart Stops Emails halt automatically when contact takes action" [ref=e177]:
+        - cell "Smart Stops" [ref=e178]:
+          - strong [ref=e179]: Smart Stops
+        - cell "Emails halt automatically when contact takes action" [ref=e180]
+  - heading "Scope" [level=3] [ref=e181]
+  - generic [ref=e182]:
+    - generic [ref=e183]:
+      - heading "Included" [level=4] [ref=e184]
+      - list [ref=e185]:
+        - listitem [ref=e186]: ✓ 15 email templates (written + formatted)
+        - listitem [ref=e187]: ✓ 1 GHL workflow (built, tested, published)
+        - listitem [ref=e188]: ✓ Contact tagging for segment tracking
+        - listitem [ref=e189]: ✓ Smart stop conditions on pipeline emails
+        - listitem [ref=e190]: ✓ QA testing before go-live
+    - generic [ref=e191]:
+      - heading "Not Included" [level=4] [ref=e192]
+      - list [ref=e193]:
+        - listitem [ref=e194]: ✗ SMS/text sequences (Phase 2)
+        - listitem [ref=e195]: ✗ Branded HTML email design
+        - listitem [ref=e196]: ✗ Ad campaigns / lead generation
+        - listitem [ref=e197]: ✗ CRM data migration
+        - listitem [ref=e198]: ✗ Ongoing content updates
+  - heading "Success Metrics" [level=3] [ref=e199]
+  - generic [ref=e200]:
+    - generic [ref=e201]:
+      - generic [ref=e202]: New Lead Response
+      - generic [ref=e203]: Within 5 minutes of form submit
+    - generic [ref=e204]:
+      - generic [ref=e205]: Quote Follow-Up Coverage
+      - generic [ref=e206]: 100% of quotes automated
+    - generic [ref=e207]:
+      - generic [ref=e208]: Post-Job Review Requests
+      - generic [ref=e209]: 100% within 3 days of completion
+    - generic [ref=e210]:
+      - generic [ref=e211]: Target Email Open Rate
+      - generic [ref=e212]: "30%+ (HVAC avg: ~25%)"
+  - generic [ref=e213]:
+    - generic [ref=e214]:
+      - strong [ref=e215]: NorthPeak Climate Solutions
+      - text: — Email Campaign Scope v1.0
+    - generic [ref=e216]: April 2, 2026 | GoHighLevel Platform

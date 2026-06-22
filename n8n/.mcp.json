@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "n8n-mcp": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "n8n-mcp"],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "https://techvablueprint1-n8n-45w6.onrender.com",
+        "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NjA0ZTBiMi03ZTU3LTRhNzUtYmUzNS00MTZmNDMzMDRlM2IiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwianRpIjoiYjVkY2JhNzktYjdmMS00YjM1LWFlNzEtM2NjYjk0ODE5ZTIzIiwiaWF0IjoxNzc0MTgzMjcxfQ.xMD9Ux14b7cPuz9N64Qe0LkCNI9OzJm8xwbqjnPN71M"
+      }
+    }
+  }
+}

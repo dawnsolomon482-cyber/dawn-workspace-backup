@@ -1,0 +1,77 @@
+[
+  {
+    "num": 1,
+    "file": "01-day0.html",
+    "subject": "You're probably losing 5+ jobs a week without knowing it, {{contact.first_name}}"
+  },
+  {
+    "num": 2,
+    "file": "02-day1.html",
+    "subject": "The #1 reason HVAC companies miss revenue (it's not what you think), {{contact.first_name}}"
+  },
+  {
+    "num": 3,
+    "file": "03-day2.html",
+    "subject": "What happens when a lead doesn't hear back in 5 minutes, {{contact.first_name}}"
+  },
+  {
+    "num": 4,
+    "file": "04-day3.html",
+    "subject": "How many calls went unanswered this week, {{contact.first_name}}?"
+  },
+  {
+    "num": 5,
+    "file": "05-day5.html",
+    "subject": "What other HVAC owners are saying about this, {{contact.first_name}}"
+  },
+  {
+    "num": 6,
+    "file": "06-day7.html",
+    "subject": "Let's calculate exactly how much you're losing, {{contact.first_name}}"
+  },
+  {
+    "num": 7,
+    "file": "07-day9.html",
+    "subject": "Your team isn't the problem, {{contact.first_name}} - the system is"
+  },
+  {
+    "num": 8,
+    "file": "08-day11.html",
+    "subject": "Here's exactly what the HVAC Revenue Operating System does, {{contact.first_name}}"
+  },
+  {
+    "num": 9,
+    "file": "09-day14.html",
+    "subject": "How review automation works (and why it matters for HVAC), {{contact.first_name}}"
+  },
+  {
+    "num": 10,
+    "file": "10-day16.html",
+    "subject": "The WhatsApp AI agent - what it does for your HVAC business, {{contact.first_name}}"
+  },
+  {
+    "num": 11,
+    "file": "11-day18.html",
+    "subject": "Would 10 extra booked jobs a month justify the investment, {{contact.first_name}}?"
+  },
+  {
+    "num": 12,
+    "file": "12-day21.html",
+    "subject": "Here's everything included in the HVAC Revenue Operating System, {{contact.first_name}}"
+  },
+  {
+    "num": 13,
+    "file": "13-day24.html",
+    "subject": "Already have software? Here's why that's not the same thing, {{contact.first_name}}"
+  },
+  {
+    "num": 14,
+    "file": "14-day27.html",
+    "subject": "We're limiting new clients per city - here's why, {{contact.first_name}}"
+  },
+  {
+    "num": 15,
+    "file": "15-day30.html",
+    "subject": "Should we close your file, {{contact.first_name}}?"
+  }
+]

@@ -1,0 +1,216 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e7]:
+            - generic [ref=e10]: DS
+          - generic [ref=e11]:
+            - generic [ref=e12]: Dawn Solomon
+            - generic [ref=e13]: Invoice Generator
+        - generic [ref=e14]:
+          - button "Reset" [ref=e15] [cursor=pointer]:
+            - img [ref=e16]
+            - text: Reset
+          - button "Preview" [active] [ref=e19] [cursor=pointer]:
+            - img [ref=e20]
+            - text: Preview
+          - button "Download PDF" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+            - text: Download PDF
+    - main [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e32]: Invoice Details
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Invoice Number
+                - generic [ref=e36]:
+                  - textbox "Invoice Number" [ref=e37]:
+                    - /placeholder: INV-202505-0001
+                    - text: INV-202605-7359
+                  - button "Generate new number" [ref=e38] [cursor=pointer]:
+                    - img [ref=e39]
+              - generic [ref=e43]:
+                - generic [ref=e44]:
+                  - generic [ref=e45]: Issue Date
+                  - textbox "Issue Date" [ref=e46]: 2026-05-10
+                - generic [ref=e47]:
+                  - generic [ref=e48]: Due Date
+                  - textbox "Due Date" [ref=e49]: 2026-06-09
+              - generic [ref=e50]:
+                - generic [ref=e51]: Currency
+                - combobox "Currency" [ref=e52] [cursor=pointer]:
+                  - option "USD — US Dollar ($)" [selected]
+                  - option "EUR — Euro (€)"
+                  - option "GBP — British Pound (£)"
+                  - option "SGD — Singapore Dollar (S$)"
+                  - option "PHP — Philippine Peso (₱)"
+                  - option "AUD — Australian Dollar (A$)"
+                  - option "CAD — Canadian Dollar (C$)"
+                  - option "JPY — Japanese Yen (¥)"
+                  - option "CHF — Swiss Franc"
+                  - option "HKD — Hong Kong Dollar (HK$)"
+          - generic [ref=e53]:
+            - generic [ref=e55]: Client Information
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - generic [ref=e58]: Client Name
+                - textbox "Client Name" [ref=e59]:
+                  - /placeholder: Full name
+              - generic [ref=e60]:
+                - generic [ref=e61]: Client Email
+                - textbox "Client Email" [ref=e62]:
+                  - /placeholder: client@example.com
+          - generic [ref=e63]:
+            - generic [ref=e65]: Branding
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e69]: Logo
+                - img "Logo" [ref=e71]
+                - generic [ref=e72] [cursor=pointer]:
+                  - img [ref=e73]
+                  - text: Change Logo
+              - generic [ref=e76]:
+                - generic [ref=e77]: Signature
+                - img "Signature" [ref=e79]
+                - generic [ref=e80] [cursor=pointer]:
+                  - img [ref=e81]
+                  - text: Upload Signature
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: Project & Amount
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - generic [ref=e90]: Project Name
+                - textbox "Project Name" [ref=e91]:
+                  - /placeholder: e.g. Brand Identity Design
+              - generic [ref=e92]:
+                - generic [ref=e93]: Project Description (optional)
+                - textbox "Project Description (optional)" [ref=e94]:
+                  - /placeholder: Brief description of the work delivered...
+              - generic [ref=e96]:
+                - generic [ref=e97]: Project Amount
+                - generic [ref=e98]:
+                  - generic [ref=e99]: $
+                  - spinbutton "Project Amount" [ref=e100]
+          - generic [ref=e101]:
+            - generic [ref=e103]: Payment Summary
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - generic [ref=e107]: Amount
+                - generic [ref=e108]: $0.00
+              - generic [ref=e109]:
+                - generic [ref=e110]: Discount
+                - generic [ref=e111]:
+                  - spinbutton [ref=e112]
+                  - combobox [ref=e113] [cursor=pointer]:
+                    - option "$" [selected]
+                    - option "%"
+                - generic [ref=e114]: "-$0.00"
+              - generic [ref=e115]:
+                - generic [ref=e116]: Downpayment
+                - spinbutton [ref=e117]
+                - generic [ref=e118]: "-$0.00"
+              - generic [ref=e120]:
+                - generic [ref=e121]: Grand Total
+                - generic [ref=e122]: $0.00
+              - generic [ref=e123]:
+                - generic [ref=e124]: Remaining Balance
+                - generic [ref=e125]: $0.00
+          - generic [ref=e126]:
+            - generic [ref=e128]: Payment Methods
+            - generic [ref=e129]:
+              - generic [ref=e130]:
+                - button "Wise" [ref=e131] [cursor=pointer]
+                - button "PayPal" [ref=e132] [cursor=pointer]
+                - button "Bank Transfer" [ref=e133] [cursor=pointer]
+                - button "MariBank" [ref=e134] [cursor=pointer]
+              - generic [ref=e135]:
+                - generic [ref=e136]:
+                  - generic [ref=e137]:
+                    - generic [ref=e138]: Account Holder
+                    - textbox "Dawn Solomon" [ref=e139]
+                  - generic [ref=e140]:
+                    - generic [ref=e141]: Email / Username
+                    - textbox "dawnsolomon482@gmail.com" [ref=e142]
+                - generic [ref=e143]:
+                  - generic [ref=e144]:
+                    - generic [ref=e145]: IBAN
+                    - textbox "GB29 NWBK 6016 1331..." [ref=e146]
+                  - generic [ref=e147]:
+                    - generic [ref=e148]: SWIFT / BIC
+                    - textbox "TRWIGB2LXXX" [ref=e149]
+                - generic [ref=e150]:
+                  - generic [ref=e151]: Payment Reference
+                  - textbox "e.g. INV-202505-0001" [ref=e152]
+  - generic [ref=e154]:
+    - generic [ref=e155]:
+      - generic [ref=e156]: Invoice Preview
+      - generic [ref=e157]:
+        - button "Save as PDF" [ref=e158] [cursor=pointer]:
+          - img [ref=e159]
+          - text: Save as PDF
+        - button "Close" [ref=e163] [cursor=pointer]:
+          - img [ref=e164]
+          - text: Close
+    - generic [ref=e169]:
+      - generic [ref=e170]:
+        - generic [ref=e171]:
+          - img "Logo" [ref=e172]
+          - generic [ref=e173]:
+            - generic [ref=e174]: Dawn Solomon
+            - generic [ref=e175]: dawnsolomon482@gmail.com
+        - generic [ref=e176]:
+          - generic [ref=e177]: INVOICE
+          - generic [ref=e178]: INV-202605-7359
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]: Bill To
+          - generic [ref=e182]: —
+        - generic [ref=e183]:
+          - generic [ref=e184]: Invoice Details
+          - table [ref=e185]:
+            - rowgroup [ref=e186]:
+              - 'row "Invoice # INV-202605-7359" [ref=e187]':
+                - 'cell "Invoice #" [ref=e188]'
+                - cell "INV-202605-7359" [ref=e189]
+              - row "Issue Date May 10, 2026" [ref=e190]:
+                - cell "Issue Date" [ref=e191]
+                - cell "May 10, 2026" [ref=e192]
+              - row "Due Date Jun 9, 2026" [ref=e193]:
+                - cell "Due Date" [ref=e194]
+                - cell "Jun 9, 2026" [ref=e195]
+              - row "Currency USD" [ref=e196]:
+                - cell "Currency" [ref=e197]
+                - cell "USD" [ref=e198]
+      - generic [ref=e199]:
+        - generic [ref=e200]: Project
+        - generic [ref=e201]: Untitled Project
+      - table [ref=e203]:
+        - rowgroup [ref=e204]:
+          - row "Project Amount $0.00" [ref=e205]:
+            - cell "Project Amount" [ref=e206]
+            - cell "$0.00" [ref=e207]
+          - row "Grand Total $0.00" [ref=e208]:
+            - cell "Grand Total" [ref=e209]
+            - cell "$0.00" [ref=e210]
+          - row "Remaining Balance $0.00" [ref=e211]:
+            - cell "Remaining Balance" [ref=e212]
+            - cell "$0.00" [ref=e213]
+      - generic [ref=e214]:
+        - generic [ref=e215]: Payment Details
+        - table [ref=e216]:
+          - rowgroup [ref=e217]:
+            - row "Method Wise" [ref=e218]:
+              - cell "Method" [ref=e219]
+              - cell "Wise" [ref=e220]
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - img "Signature" [ref=e223]
+          - generic [ref=e225]: Dawn Solomon
+          - generic [ref=e226]: Freelancer / Service Provider
+        - generic [ref=e227]:
+          - generic [ref=e228]: Thank you for your business!
+          - generic [ref=e229]: DS Invoice Generator

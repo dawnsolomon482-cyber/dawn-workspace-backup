@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ManoPress — Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:      #1e3a8a;
+      --blue-dark: #0f2460;
+      --blue-lt:   #2d52b0;
+      --blue-pale: #eef2fb;
+      --blue-mid:  #dce4f5;
+      --bg:        #ffffff;
+      --bg2:       #f5f7fd;
+      --bg3:       #eef2fb;
+      --text:      #0a1628;
+      --text-dim:  #3d5070;
+      --border:    #d8e0f0;
+      --border-drk:#b0c0e0;
+      --radius:    10px;
+      --shadow:    0 2px 16px rgba(30,58,138,0.08);
+      --shadow-lg: 0 8px 40px rgba(30,58,138,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 12px rgba(30,58,138,0.07);
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo img { height: 34px; object-fit: contain; }
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 900;
+      color: var(--text); letter-spacing: 0.04em;
+    }
+    .nav-logo-text span { color: var(--blue); }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--text-dim); text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--blue) !important; color: #fff !important;
+      padding: 9px 22px; border-radius: var(--radius);
+      font-weight: 600 !important;
+      box-shadow: 0 2px 10px rgba(30,58,138,0.3);
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--blue-dark) !important; }
+
+    /* ── HERO COVER (full original) ── */
+    .hero-cover {
+      width: 100%;
+      padding-top: 68px;
+      position: relative;
+      background: var(--blue-pale);
+      overflow: hidden;
+    }
+    .hero-cover img {
+      width: 100%;
+      max-height: 92vh;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 55%, rgba(255,255,255,0.95) 100%);
+    }
+    .hero-cover-badge {
+      position: absolute;
+      top: 40px; left: 56px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 7px 18px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+    .hero-cover-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--blue); border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:.4; transform:scale(.7); }
+    }
+    .hero-cover-cta {
+      position: absolute;
+      bottom: 48px; left: 56px;
+      display: flex; gap: 14px; flex-wrap: wrap;
+    }
+
+    /* ── HERO INTRO (below cover) ── */
+    .hero-intro {
+      background: #fff;
+      padding: 72px 64px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-intro-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 4.5vw, 60px);
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+    .hero-intro-title em { color: var(--blue); font-style: italic; }
+    .hero-intro-sub {
+      font-size: 16px; line-height: 1.75;
+      color: var(--text-dim); margin-bottom: 36px;
+    }
+    .hero-stats {
+      display: flex; gap: 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px; font-weight: 700; color: var(--blue);
+    }
+    .stat-label {
+      font-size: 11px; color: var(--text-dim);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px;
+    }
+    .hero-intro-right {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .mini-card {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .mini-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .mini-card img {
+      width: 100%; aspect-ratio: 1; object-fit: cover; display: block;
+    }
+    .mini-card-label {
+      padding: 10px 14px;
+      font-size: 12px; font-weight: 600;
+      color: var(--text-dim);
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--blue);
+      padding: 12px 0; overflow: hidden;
+    }
+    .marquee-track { display: inline-flex; animation: marquee 22s linear infinite; }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 0 22px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+    .marquee-item strong { color: #fff; }
+    .marquee-dot { width: 4px; height: 4px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── COMMON ── */
+    section { padding: 88px 64px; }
+    .section-label {
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue); font-weight: 600; margin-bottom: 12px;
+      font-family: 'DM Mono', monospace;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 3.5vw, 46px);
+      font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 15px; color: var(--text-dim); line-height: 1.75; max-width: 520px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      background: var(--blue); color: #fff;
+      padding: 13px 30px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 14px rgba(30,58,138,0.3);
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); }
+    .btn-ghost {
+      color: var(--text); padding: 13px 26px; border-radius: var(--radius);
+      border: 1.5px solid var(--border-drk); font-size: 14px; font-weight: 500;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: border-color .2s, background .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--blue); background: var(--blue-pale); color: var(--blue); }
+
+    /* ── SERVICES ── */
+    .services { background: var(--bg2); }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+    .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .services-grid-2 { grid-template-columns: repeat(3,1fr); margin-top: 14px; }
+    .service-card {
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 30px 26px;
+      transition: border-color .25s, box-shadow .25s, transform .2s;
+    }
+    .service-card:hover { border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .service-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--blue); margin-bottom:18px; letter-spacing:.1em; }
+    .service-icon {
+      width: 50px; height: 50px; background: var(--blue-pale);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px; color: var(--blue);
+    }
+    .service-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--text); margin-bottom:9px; }
+    .service-desc { font-size:13px; line-height:1.65; color:var(--text-dim); }
+
+    /* ── PRODUCTS ── */
+    .products { background: #fff; }
+    .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; flex-wrap: wrap; gap: 24px; }
+    .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .product-card {
+      background: var(--bg2); border-radius: 12px; overflow: hidden;
+      border: 1.5px solid var(--border); box-shadow: var(--shadow);
+      transition: border-color .25s, box-shadow .25s, transform .2s;
+    }
+    .product-card:hover { border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .product-thumb { aspect-ratio: 4/3; overflow: hidden; background: var(--bg3); }
+    .product-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
+    .product-card:hover .product-thumb img { transform: scale(1.05); }
+    .product-info { padding: 16px 20px 20px; }
+    .product-category { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--blue); font-family:'DM Mono',monospace; margin-bottom:4px; }
+    .product-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:var(--text); margin-bottom:4px; }
+    .product-price { font-size:13px; color:var(--text-dim); }
+    .price-val { font-family:'DM Mono',monospace; color:var(--blue); font-weight:600; }
+
+    /* ── HOW TO ORDER ── */
+    .how-to-order { background: var(--bg2); text-align: center; }
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 56px; position: relative; }
+    .steps::after {
+      content:''; position:absolute;
+      top:37px; left:12.5%; right:12.5%;
+      height:1.5px; background:var(--border-drk); z-index:0;
+    }
+    .step { padding: 0 24px; position: relative; z-index: 1; }
+    .step-num {
+      width:74px; height:74px; border-radius:50%;
+      background:#fff; border:2px solid var(--border-drk);
+      display:flex; align-items:center; justify-content:center;
+      margin: 0 auto 22px;
+      font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--blue);
+      box-shadow: var(--shadow); transition: background .2s, border-color .2s, box-shadow .2s;
+    }
+    .step:hover .step-num { background:var(--blue-pale); border-color:var(--blue); box-shadow: 0 4px 20px rgba(30,58,138,0.2); }
+    .step-title { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:var(--text); margin-bottom:9px; }
+    .step-desc { font-size:13px; color:var(--text-dim); line-height:1.65; }
+
+    /* ── ORDER CTA ── */
+    .order-cta {
+      background: var(--blue);
+      text-align: center; padding: 110px 64px;
+      position: relative; overflow: hidden;
+    }
+    .order-cta::before {
+      content:''; position:absolute;
+      width:600px; height:600px; border-radius:50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      top:50%; left:50%; transform:translate(-50%,-50%);
+    }
+    .cta-title {
+      font-family:'Playfair Display',serif;
+      font-size: clamp(38px,4.5vw,58px); font-weight:900;
+      color:#fff; line-height:1.1; margin-bottom:18px;
+    }
+    .cta-title em { font-style:italic; opacity:.85; }
+    .cta-sub { font-size:16px; color:rgba(255,255,255,0.75); max-width:440px; margin:0 auto 40px; line-height:1.75; }
+    .cta-actions { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; position:relative; z-index:1; }
+    .btn-white { background:#fff; color:var(--blue); padding:13px 34px; border-radius:var(--radius); font-size:14px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 20px rgba(0,0,0,0.15); transition:transform .2s, box-shadow .2s; }
+    .btn-white:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,0.2); }
+    .btn-ghost-white { color:rgba(255,255,255,0.85); padding:13px 26px; border-radius:var(--radius); border:1.5px solid rgba(255,255,255,0.3); font-size:14px; font-weight:500; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:border-color .2s, background .2s; }
+    .btn-ghost-white:hover { border-color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.1); color:#fff; }
+
+    /* ── BLOG ── */
+    .blog { background:#fff; }
+    .blog-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px; flex-wrap:wrap; gap:16px; }
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .blog-card {
+      background:var(--bg2); border:1.5px solid var(--border); border-radius:12px; padding:26px;
+      transition:border-color .25s, box-shadow .25s, transform .2s; cursor:pointer;
+    }
+    .blog-card:hover { border-color:var(--blue); box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+    .blog-date { font-family:'DM Mono',monospace; font-size:11px; color:var(--blue); margin-bottom:12px; }
+    .blog-title { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:var(--text); line-height:1.35; margin-bottom:9px; }
+    .blog-excerpt { font-size:13px; color:var(--text-dim); line-height:1.65; }
+    .blog-read { display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--blue); }
+
+    /* ── FOOTER ── */
+    footer { background:#0f1f40; color:rgba(255,255,255,0.65); padding:60px 64px 36px; }
+    .footer-top { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px; padding-bottom:44px; border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:28px; }
+    .footer-logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:#fff; margin-bottom:12px; display:block; }
+    .footer-logo span { color:var(--blue-lt); }
+    .footer-tagline { font-size:13px; line-height:1.7; margin-bottom:18px; }
+    .footer-col-title { font-family:'Playfair Display',serif; font-size:14px; font-weight:700; color:#fff; margin-bottom:16px; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:9px; }
+    .footer-links a { font-size:13px; color:rgba(255,255,255,0.45); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:rgba(255,255,255,0.85); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+    .footer-copy { font-size:12px; opacity:.35; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/manopress-logo-new.png" alt="" onerror="this.style.display='none'" />
+    <span class="nav-logo-text">MANO<span>PRESS</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#order" class="nav-cta">Place an Order</a></li>
+  </ul>
+</nav>
+
+<!-- HERO COVER -->
+<div class="hero-cover">
+  <span class="hero-cover-badge">Santa Rosa, Laguna · Custom Sublimation Printing</span>
+  <img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/hero-cover-v4.png" alt="ManoPress" />
+  <div class="hero-cover-overlay"></div>
+  <div class="hero-cover-cta">
+    <a href="#order" class="btn-primary"><i class="fa-solid fa-pen-nib"></i> Place an Order</a>
+    <a href="https://www.facebook.com/profile.php?id=61587380491479" target="_blank" class="btn-ghost"><i class="fa-brands fa-facebook-messenger"></i> Message Us on Facebook</a>
+  </div>
+</div>
+
+<!-- HERO INTRO -->
+<div class="hero-intro" id="about">
+  <div>
+    <div class="section-label">// Custom Sublimation Printing</div>
+    <h1 class="hero-intro-title">Your Design,<br/><em>Brilliantly</em> Printed.</h1>
+    <p class="hero-intro-sub">ManoPress brings your ideas to life with professional sublimation printing — vibrant colors, sharp detail, and lasting quality on every product.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;">
+      <a href="#order" class="btn-primary"><i class="fa-solid fa-pen-nib"></i> Place an Order</a>
+      <a href="#services" class="btn-ghost">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">7+</div><div class="stat-label">Products</div></div>
+      <div><div class="stat-num">2–3</div><div class="stat-label">Day Turnaround</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Custom Prints</div></div>
+    </div>
+  </div>
+  <div class="hero-intro-right">
+    <div class="mini-card">
+      <img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/tshirt-design-1.jpg" alt="T-Shirt" />
+      <div class="mini-card-label">T-Shirts</div>
+    </div>
+    <div class="mini-card">
+      <img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/mousepad-design-1.jpg" alt="Mousepad" />
+      <div class="mini-card-label">Mousepads</div>
+    </div>
+    <div class="mini-card">
+      <img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/netcap-design-1.jpg" alt="Net Cap" />
+      <div class="mini-card-label">Net Caps</div>
+    </div>
+    <div class="mini-card">
+      <img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/metalsheet-design-1.jpg" alt="Metal Sheet" />
+      <div class="mini-card-label">Metal Sheets</div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item"><strong>Custom T-Shirts</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Sublimation Mugs</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Net Caps</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Mousepads</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Ceramic Plates</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Jigsaw Puzzles</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Metal Sheet Prints</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item">Santa Rosa, Laguna<span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Custom T-Shirts</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Sublimation Mugs</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Net Caps</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Mousepads</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Ceramic Plates</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Jigsaw Puzzles</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item"><strong>Metal Sheet Prints</strong><span class="marquee-dot"></span></span>
+    <span class="marquee-item">Santa Rosa, Laguna<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">// What We Print</div>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <p class="section-sub">Every item uses high-temp sublimation — colors embedded directly into the material for vibrant, lasting prints.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-num">01</div><div class="service-icon"><i class="fa-solid fa-shirt"></i></div><div class="service-name">Custom T-Shirts</div><div class="service-desc">Full-color, all-over sublimation prints on white polyester tees. XS to 5XL, vibrant colors, sharp details.</div></div>
+    <div class="service-card"><div class="service-num">02</div><div class="service-icon"><i class="fa-solid fa-mug-hot"></i></div><div class="service-name">Sublimation Mugs</div><div class="service-desc">Personalized ceramic mugs with wrap-around printing. Dishwasher-safe and fade-proof.</div></div>
+    <div class="service-card"><div class="service-num">03</div><div class="service-icon"><i class="fa-solid fa-hat-cowboy"></i></div><div class="service-name">Net Cap Printing</div><div class="service-desc">Custom sublimation on net caps. Perfect for teams, events, and giveaways.</div></div>
+    <div class="service-card"><div class="service-num">04</div><div class="service-icon"><i class="fa-solid fa-computer-mouse"></i></div><div class="service-name">Mousepads</div><div class="service-desc">Custom-printed thick mousepads with smooth surface and non-slip rubber base.</div></div>
+  </div>
+  <div class="services-grid services-grid-2">
+    <div class="service-card"><div class="service-num">05</div><div class="service-icon"><i class="fa-solid fa-circle-dot"></i></div><div class="service-name">Ceramic Plates</div><div class="service-desc">Photo plates and decorative ceramic plates — perfect personalized gifts.</div></div>
+    <div class="service-card"><div class="service-num">06</div><div class="service-icon"><i class="fa-solid fa-puzzle-piece"></i></div><div class="service-name">Jigsaw Puzzles</div><div class="service-desc">Custom photo puzzles, fun and unique gifts. Multiple piece counts available.</div></div>
+    <div class="service-card"><div class="service-num">07</div><div class="service-icon"><i class="fa-solid fa-layer-group"></i></div><div class="service-name">Metal Sheet Prints</div><div class="service-desc">Full-color prints on aluminum sheets. Durable, weather-resistant, great for signage and decor.</div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS GALLERY -->
+<section class="products" id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-label">// Design Gallery</div>
+      <h2 class="section-title">Sample Prints</h2>
+    </div>
+    <a href="#products" class="btn-ghost">View All →</a>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-thumb"><img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/tshirt-design-2.jpg" alt="T-Shirt" /></div>
+      <div class="product-info"><div class="product-category">Sublimation</div><div class="product-name">Custom T-Shirt</div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-thumb"><img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/mousepad-design-2.jpg" alt="Mousepad" /></div>
+      <div class="product-info"><div class="product-category">Sublimation</div><div class="product-name">Mousepad</div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-thumb"><img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/netcap-design-2.jpg" alt="Net Cap" /></div>
+      <div class="product-info"><div class="product-category">Sublimation</div><div class="product-name">Net Cap</div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-thumb"><img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/plate-design-2.jpg" alt="Plate" /></div>
+      <div class="product-info"><div class="product-category">Sublimation</div><div class="product-name">Ceramic Plate</div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-thumb"><img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/puzzle-design-1.jpg" alt="Puzzle" /></div>
+      <div class="product-info"><div class="product-category">Sublimation</div><div class="product-name">Jigsaw Puzzle</div></div>
+    </div>
+    <div class="product-card">
+      <div class="product-thumb"><img src="file:///C:/Users/R%20Y%20Z%20E%20N/Downloads/manopress-extracted/manopress-main/src/assets/metalsheet-design-2.jpg" alt="Metal Sheet" /></div>
+      <div class="product-info"><div class="product-category">Sublimation</div><div class="product-name">Metal Sheet Print</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="how-to-order" id="how-to-order">
+  <div class="section-label">// The Process</div>
+  <h2 class="section-title">How to Order</h2>
+  <p class="section-sub" style="margin:0 auto;text-align:center;max-width:460px;">Simple 4-step process from your design to your doorstep.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-title">Send Your Design</div><div class="step-desc">Upload your artwork via our order form. PNG, JPG, PDF, and vector files accepted.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-title">Confirm Details</div><div class="step-desc">We review product type, quantity, and size — then confirm pricing before production.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-title">Production</div><div class="step-desc">Standard turnaround is 2–3 business days from design approval.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-title">Receive Your Order</div><div class="step-desc">Pick up in Santa Rosa or have it delivered. We'll update your order status.</div></div>
+  </div>
+</section>
+
+<!-- ORDER CTA -->
+<section class="order-cta" id="order">
+  <div class="section-label" style="color:rgba(255,255,255,0.7);margin-bottom:14px;">// Ready to Print?</div>
+  <h2 class="cta-title">Turn Your Design<br/>Into <em>Reality</em></h2>
+  <p class="cta-sub">Upload your design, choose your product, and we'll handle the rest. Fast turnaround, professional results.</p>
+  <div class="cta-actions">
+    <a href="/order" class="btn-white"><i class="fa-solid fa-pen-nib"></i> Place an Order</a>
+    <a href="#products" class="btn-ghost-white">View Price List</a>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="blog-header">
+    <div>
+      <div class="section-label">// From Our Blog</div>
+      <h2 class="section-title">Tips & Guides</h2>
+    </div>
+    <a href="#blog" class="btn-ghost" style="font-size:13px;">All Articles →</a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-date">March 11, 2026 · 5 min read</div>
+      <div class="blog-title">How to Prepare Your Design File for Sublimation Printing</div>
+      <div class="blog-excerpt">A complete checklist for getting your artwork print-ready — resolution, color mode, bleed, and file format best practices.</div>
+      <div class="blog-read">Read more →</div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">March 5, 2026 · 4 min read</div>
+      <div class="blog-title">Why Sublimation Printing Lasts Longer Than Heat Transfer Vinyl</div>
+      <div class="blog-excerpt">Sublimation ink fuses directly into the fabric — here's why that means your prints stay vibrant through hundreds of washes.</div>
+      <div class="blog-read">Read more →</div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-date">Feb 20, 2026 · 6 min read</div>
+      <div class="blog-title">Best Products for Custom Giveaways and Corporate Souvenirs</div>
+      <div class="blog-excerpt">Planning an event? Here are the most popular sublimation products our clients order in bulk.</div>
+      <div class="blog-read">Read more →</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">MANO<span>PRESS</span></span>
+      <p class="footer-tagline">Custom sublimation printing in Santa Rosa, Laguna. Vibrant colors, lasting quality, fast turnaround.</p>
+      <a href="#" style="color:var(--blue-lt);font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;"><i class="fa-brands fa-facebook"></i> Follow us on Facebook</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#products">T-Shirts</a></li><li><a href="#products">Mugs</a></li>
+        <li><a href="#products">Net Caps</a></li><li><a href="#products">Mousepads</a></li>
+        <li><a href="#products">Plates</a></li><li><a href="#products">Jigsaw Puzzles</a></li>
+        <li><a href="#products">Metal Sheets</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li><li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li><li><a href="#how-to-order">How to Order</a></li>
+        <li><a href="#products">Price List</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="#contact"><i class="fa-solid fa-location-dot"></i> Santa Rosa, Laguna</a></li>
+        <li><a href="#contact"><i class="fa-regular fa-clock"></i> Mon–Sat, 9AM–6PM</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61587380491479" target="_blank"><i class="fa-brands fa-facebook-messenger"></i> Facebook Messenger</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 ManoPress. All rights reserved.</div>
+    <div class="footer-copy">📍 Santa Rosa, Laguna, Philippines</div>
+  </div>
+</footer>
+</body>
+</html>
