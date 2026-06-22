@@ -11,6 +11,11 @@ Unified summary of work done across Claude Code and Codex. Updated after session
 - Archived completed `manopress` plan + spec to `docs/archive/manopress/`
 - Set up cross-tool memory: Codex history reference, clone→WordPress-theme workflow preference
 - Created this unified activity log
+- Set up GitHub backup repo (`dawn-workspace-backup`, private), fixed broken nested-repo gitlinks (manopress, lord-law-website, interactive-design-studio)
+- Added `docs/memory/` snapshot so Claude's memory syncs to GitHub for laptop access
+
+## 2026-06-22 — Codex
+- Gumawa ng SEO ranking skill
 
 ## 2026-06-19 — Codex
 - Suriin watermark at SEO
@@ -49,9 +54,43 @@ Unified summary of work done across Claude Code and Codex. Updated after session
 - Ayusin website error
 
 ## 2026-05-30 — Codex
+- Create luxury website
 - Analyze NextStaffRemote site
 - Suriin SEO ng site
 
+## 2026-05-29 — Codex
+- Draft automotive retoucher brief
+
+## 2026-05-28 — Codex
+- Gumawa ng friendly reply
+- Ayusin categories at drafts
+
+## 2026-05-27 — Codex
+- Install project skills
+- Review Loom instructions
+
+## 2026-05-26 — Codex
+- Reorganize site pages
+- Mag-apply muli ngayon
+- Mag-research ng keywords sa CCI
+
+## 2026-05-25 — Codex
+- Ayusin ang categories ng site
+- I-optimize OLJ profile
+- Gumawa ng OLJ tracking sa Notion
+- I-optimize ang LinkedIn
+
+## 2026-05-20 — Codex
+- Hanap low-KD keywords
+- Ihanda sa interview
+- Build GHL automation workflow
+
+## 2026-05-19 — Codex
+- Guide SEO task fixes
+
+## 2026-05-18 — Codex
+- Ayusin SEO site reorg
+
 ---
 
-**Note**: Codex entries above are pulled from `~/.codex/session_index.jsonl` thread names (titles only, not full content). For full detail on any entry, the corresponding session file in `~/.codex/sessions/` can be read on request.
+**Note**: Codex entries above are pulled from `~/.codex/session_index.jsonl` thread names (titles only, not full content). For full detail on any entry, the corresponding session file in `~/.codex/sessions/` can be read on request. The index only retains the last ~40 sessions, so older history may already be gone.
