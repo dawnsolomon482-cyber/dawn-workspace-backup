@@ -29,3 +29,4 @@ reference/
 # Nested repos (have their own .git, skipped to avoid broken submodule links)
 /lord-law-website/
 /manopress/
+/interactive-design-studio/
